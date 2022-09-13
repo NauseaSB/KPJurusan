@@ -90,19 +90,37 @@
                 </button>
             </div>
         @endif
-        <form>
+
+        @if (session()->has('loginError'))
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            {{ session('loginError') }}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    @endif
+
+        
+        <form action="/login" method="post">
+            @csrf
             <img class="mb-4" src="{{ asset('img/if unjani.png') }}" alt="" width="80" height="80">
             <h1 class="h3 mb-3 fw-normal">LOGIN</h1>
 
             <div class="form-floating">
-                <input type="text" class="form-control" name="username" id="username" placeholder="Username">
+                <input type="text" name="username" class="form-control @error('username') is-invalid @enderror" name="username" id="username" placeholder="Username" autofocus required value="{{ old('username') }}">
                 <label for="username">Username</label>
+                @error('username')
+                <div class="invalid-feedback">
+                    {{ $message }}
+                </div>
+                @enderror
             </div>
             <div class="form-floating">
-                <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-                <label for="floatingPassword">Password</label>
+                <input type="password" name="password" class="form-control" id="password" placeholder="Password" required>
+                <label for="password">Password</label>
             </div>
-
+            @auth
+                
             <button class="w-100 btn btn-lg mb-2 btn-primary" type="submit">Sign in</button>
             <a href="/register">Register</a>
             <p class="mt-5 mb-3 text-muted">&copy; 2017–2022</p>
