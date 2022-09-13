@@ -82,6 +82,14 @@
 
 <body class="text-center">
     <main class="form-signin w-100 m-auto">
+        @if (session()->has('success'))
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                {{ session('success') }}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        @endif
         <form>
             <img class="mb-4" src="{{ asset('img/if unjani.png') }}" alt="" width="80" height="80">
             <h1 class="h3 mb-3 fw-normal">LOGIN</h1>

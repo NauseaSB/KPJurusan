@@ -83,6 +83,7 @@ body {
   -webkit-overflow-scrolling: touch;
 }
 
-.from-registration input {
-  
+.form-signin input {
+  border-radius: 0;
+  margin-bottom: -1px;
 }
