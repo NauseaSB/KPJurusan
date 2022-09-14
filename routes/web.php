@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DaftarKPController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
@@ -25,3 +26,7 @@ Route::get('/register', [RegisterController::class, 'index'])->middleware('guest
 Route::post('/register', [RegisterController::class, 'store']);
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
+
+Route::get('/daftarkp', [DaftarKPController::class, 'index'])->middleware('auth');;
+
+Route::post('/daftarkp', [DaftarKPController::class, 'store'])->middleware('auth');;

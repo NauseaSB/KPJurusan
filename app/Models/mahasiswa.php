@@ -9,5 +9,14 @@ class mahasiswa extends Model
 {
     use HasFactory;
 
-    protected $guarded = ['id'];
+    protected $fillable = [
+        'nim',
+        'angkatan',
+        'nama',
+        'doswal',
+        'peminatan',
+        'ipk',
+        't_sks',
+        'semester',
+    ];
 }

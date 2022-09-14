@@ -23,8 +23,6 @@ class RegisterController extends Controller
             'password' => 'required|min:6|max:255'
         ]);
 
-        $dataMahasiswa1 = $request->validate([]);
-
         $validatedData['password'] = bcrypt($validatedData['password']);
 
         User::create($validatedData);
