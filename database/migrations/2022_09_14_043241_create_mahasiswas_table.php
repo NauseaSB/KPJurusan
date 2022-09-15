@@ -18,11 +18,14 @@ class CreateMahasiswasTable extends Migration
             $table->string('nim');
             $table->integer('angkatan');
             $table->string('nama');
+            $table->bigInteger('telp');
             $table->string('doswal');
             $table->string('peminatan');
             $table->double('ipk');
             $table->integer('t_sks');
             $table->string('semester');
+            $table->string('t_akd');
+            $table->string('ket_mahasiswa');
             $table->timestamps();
         });
     }
