@@ -65,6 +65,8 @@ class DaftarKPController extends Controller
         // mahasiswa::create($validatedData);
         // mahasiswa::create($validatedData2);
 
+        $user = auth()->user();
+
         $data = $request->all();
         $m1 = new Mahasiswa;
         $m1->nim = $data['nim1'];

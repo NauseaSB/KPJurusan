@@ -4,15 +4,15 @@
         data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
+    <h2 class="text-light">SISTEM INFORMASI KERJA PRAKTIK</h2>
     {{-- <div class="navbar-nav">
-            <div class="nav-item text-nowrap">
-                <a class="nav-link px-3" href="#">Sign out</a>
-            </div>
-        </div> --}}
-    <div class="container">
+        <div class="nav-item text-nowrap">
+            <a class="nav-link px-3" href="#">Sign out</a>
+        </div>
+    </div> --}}
+    <div class="navbar-nav justify-content-center">
         <div class="row">
-            <div class="col mx-auto">
-                <h2 class="text-light">SISTEM INFORMASI KERJA PRAKTIK</h2>
+            <div class="col">
 
             </div>
         </div>
