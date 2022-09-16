@@ -6,6 +6,99 @@
     </div>
     <div class="row">
         <div class="col">
+    <h3> Mahasiswa 1 </h3>
+    <table class="table table-responsive">
+        <tr> 
+            <td> NIM </td> 
+            <td> {{ $mahasiswa[0]->nim }} </td>          
+        </tr>
+        <tr> 
+            <td> Angkatan </td> 
+            <td> {{ $mahasiswa[0]->angkatan}}</td>           
+        </tr>
+        <tr> 
+            <td> Nama Mahasiswa </td> 
+            <td> {{ $mahasiswa[0]->nama}} </td>           
+        </tr>
+        <tr> 
+            <td> Nomor Telfon </td> 
+            <td> {{ $mahasiswa[0]->telp}}</td>           
+        </tr>
+        <tr> 
+            <td> Nama Dosen Wali </td> 
+            <td> {{ $mahasiswa[0]->doswal}}</td>           
+        </tr>
+        <tr> 
+            <td> Peminatan </td> 
+            <td> {{ $mahasiswa[0]->peminatan}}</td>           
+        </tr>
+        <tr> 
+            <td> IPK </td> 
+            <td> {{ $mahasiswa[0]->ipk}}</td>           
+        </tr>
+        <tr> 
+            <td> Total SKS </td> 
+            <td> {{ $mahasiswa[0]->t_sks}}</td>           
+        </tr>
+        <tr> 
+            <td> Semester </td> 
+            <td> {{ $mahasiswa[0]->semester}}</td>           
+        </tr>
+        <tr> 
+            <td> Tahun Akademik </td> 
+            <td> {{ $mahasiswa[0]->t_akd}}</td>           
+        </tr>
+      </table>
+        </div>
+        <div class="col">
+            <h3> Mahasiswa 2 </h3>
+            <table class="table table-responsive">
+                <tr> 
+                    <td> NIM </td> 
+                    <td> {{ $mahasiswa[1]->nim }} </td>          
+                </tr>
+                <tr> 
+                    <td> Angkatan </td> 
+                    <td> {{ $mahasiswa[1]->angkatan}}</td>           
+                </tr>
+                <tr> 
+                    <td> Nama Mahasiswa </td> 
+                    <td> {{ $mahasiswa[1]->nama}} </td>           
+                </tr>
+                <tr> 
+                    <td> Nomor Telfon </td> 
+                    <td> {{ $mahasiswa[1]->telp}}</td>           
+                </tr>
+                <tr> 
+                    <td> Nama Dosen Wali </td> 
+                    <td> {{ $mahasiswa[1]->doswal}}</td>           
+                </tr>
+                <tr> 
+                    <td> Peminatan </td> 
+                    <td> {{ $mahasiswa[1]->peminatan}}</td>           
+                </tr>
+                <tr> 
+                    <td> IPK </td> 
+                    <td> {{ $mahasiswa[1]->ipk}}</td>           
+                </tr>
+                <tr> 
+                    <td> Total SKS </td> 
+                    <td> {{ $mahasiswa[1]->t_sks}}</td>           
+                </tr>
+                <tr> 
+                    <td> Semester </td> 
+                    <td> {{ $mahasiswa[1]->semester}}</td>           
+                </tr>
+                <tr> 
+                    <td> Tahun Akademik </td> 
+                    <td> {{ $mahasiswa[1]->t_akd}}</td>           
+                </tr>
+              </table>
+                </div>
+    </div>
+
+    {{-- <div class="row">
+        <div class="col">
             <h2>Mahasiswa 1</h2>
             <div class="form-floating">
                 <input type="text" class="form-control rounded-top" name="nim1" id="nim1"
@@ -120,6 +213,6 @@
                     placeholder="Keterangan Mahasiswa" disabled value="">
                 <label for="ket_mahasiswa1">Keterangan Mahasiswa</label>
             </div>
-        </div>
+        </div> --}}
     </div>
 @endsection
