@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\KelompokController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,3 +31,5 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('aut
 Route::get('/daftarkp', [DaftarKPController::class, 'index'])->middleware('auth');;
 
 Route::post('/daftarkp', [DaftarKPController::class, 'store'])->middleware('auth');;
+
+Route::get('/test', [KelompokController::class, 'index']);

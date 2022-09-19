@@ -6,95 +6,95 @@
     </div>
     <div class="row">
         <div class="col">
-    <h3> Mahasiswa 1 </h3>
-    <table class="table table-responsive">
-        <tr> 
-            <td> NIM </td> 
-            <td> {{ $mahasiswa[0]->nim }} </td>          
-        </tr>
-        <tr> 
-            <td> Angkatan </td> 
-            <td> {{ $mahasiswa[0]->angkatan}}</td>           
-        </tr>
-        <tr> 
-            <td> Nama Mahasiswa </td> 
-            <td> {{ $mahasiswa[0]->nama}} </td>           
-        </tr>
-        <tr> 
-            <td> Nomor Telfon </td> 
-            <td> {{ $mahasiswa[0]->telp}}</td>           
-        </tr>
-        <tr> 
-            <td> Nama Dosen Wali </td> 
-            <td> {{ $mahasiswa[0]->doswal}}</td>           
-        </tr>
-        <tr> 
-            <td> Peminatan </td> 
-            <td> {{ $mahasiswa[0]->peminatan}}</td>           
-        </tr>
-        <tr> 
-            <td> IPK </td> 
-            <td> {{ $mahasiswa[0]->ipk}}</td>           
-        </tr>
-        <tr> 
-            <td> Total SKS </td> 
-            <td> {{ $mahasiswa[0]->t_sks}}</td>           
-        </tr>
-        <tr> 
-            <td> Semester </td> 
-            <td> {{ $mahasiswa[0]->semester}}</td>           
-        </tr>
-        <tr> 
-            <td> Tahun Akademik </td> 
-            <td> {{ $mahasiswa[0]->t_akd}}</td>           
-        </tr>
-      </table>
+            <h3> Mahasiswa 1 </h3>
+            <table class="table table-responsive">
+                <tr>
+                    <td> NIM </td>
+                    <td> {{ $mahasiswa[0]->nim }} </td>
+                </tr>
+                <tr>
+                    <td> Angkatan </td>
+                    <td> {{ $mahasiswa[0]->angkatan }}</td>
+                </tr>
+                <tr>
+                    <td> Nama Mahasiswa </td>
+                    <td> {{ $mahasiswa[0]->nama }} </td>
+                </tr>
+                <tr>
+                    <td> Nomor Telfon </td>
+                    <td> {{ $mahasiswa[0]->telp }}</td>
+                </tr>
+                <tr>
+                    <td> Nama Dosen Wali </td>
+                    <td> {{ $mahasiswa[0]->doswal }}</td>
+                </tr>
+                <tr>
+                    <td> Peminatan </td>
+                    <td> {{ $mahasiswa[0]->peminatan }}</td>
+                </tr>
+                <tr>
+                    <td> IPK </td>
+                    <td> {{ $mahasiswa[0]->ipk }}</td>
+                </tr>
+                <tr>
+                    <td> Total SKS </td>
+                    <td> {{ $mahasiswa[0]->t_sks }}</td>
+                </tr>
+                <tr>
+                    <td> Semester </td>
+                    <td> {{ $mahasiswa[0]->semester }}</td>
+                </tr>
+                <tr>
+                    <td> Tahun Akademik </td>
+                    <td> {{ $mahasiswa[0]->t_akd }}</td>
+                </tr>
+            </table>
         </div>
         <div class="col">
             <h3> Mahasiswa 2 </h3>
             <table class="table table-responsive">
-                <tr> 
-                    <td> NIM </td> 
-                    <td> {{ $mahasiswa[1]->nim }} </td>          
+                <tr>
+                    <td> NIM </td>
+                    <td> {{ $mahasiswa[1]->nim }} </td>
                 </tr>
-                <tr> 
-                    <td> Angkatan </td> 
-                    <td> {{ $mahasiswa[1]->angkatan}}</td>           
+                <tr>
+                    <td> Angkatan </td>
+                    <td> {{ $mahasiswa[1]->angkatan }}</td>
                 </tr>
-                <tr> 
-                    <td> Nama Mahasiswa </td> 
-                    <td> {{ $mahasiswa[1]->nama}} </td>           
+                <tr>
+                    <td> Nama Mahasiswa </td>
+                    <td> {{ $mahasiswa[1]->nama }} </td>
                 </tr>
-                <tr> 
-                    <td> Nomor Telfon </td> 
-                    <td> {{ $mahasiswa[1]->telp}}</td>           
+                <tr>
+                    <td> Nomor Telfon </td>
+                    <td> {{ $mahasiswa[1]->telp }}</td>
                 </tr>
-                <tr> 
-                    <td> Nama Dosen Wali </td> 
-                    <td> {{ $mahasiswa[1]->doswal}}</td>           
+                <tr>
+                    <td> Nama Dosen Wali </td>
+                    <td> {{ $mahasiswa[1]->doswal }}</td>
                 </tr>
-                <tr> 
-                    <td> Peminatan </td> 
-                    <td> {{ $mahasiswa[1]->peminatan}}</td>           
+                <tr>
+                    <td> Peminatan </td>
+                    <td> {{ $mahasiswa[1]->peminatan }}</td>
                 </tr>
-                <tr> 
-                    <td> IPK </td> 
-                    <td> {{ $mahasiswa[1]->ipk}}</td>           
+                <tr>
+                    <td> IPK </td>
+                    <td> {{ $mahasiswa[1]->ipk }}</td>
                 </tr>
-                <tr> 
-                    <td> Total SKS </td> 
-                    <td> {{ $mahasiswa[1]->t_sks}}</td>           
+                <tr>
+                    <td> Total SKS </td>
+                    <td> {{ $mahasiswa[1]->t_sks }}</td>
                 </tr>
-                <tr> 
-                    <td> Semester </td> 
-                    <td> {{ $mahasiswa[1]->semester}}</td>           
+                <tr>
+                    <td> Semester </td>
+                    <td> {{ $mahasiswa[1]->semester }}</td>
                 </tr>
-                <tr> 
-                    <td> Tahun Akademik </td> 
-                    <td> {{ $mahasiswa[1]->t_akd}}</td>           
+                <tr>
+                    <td> Tahun Akademik </td>
+                    <td> {{ $mahasiswa[1]->t_akd }}</td>
                 </tr>
-              </table>
-                </div>
+            </table>
+        </div>
     </div>
 
     {{-- <div class="row">
