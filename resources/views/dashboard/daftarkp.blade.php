@@ -7,7 +7,7 @@
         <main class="form-signin text-center">
             <form action="/daftarkp" method="post">
                 @csrf
-                <h1 class="h3 mb-3 fw-normal">Daftar Mahasiswa</h1>
+                <h1 class="h3 mt-3 mb-3 fw-normal">Daftar Kelompok KP</h1>
 
                 <div class="row">
                     <div class="col">
@@ -266,7 +266,7 @@
                 </div>
 
 
-                <button class="w-100 btn btn-lg btn-primary" type="submit">Daftar</button>
+                <button class="mt-3 w-100 btn btn-lg btn-primary" type="submit">Daftar</button>
                 <p class="mt-5 mb-3 text-muted">&copy; 2017–2022</p>
             </form>
         </main>

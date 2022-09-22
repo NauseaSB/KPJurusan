@@ -1,11 +1,15 @@
 <?php
 
+use App\Http\Controllers\DaftarKP1Controller;
+use App\Http\Controllers\DaftarKP2Controller;
 use App\Http\Controllers\DaftarKPController;
+use App\Http\Controllers\DaftarMateriKPController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\KelompokController;
+use Illuminate\Routing\Route as RoutingRoute;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,6 +22,8 @@ use App\Http\Controllers\KelompokController;
 |
 */
 
+Route::get('/', [LoginController::class, 'index'])->name('login')->middleware('guest');
+
 Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
 Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout']);
@@ -28,8 +34,14 @@ Route::post('/register', [RegisterController::class, 'store']);
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
 
-Route::get('/daftarkp', [DaftarKPController::class, 'index'])->middleware('auth');;
+Route::get('/daftar-kelompok-kp', [DaftarKPController::class, 'index'])->middleware('auth');
 
-Route::post('/daftarkp', [DaftarKPController::class, 'store'])->middleware('auth');;
+Route::post('/daftarkp', [DaftarKPController::class, 'store'])->middleware('auth');
 
 Route::get('/test', [KelompokController::class, 'index']);
+
+Route::get('/daftar-kp1', [DaftarKP1Controller::class, 'index']);
+
+Route::get('/daftar-materi-kp', [DaftarMateriKPController::class, 'index']);
+
+Route::get('/daftar-kp2', [DaftarKP2Controller::class, 'index']);
