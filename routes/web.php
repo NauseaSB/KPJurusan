@@ -22,6 +22,8 @@ use Illuminate\Routing\Route as RoutingRoute;
 |
 */
 
+Route::get('/test', [KelompokController::class, 'index']);
+
 Route::get('/', [LoginController::class, 'index'])->name('login')->middleware('guest');
 
 Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
@@ -40,8 +42,8 @@ Route::post('/daftarkp', [DaftarKPController::class, 'store'])->middleware('auth
 
 Route::get('/test', [KelompokController::class, 'index']);
 
-Route::get('/daftar-kp1', [DaftarKP1Controller::class, 'index']);
+Route::get('/daftar-kp1', [DaftarKP1Controller::class, 'index'])->middleware('auth');
 
-Route::get('/daftar-materi-kp', [DaftarMateriKPController::class, 'index']);
+Route::get('/daftar-materi-kp', [DaftarMateriKPController::class, 'index'])->middleware('auth');
 
-Route::get('/daftar-kp2', [DaftarKP2Controller::class, 'index']);
+Route::get('/daftar-kp2', [DaftarKP2Controller::class, 'index'])->middleware('auth');
