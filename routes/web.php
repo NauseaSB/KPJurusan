@@ -9,6 +9,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\KelompokController;
+use App\Http\Controllers\MateriController;
 use Illuminate\Routing\Route as RoutingRoute;
 
 /*
@@ -38,12 +39,14 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('aut
 
 Route::get('/daftar-kelompok-kp', [DaftarKPController::class, 'index'])->middleware('auth');
 
-Route::post('/daftarkp', [DaftarKPController::class, 'store'])->middleware('auth');
+Route::post('/daftarkp', [DaftarKPController::class, 'store']);
 
 Route::get('/test', [KelompokController::class, 'index']);
 
 Route::get('/daftar-kp1', [DaftarKP1Controller::class, 'index'])->middleware('auth');
 
-Route::get('/daftar-materi-kp', [DaftarMateriKPController::class, 'index'])->middleware('auth');
+Route::get('/daftar-materi-kp', [MateriController::class, 'index'])->middleware('auth');
+
+Route::post('/daftar-materi-kp', [MateriController::class, 'store']);
 
 Route::get('/daftar-kp2', [DaftarKP2Controller::class, 'index'])->middleware('auth');
