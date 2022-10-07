@@ -14,6 +14,12 @@ class Kelompok extends Model
 
     public function mahasiswa()
     {
-        return $this->hasOne(Mahasiswa::class, 'mahasiswa_id', 'id');
+        return $this->belongsTo(Mahasiswa::class, 'mahasiswa_id', 'id');
+    }
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
+    public function mahasiswa2(){
+        return $this->belongsTo(Mahasiswa::class, 'mahasiswa_id2', 'id');
     }
 }

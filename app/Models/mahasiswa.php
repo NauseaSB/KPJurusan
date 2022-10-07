@@ -13,6 +13,9 @@ class Mahasiswa extends Model
 
     public function kelompok()
     {
-        return $this->belongsTo(Kelompok::class);
+        return $this->hasOne(Kelompok::class);
+    }
+    public function user(){
+        return $this->hasOne(User::class);
     }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\kelompok;
 use App\Models\mahasiswa;
 use Illuminate\Http\Request;
 
@@ -95,8 +96,14 @@ class DaftarKPController extends Controller
         $m2->t_akd = $data['t_akd2'];
         $m2->ket_mahasiswa = $data['ket_mahasiswa2'];
         $m2->save();
-
-        // dd($data);
+        
+        $current_mahasiswa_id = $m1->id;
+        $current_mahasiswa_id2 = $m2->id;
+        
+        Kelompok::where('id', auth()->user()->kelompok->id)->update([
+            'mahasiswa_id' => $current_mahasiswa_id,
+            'mahasiswa_id2'=> $current_mahasiswa_id2 
+        ]);
 
         return redirect('/dashboard')->with('success', 'Pendaftaran KP Berhasil');
     }

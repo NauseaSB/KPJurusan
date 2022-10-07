@@ -10,18 +10,25 @@
             <table class="table table-responsive">
                 <tr>
                     <td> NIM </td>
-                    <td> {!! $mahasiswa[$kelompok1 - 1]->nim !!} </td>
+                    @if(isset($kelompok->mahasiswa))
+                    <td> {{ $kelompok->mahasiswa->nim }} </td>
+                    @endif
                 </tr>
                 <tr>
                     <td> Angkatan </td>
-                    <td> </td>
+                    @if(isset($kelompok->mahasiswa))
+                    <td> {{ $kelompok->mahasiswa->angkatan }}</td>
+                    @endif
                 </tr>
                 <tr>
                     <td> Nama Mahasiswa </td>
-                    <td> {!! $mahasiswa[$kelompok1 - 1]->nama !!} </td>
+                    @if(isset($kelompok->mahasiswa))
+                    <td> {{ $kelompok->mahasiswa->nama }} </td>
+                    @endif
                 </tr>
                 <tr>
                     <td> Nomor Telfon </td>
+                    
                     <td> </td>
                 </tr>
                 <tr>
@@ -55,7 +62,9 @@
             <table class="table table-responsive">
                 <tr>
                     <td> NIM </td>
-                    <td> {!! $mahasiswa1[$kelompok2 - 1]->nim !!} </td>
+                    @if(isset($kelompok->mahasiswa2))
+                    <td> {{ $kelompok->mahasiswa2->nim }}</td>
+                    @endif
                 </tr>
                 <tr>
                     <td> Angkatan </td>
@@ -63,7 +72,9 @@
                 </tr>
                 <tr>
                     <td> Nama Mahasiswa </td>
-                    <td> {!! $mahasiswa1[$kelompok2 - 1]->nama !!} </td>
+                    @if(isset($kelompok->mahasiswa2))
+                    <td> {{ $kelompok->mahasiswa2->nama }} </td>
+                    @endif
                 </tr>
                 <tr>
                     <td> Nomor Telfon </td>

@@ -16,8 +16,8 @@ class CreateKelompoksTable extends Migration
         Schema::create('kelompoks', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id');
-            $table->foreignId('mahasiswa_id')->references('id')->on('mahasiswas');
-            $table->foreignId('mahasiswa_id2')->references('id')->on('mahasiswas');
+            $table->integer('mahasiswa_id')->references('id')->on('mahasiswas')->nullable();
+            $table->integer('mahasiswa_id2')->references('id')->on('mahasiswas')->nullable();
             $table->timestamps();
         });
     }
