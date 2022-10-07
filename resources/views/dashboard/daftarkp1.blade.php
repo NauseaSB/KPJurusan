@@ -5,7 +5,7 @@
     <body>
 
         <main class="form-signin text-center">
-            <form action="/daftarkp" method="post">
+            <form action="/daftarkp" method="post" enctype="multipart/form-data">
                 @csrf
                 <h1 class="h3 mt-3 mb-3 fw-normal">Daftar KP Tahap 1</h1>
 
@@ -290,26 +290,26 @@
                         </div> --}}
                         <div class="form-floating">
                             <div class="mb-2">
-                                <label for="formFile" class="form-label mt-2">Upload KHS</label>
-                                <input class="form-control" type="file" id="formFile">
+                                <label for="khs1" class="form-label mt-2">Upload KHS</label>
+                                <input class="form-control" type="file" id="khs1" name="khs1">
                             </div>
                         </div>
                         <div class="form-floating">
                             <div class="mb-2">
-                                <label for="formFile" class="form-label">Upload KRS</label>
-                                <input class="form-control" type="file" id="formFile">
+                                <label for="krs1" class="form-label">Upload KRS</label>
+                                <input class="form-control" type="file" id="krs1" name="krs1">
                             </div>
                         </div>
                         <div class="form-floating">
                             <div class="mb-2">
-                                <label for="formFile" class="form-label">Upload KTM</label>
-                                <input class="form-control" type="file" id="formFile">
+                                <label for="ktm1" class="form-label">Upload KTM</label>
+                                <input class="form-control" type="file" id="ktm1" name="ktm1">
                             </div>
                         </div>
                         <div class="form-floating">
                             <div class="mb-2">
-                                <label for="formFile" class="form-label">Upload Pas Foto</label>
-                                <input class="form-control" type="file" id="formFile">
+                                <label for="p_foto1" class="form-label">Upload Pas Foto</label>
+                                <input class="form-control" type="file" id="p_foto1" name="p_foto1">
                             </div>
                         </div>
                     </div>
@@ -439,7 +439,7 @@
                             @enderror
                         </div>
                         <div class="form-floating mt-2">
-                            <select class="form-select" name="algo1" id="algo1">
+                            <select class="form-select" name="algo2" id="algo2">
                                 <option selected>Nilai</option>
                                 <option value="A">A</option>
                                 <option value="AB">AB</option>
@@ -449,10 +449,10 @@
                                 <option value="D">D</option>
                                 <option value="E">E</option>
                             </select>
-                            <label for="algo1">Nilai Algoritma dan Pemrograman</label>
+                            <label for="algo2">Nilai Algoritma dan Pemrograman</label>
                         </div>
                         <div class="form-floating">
-                            <select class="form-select" name="p_algo1" id="p_algo1">
+                            <select class="form-select" name="p_algo2" id="p_algo2">
                                 <option selected>Nilai</option>
                                 <option value="A">A</option>
                                 <option value="AB">AB</option>
@@ -462,10 +462,10 @@
                                 <option value="D">D</option>
                                 <option value="E">E</option>
                             </select>
-                            <label for="p_algo1">Nilai Praktikum Algoritma dan Pemrograman</label>
+                            <label for="p_algo2">Nilai Praktikum Algoritma dan Pemrograman</label>
                         </div>
                         <div class="form-floating">
-                            <select class="form-select" name="strukdat1" id="strukdat1">
+                            <select class="form-select" name="strukdat2" id="strukdat2">
                                 <option selected>Nilai</option>
                                 <option value="A">A</option>
                                 <option value="AB">AB</option>
@@ -475,10 +475,10 @@
                                 <option value="D">D</option>
                                 <option value="E">E</option>
                             </select>
-                            <label for="strukdat1">Nilai Struktur Data</label>
+                            <label for="strukdat2">Nilai Struktur Data</label>
                         </div>
                         <div class="form-floating">
-                            <select class="form-select" name="p_strukdat1" id="p_strukdat1">
+                            <select class="form-select" name="p_strukdat2" id="p_strukdat2">
                                 <option selected>Nilai</option>
                                 <option value="A">A</option>
                                 <option value="AB">AB</option>
@@ -488,10 +488,10 @@
                                 <option value="D">D</option>
                                 <option value="E">E</option>
                             </select>
-                            <label for="p_strukdat1">Nilai Praktikum Struktur Data</label>
+                            <label for="p_strukdat2">Nilai Praktikum Struktur Data</label>
                         </div>
                         <div class="form-floating">
-                            <select class="form-select" name="basdat1" id="basdat1">
+                            <select class="form-select" name="basdat2" id="basdat2">
                                 <option selected>Nilai</option>
                                 <option value="A">A</option>
                                 <option value="AB">AB</option>
@@ -501,10 +501,10 @@
                                 <option value="D">D</option>
                                 <option value="E">E</option>
                             </select>
-                            <label for="basdat1">Nilai Basis Data</label>
+                            <label for="basdat2">Nilai Basis Data</label>
                         </div>
                         <div class="form-floating">
-                            <select class="form-select" name="p_basdat1" id="p_basdat1">
+                            <select class="form-select" name="p_basdat2" id="p_basdat2">
                                 <option selected>Nilai</option>
                                 <option value="A">A</option>
                                 <option value="AB">AB</option>
@@ -514,10 +514,10 @@
                                 <option value="D">D</option>
                                 <option value="E">E</option>
                             </select>
-                            <label for="p_basdat1">Nilai Praktikum Basis Data</label>
+                            <label for="p_basdat2">Nilai Praktikum Basis Data</label>
                         </div>
                         <div class="form-floating">
-                            <select class="form-select" name="rpl1" id="rpl1">
+                            <select class="form-select" name="rpl2" id="rpl2">
                                 <option selected>Nilai</option>
                                 <option value="A">A</option>
                                 <option value="AB">AB</option>
@@ -527,10 +527,10 @@
                                 <option value="D">D</option>
                                 <option value="E">E</option>
                             </select>
-                            <label for="rpl1">Nilai Rekayasa Perangkat Lunak</label>
+                            <label for="rpl2">Nilai Rekayasa Perangkat Lunak</label>
                         </div>
                         <div class="form-floating">
-                            <select class="form-select" name="appl1" id="appl1">
+                            <select class="form-select" name="appl2" id="appl2">
                                 <option selected>Nilai</option>
                                 <option value="A">A</option>
                                 <option value="AB">AB</option>
@@ -540,10 +540,10 @@
                                 <option value="D">D</option>
                                 <option value="E">E</option>
                             </select>
-                            <label for="appl1">Nilai Analisis dan Perancangan Perangkat Lunak</label>
+                            <label for="appl2">Nilai Analisis dan Perancangan Perangkat Lunak</label>
                         </div>
                         <div class="form-floating">
-                            <select class="form-select" name="progweb1" id="progweb1">
+                            <select class="form-select" name="progweb2" id="progweb2">
                                 <option selected>Nilai</option>
                                 <option value="A">A</option>
                                 <option value="AB">AB</option>
@@ -553,10 +553,10 @@
                                 <option value="D">D</option>
                                 <option value="E">E</option>
                             </select>
-                            <label for="progweb1">Nilai Pemrograman Web</label>
+                            <label for="progweb2">Nilai Pemrograman Web</label>
                         </div>
                         <div class="form-floating">
-                            <select class="form-select" name="p_progweb1" id="p_progweb1">
+                            <select class="form-select" name="p_progweb2" id="p_progweb2">
                                 <option selected>Nilai</option>
                                 <option value="A">A</option>
                                 <option value="AB">AB</option>
@@ -566,7 +566,7 @@
                                 <option value="D">D</option>
                                 <option value="E">E</option>
                             </select>
-                            <label for="p_progweb1">Nilai Praktikum Pemrograman Web</label>
+                            <label for="p_progweb2">Nilai Praktikum Pemrograman Web</label>
                         </div>
                         {{-- <div class="form-floating">
                             <select class="form-select" name="progweb1" id="progweb1">
@@ -596,39 +596,39 @@
                         </div> --}}
                         <div class="form-floating">
                             <div class="mb-2">
-                                <label for="formFile" class="form-label mt-2">Upload KHS</label>
-                                <input class="form-control" type="file" id="formFile">
+                                <label for="khs2" class="form-label mt-2">Upload KHS</label>
+                                <input class="form-control" type="file" id="khs2" name="khs2">
                             </div>
                         </div>
                         <div class="form-floating">
                             <div class="mb-2">
-                                <label for="formFile" class="form-label">Upload KRS</label>
-                                <input class="form-control" type="file" id="formFile">
+                                <label for="krs2" class="form-label">Upload KRS</label>
+                                <input class="form-control" type="file" id="krs2" name="krs2">
                             </div>
                         </div>
                         <div class="form-floating">
                             <div class="mb-2">
-                                <label for="formFile" class="form-label">Upload KTM</label>
-                                <input class="form-control" type="file" id="formFile">
+                                <label for="ktm2" class="form-label">Upload KTM</label>
+                                <input class="form-control" type="file" id="ktm2" name="ktm2">
                             </div>
                         </div>
                         <div class="form-floating">
                             <div class="mb-2">
-                                <label for="formFile" class="form-label">Upload Pas Foto</label>
-                                <input class="form-control" type="file" id="formFile">
+                                <label for="p_foto2" class="form-label">Upload Pas Foto</label>
+                                <input class="form-control" type="file" id="p_foto2" name="p_foto2">
                             </div>
                         </div>
                     </div>
                     <div class="form-floating">
                         <div class="mb-3">
-                            <label for="formFile" class="form-label">Upload Proposal</label>
-                            <input class="form-control" type="file" id="formFile">
+                            <label for="proposal" class="form-label">Upload Proposal</label>
+                            <input class="form-control" type="file" id="proposal" name="proposal">
                         </div>
                     </div>
                     <div class="form-floating">
                         <div class="mb-3">
-                            <label for="formFile" class="form-label">Upload Pernyataan Izin KP</label>
-                            <input class="form-control" type="file" id="formFile">
+                            <label for="izin_kp" class="form-label">Upload Pernyataan Izin KP</label>
+                            <input class="form-control" type="file" id="izin_kp" name="izin_kp">
                         </div>
                     </div>
                 </div>
