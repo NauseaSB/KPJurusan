@@ -18,6 +18,7 @@ class CreateKelompoksTable extends Migration
             $table->foreignId('user_id');
             $table->integer('mahasiswa_id')->references('id')->on('mahasiswas')->nullable();
             $table->integer('mahasiswa_id2')->references('id')->on('mahasiswas')->nullable();
+            $table->integer('kp_id')->references('id')->on('kp1s')->nullable();
             $table->timestamps();
         });
     }

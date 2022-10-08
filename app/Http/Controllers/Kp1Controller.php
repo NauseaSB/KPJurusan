@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\kp1;
+use App\Models\Kelompok;
 use App\Http\Requests\Storekp1Request;
 use App\Http\Requests\Updatekp1Request;
 
@@ -100,6 +101,12 @@ class Kp1Controller extends Controller
         $kp1->izin_kp = $request->file('izin_kp')->store('data-mahasiswa');
 
         $kp1->save();
+
+        $current_kp_id = $kp1->id;
+
+        Kelompok::where('id', auth()->user()->kelompok->id)->update([
+            'kp_id' => $current_kp_id,
+        ]);
 
         return redirect('/dashboard')->with('success', 'Pendaftaran KP1 Berhasil');
     }

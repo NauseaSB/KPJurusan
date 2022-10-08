@@ -16,10 +16,16 @@ class Kelompok extends Model
     {
         return $this->belongsTo(Mahasiswa::class, 'mahasiswa_id', 'id');
     }
-    public function user(){
+    public function user()
+    {
         return $this->belongsTo(User::class);
     }
-    public function mahasiswa2(){
+    public function mahasiswa2()
+    {
         return $this->belongsTo(Mahasiswa::class, 'mahasiswa_id2', 'id');
+    }
+    public function kp1()
+    {
+        return $this->belongsTo(kp1::class, 'kp_id', 'id');
     }
 }
