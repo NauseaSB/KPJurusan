@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Materi;
+use App\Models\Kelompok;
 use App\Http\Requests\StoreMateriRequest;
 use App\Http\Requests\UpdateMateriRequest;
 
@@ -50,6 +51,12 @@ class MateriController extends Controller
         $m->ajuan_pembimbing1 = $data['p_kp1'];
         $m->ajuan_pembimbing2 = $data['p_kp2'];
         $m->save();
+
+        $current_materi_id = $m->id;
+
+        kelompok::where('id', auth()->user()->kelompok->id)->update([
+            'materi_id' => $current_materi_id,
+        ]);
 
         return redirect('/dashboard')->with('success', 'Pendaftaran KP Berhasil');
     }

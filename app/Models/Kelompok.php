@@ -28,4 +28,8 @@ class Kelompok extends Model
     {
         return $this->belongsTo(kp1::class, 'kp_id', 'id');
     }
+    public function materi()
+    {
+        return $this->belongsTo(Materi::class, 'materi_id', 'id');
+    }
 }

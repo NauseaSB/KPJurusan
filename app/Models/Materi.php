@@ -10,4 +10,9 @@ class Materi extends Model
     use HasFactory;
 
     protected $guarded = ['id'];
+
+    public function kelompok()
+    {
+        return $this->hasOne(kelompok::class);
+    }
 }
