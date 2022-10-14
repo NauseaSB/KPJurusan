@@ -41,11 +41,13 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('aut
 
 Route::get('/daftar-kelompok-kp', [DaftarKPController::class, 'index'])->middleware('auth');
 
-Route::post('/daftarkp', [DaftarKPController::class, 'store']);
+Route::post('/daftar-kelompok', [DaftarKPController::class, 'store']);
 
 Route::get('/test', [KelompokController::class, 'index']);
 
 Route::get('/daftar-kp1', [Kp1Controller::class, 'index'])->middleware('auth');
+
+Route::post('/daftarkp', [Kp1Controller::class, 'store']);
 
 Route::get('/daftar-materi-kp', [MateriController::class, 'index'])->middleware('auth');
 
