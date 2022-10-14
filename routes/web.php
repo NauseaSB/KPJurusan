@@ -41,7 +41,7 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('aut
 
 Route::get('/daftar-kelompok-kp', [DaftarKPController::class, 'index'])->middleware('auth');
 
-Route::post('/daftarkp', [Kp1Controller::class, 'store']);
+Route::post('/daftarkp', [DaftarKPController::class, 'store']);
 
 Route::get('/test', [KelompokController::class, 'index']);
 
