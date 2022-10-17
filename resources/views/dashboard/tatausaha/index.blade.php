@@ -1,6 +1,6 @@
 @extends('dashboard.tatausaha.main')
 @section('container')
-    halaman index koordinator
+    halaman index tata usaha
     <div class="table-responsive">
         <table class="table table-striped table-sm">
             <thead>
