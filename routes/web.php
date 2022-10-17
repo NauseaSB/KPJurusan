@@ -1,18 +1,21 @@
 <?php
 
+use App\Models\kp1;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Kp1Controller;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\MateriController;
+use App\Http\Controllers\DaftarKPController;
+use App\Http\Controllers\KelompokController;
+use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DaftarKP1Controller;
 use App\Http\Controllers\DaftarKP2Controller;
-use App\Http\Controllers\DaftarKPController;
-use App\Http\Controllers\DaftarMateriKPController;
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\LoginController;
-use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\KelompokController;
-use App\Http\Controllers\Kp1Controller;
-use App\Http\Controllers\MateriController;
-use App\Models\kp1;
 use Illuminate\Routing\Route as RoutingRoute;
+use App\Http\Controllers\DashboardTUController;
+use App\Http\Controllers\DashboardKoorController;
+use App\Http\Controllers\DaftarMateriKPController;
+use App\Http\Controllers\DashboardAdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,23 +30,27 @@ use Illuminate\Routing\Route as RoutingRoute;
 
 Route::get('/test', [KelompokController::class, 'index']);
 
+//route Login
 Route::get('/', [LoginController::class, 'index'])->name('login')->middleware('guest');
-
 Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
 Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout']);
 
-Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
 
+//route register
+Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
 Route::post('/register', [RegisterController::class, 'store']);
 
-Route::group(['middleware'=> 'auth'], function(){
-    Route::group(['middleware' => 'role:admin'], function(){
-        Route::get('/admin', function(){
-            return 'Hello Admin!';
-        });
+//route group untuk otentikasi setiap role
+Route::group(['middleware' => 'auth'], function () {
+
+    //route group untuk role ADMIN
+    Route::group(['middleware' => 'role:admin'], function () {
+        Route::get('/admin', [DashboardAdminController::class, 'index'])->middleware('auth');
     });
-    Route::group(['middleware' => 'role:mahasiswa'], function(){
+
+    //route group untuk role MAHASISWA
+    Route::group(['middleware' => 'role:mahasiswa'], function () {
         Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
 
         Route::get('/daftar-kelompok-kp', [DaftarKPController::class, 'index'])->middleware('auth');
@@ -62,15 +69,14 @@ Route::group(['middleware'=> 'auth'], function(){
 
         Route::get('/daftar-kp2', [DaftarKP2Controller::class, 'index'])->middleware('auth');
     });
-    Route::group(['middleware' => 'role:koodinatorKP'], function(){
-        Route::get('/koorkp', function(){
-            return 'Hello KoorKP!';
-        });
+
+    //route group untuk role KOORDINATOR
+    Route::group(['middleware' => 'role:koodinatorKP'], function () {
+        Route::get('/koorkp', [DashboardKoorController::class, 'index'])->middleware('auth');
     });
-    Route::group(['middleware' => 'role:tataUsaha'], function(){
-        Route::get('/TU', function(){
-            return 'Hello TU!';
-        });
+
+    //route group untuk role TATA USAHA
+    Route::group(['middleware' => 'role:tataUsaha'], function () {
+        Route::get('/TU', [DashboardTUController::class, 'index'])->middleware('auth');
     });
 });
-

@@ -59,6 +59,8 @@ class DatabaseSeeder extends Seeder
             't_akd' => '2022',
             'ket_mahasiswa' => 'mahasiswa2',
         ]);
+
+        //role
         Role::create([
             'nama' => 'admin',
             'redirect_to' => '/admin'
@@ -74,6 +76,25 @@ class DatabaseSeeder extends Seeder
         Role::create([
             'nama' => 'tataUsaha',
             'redirect_to' => '/TU'
+        ]);
+
+        //user lainnya
+        User::create([
+            'role_id' => '1',
+            'username' => 'admin',
+            'password' => bcrypt('admin123')
+        ]);
+
+        User::create([
+            'role_id' => '3',
+            'username' => 'koorkp',
+            'password' => bcrypt('koorkp123')
+        ]);
+
+        User::create([
+            'role_id' => '4',
+            'username' => 'tatausaha',
+            'password' => bcrypt('tatausaha123')
         ]);
     }
 }
