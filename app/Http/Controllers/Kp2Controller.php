@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\fs;
 use Illuminate\Http\Request;
 
-class DaftarKP2Controller extends Controller
+class Kp2Controller extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,12 +14,7 @@ class DaftarKP2Controller extends Controller
      */
     public function index()
     {
-        // dd(auth()->user()->kelompok->kp1->algoritma1);
-        return view('dashboard.daftarkp2', [
-            'mahasiswa1' => auth()->user()->kelompok->mahasiswa,
-            'mahasiswa2' => auth()->user()->kelompok->mahasiswa2,
-            'info_mhs' =>  auth()->user()->kelompok->kp1
-        ]);
+        //
     }
 
     /**
@@ -45,10 +41,10 @@ class DaftarKP2Controller extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\fs  $fs
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(fs $fs)
     {
         //
     }
@@ -56,10 +52,10 @@ class DaftarKP2Controller extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\fs  $fs
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(fs $fs)
     {
         //
     }
@@ -68,10 +64,10 @@ class DaftarKP2Controller extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\fs  $fs
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, fs $fs)
     {
         //
     }
@@ -79,10 +75,10 @@ class DaftarKP2Controller extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\fs  $fs
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(fs $fs)
     {
         //
     }

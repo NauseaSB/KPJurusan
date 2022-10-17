@@ -32,4 +32,8 @@ class Kelompok extends Model
     {
         return $this->belongsTo(Materi::class, 'materi_id', 'id');
     }
+    public function kp2()
+    {
+        return $this->belongsTo(kp2::class, 'kp_id', 'id');
+    }
 }

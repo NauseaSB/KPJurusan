@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\kp2;
 use App\Models\kp1;
 use App\Models\Kelompok;
 use App\Http\Requests\Storekp1Request;
@@ -106,6 +107,63 @@ class Kp1Controller extends Controller
 
         Kelompok::where('id', auth()->user()->kelompok->id)->update([
             'kp_id' => $current_kp_id,
+        ]);
+
+        $kp2 = new kp2;
+        //Mahasiswa1
+        $kp2->nim1 = $data['nim1'];
+        $kp2->nama1 = $data['nama1'];
+        $kp2->doswal1 = $data['doswal1'];
+        $kp2->peminatan1 = $data['peminatan1'];
+        $kp2->ipk1 = $data['ipk1'];
+        $kp2->t_sks1 = $data['t_sks1'];
+        $kp2->semester1 = $data['semester1'];
+        $kp2->jum_d1 = $data['jum_d1'];
+        $kp2->mk_d1 = $data['mk_d1'];
+        $kp2->jum_e1 = $data['jum_e1'];
+        $kp2->mk_e1 = $data['mk_e1'];
+        $kp2->algoritma1 = $data['algo1'];
+        $kp2->p_algoritma1 = $data['p_algo1'];
+        $kp2->strukdat1 = $data['strukdat1'];
+        $kp2->p_strukdat1 = $data['p_strukdat1'];
+        $kp2->basdat1 = $data['basdat1'];
+        $kp2->p_basdat1 = $data['p_basdat1'];
+        $kp2->rpl1 = $data['rpl1'];
+        $kp2->appl1 = $data['appl1'];
+        $kp2->progweb1 = $data['progweb1'];
+        $kp2->p_progweb1 = $data['p_progweb1'];
+        $kp2->kontrak = null;
+
+        //Mahasiswa2
+        $kp2->nim2 = $data['nim2'];
+        $kp2->nama2 = $data['nama2'];
+        $kp2->doswal2 = $data['doswal2'];
+        $kp2->peminatan2 = $data['peminatan2'];
+        $kp2->ipk2 = $data['ipk2'];
+        $kp2->t_sks2 = $data['t_sks2'];
+        $kp2->semester2 = $data['semester2'];
+        $kp2->jum_d2 = $data['jum_d2'];
+        $kp2->mk_d2 = $data['mk_d2'];
+        $kp2->jum_e2 = $data['jum_e2'];
+        $kp2->mk_e2 = $data['mk_e2'];
+        $kp2->algoritma2 = $data['algo2'];
+        $kp2->p_algoritma2 = $data['p_algo2'];
+        $kp2->strukdat2 = $data['strukdat2'];
+        $kp2->p_strukdat2 = $data['p_strukdat2'];
+        $kp2->basdat2 = $data['basdat2'];
+        $kp2->p_basdat2 = $data['p_basdat2'];
+        $kp2->rpl2 = $data['rpl2'];
+        $kp2->appl2 = $data['appl2'];
+        $kp2->progweb2 = $data['progweb2'];
+        $kp2->p_progweb2 = $data['p_progweb2'];
+        $kp2->kontrak2 = null;
+
+        $kp2->save();
+
+        $current_kp2_id = $kp2->id;
+
+        Kelompok::where('id', auth()->user()->kelompok->id)->update([
+            'kp2_id' => $current_kp2_id,
         ]);
 
         return redirect('/dashboard')->with('success', 'Pendaftaran KP1 Berhasil');
