@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Role;
 use App\Models\Kelompok;
 use App\Models\Mahasiswa;
 use Illuminate\Database\Seeder;
@@ -20,6 +21,7 @@ class DatabaseSeeder extends Seeder
 
         //Dummy Kelompok
         User::create([
+            'role_id' => '2',
             'username' => 'mahasiswa',
             'password' => bcrypt('mahasiswa123')
         ]);
@@ -56,6 +58,22 @@ class DatabaseSeeder extends Seeder
             'semester' => 'GANJIL',
             't_akd' => '2022',
             'ket_mahasiswa' => 'mahasiswa2',
+        ]);
+        Role::create([
+            'nama' => 'admin',
+            'redirect_to' => '/admin'
+        ]);
+        Role::create([
+            'nama' => 'mahasiswa',
+            'redirect_to' => '/dashboard'
+        ]);
+        Role::create([
+            'nama' => 'koordinatorKP',
+            'redirect_to' => '/koorkp'
+        ]);
+        Role::create([
+            'nama' => 'tataUsaha',
+            'redirect_to' => '/TU'
         ]);
     }
 }

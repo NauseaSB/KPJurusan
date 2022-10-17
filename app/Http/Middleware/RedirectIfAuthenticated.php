@@ -21,9 +21,15 @@ class RedirectIfAuthenticated
     {
         $guards = empty($guards) ? [null] : $guards;
 
+        $roles = \App\Models\Role::all();
+
         foreach ($guards as $guard) {
             if (Auth::guard($guard)->check()) {
-                return redirect(RouteServiceProvider::HOME);
+                foreach ($roles as $role) {
+                    if (auth()->user()->role_id == $role->id) {
+                        return redirect($role->redirect_to);
+                    }
+                }
             }
         }
 

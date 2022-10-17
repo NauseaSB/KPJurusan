@@ -7,7 +7,7 @@
         <main class="form-signin text-center">
             <form action="/daftarkp" method="post">
                 @csrf
-                <h1 class="h3 mt-3 mb-3 fw-normal">Daftar KP Tahap 1</h1>
+                <h1 class="h3 mt-3 mb-3 fw-normal">Daftar KP Tahap 2</h1>
 
                 <div class="row">
                     <div class="col">
