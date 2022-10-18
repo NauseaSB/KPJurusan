@@ -15,7 +15,9 @@ class DaftarKPController extends Controller
      */
     public function index()
     {
-        return view('dashboard.daftarkp');
+        return view('dashboard.daftarkp', [
+            'kelompok' => auth()->user()->kelompok->mahasiswa,
+        ]);
     }
 
     /**
@@ -96,16 +98,16 @@ class DaftarKPController extends Controller
         $m2->t_akd = $data['t_akd2'];
         $m2->ket_mahasiswa = $data['ket_mahasiswa2'];
         $m2->save();
-        
+
         $current_mahasiswa_id = $m1->id;
         $current_mahasiswa_id2 = $m2->id;
-        
+
         Kelompok::where('id', auth()->user()->kelompok->id)->update([
             'mahasiswa_id' => $current_mahasiswa_id,
-            'mahasiswa_id2'=> $current_mahasiswa_id2 
+            'mahasiswa_id2' => $current_mahasiswa_id2
         ]);
 
-        return redirect('/dashboard')->with('success', 'Pendaftaran KP Berhasil');
+        return redirect('/dashboard')->with('success', 'Pendaftaran Kelompok KP Berhasil');
     }
 
     /**
@@ -127,7 +129,9 @@ class DaftarKPController extends Controller
      */
     public function edit(mahasiswa $mahasiswa)
     {
-        //
+        return view('dashboard.editkelompok', [
+            'datakelompok' => auth()->user()->kelompok,
+        ]);
     }
 
     /**
@@ -139,7 +143,63 @@ class DaftarKPController extends Controller
      */
     public function update(Request $request, mahasiswa $mahasiswa)
     {
-        //
+        $data = $request->all();
+        $m1_nim = $data['nim1'];
+        $m1_angkatan = $data['angkatan1'];
+        $m1_nama = $data['nama1'];
+        $m1_telp = $data['telp1'];
+        $m1_doswal = $data['doswal1'];
+        $m1_peminatan = $data['peminatan1'];
+        $m1_ipk = $data['ipk1'];
+        $m1_t_sks = $data['t_sks1'];
+        $m1_semester = $data['semester1'];
+        $m1_t_akd = $data['t_akd1'];
+        $m1_ket_mahasiswa = $data['ket_mahasiswa1'];
+
+        $m2_nim = $data['nim2'];
+        $m2_angkatan = $data['angkatan2'];
+        $m2_nama = $data['nama2'];
+        $m2_telp = $data['telp2'];
+        $m2_doswal = $data['doswal2'];
+        $m2_peminatan = $data['peminatan2'];
+        $m2_ipk = $data['ipk2'];
+        $m2_t_sks = $data['t_sks2'];
+        $m2_semester = $data['semester2'];
+        $m2_t_akd = $data['t_akd2'];
+        $m2_ket_mahasiswa = $data['ket_mahasiswa2'];
+
+        $current_mahasiswa_id = auth()->user()->kelompok->mahasiswa;
+        $current_mahasiswa_id2 = auth()->user()->kelompok->mahasiswa2;
+
+        mahasiswa::where('id', $current_mahasiswa_id)->update([
+            'nim' => $m1_nim,
+            'angkatan' => $m1_angkatan,
+            'nama' => $m1_nama,
+            'telp' => $m1_telp,
+            'doswal' => $m1_doswal,
+            'peminatan' => $m1_peminatan,
+            'ipk' => $m1_ipk,
+            't_sks' => $m1_t_sks,
+            'semester' => $m1_semester,
+            't_akd' => $m1_t_akd,
+            'ket_mahasiswa' => $m1_ket_mahasiswa,
+        ]);
+
+        mahasiswa::where('id', $current_mahasiswa_id2)->update([
+            'nim' => $m2_nim,
+            'angkatan' => $m2_angkatan,
+            'nama' => $m2_nama,
+            'telp' => $m2_telp,
+            'doswal' => $m2_doswal,
+            'peminatan' => $m2_peminatan,
+            'ipk' => $m2_ipk,
+            't_sks' => $m2_t_sks,
+            'semester' => $m2_semester,
+            't_akd' => $m2_t_akd,
+            'ket_mahasiswa' => $m2_ket_mahasiswa,
+        ]);
+
+        return redirect('/dashboard')->with('success', 'Perubahan Data Kelompok KP Berhasil');
     }
 
     /**

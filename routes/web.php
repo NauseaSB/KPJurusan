@@ -68,6 +68,10 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('/daftar-materi-kp', [MateriController::class, 'store']);
 
         Route::get('/daftar-kp2', [DaftarKP2Controller::class, 'index'])->middleware('auth');
+
+        Route::get('/edit-kelompok', [DaftarKPController::class, 'edit']);
+
+        Route::post('/edit-kelompok', [DaftarKPController::class, 'update']);
     });
 
     //route group untuk role KOORDINATOR

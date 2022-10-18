@@ -634,7 +634,8 @@
                 </div>
 
 
-                <button class="mt-3 w-100 btn btn-lg btn-primary" type="submit">Daftar</button>
+                <button class="mt-3 w-100 btn btn-lg btn-primary" type="submit"
+                    @if (isset($datakp1)) disabled @endif>Daftar</button>
                 <p class="mt-5 mb-3 text-muted">&copy; 2017–2022</p>
             </form>
         </main>

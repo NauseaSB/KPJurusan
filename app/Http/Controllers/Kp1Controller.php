@@ -17,7 +17,9 @@ class Kp1Controller extends Controller
      */
     public function index()
     {
-        return view('dashboard.daftarkp1');
+        return view('dashboard.daftarkp1', [
+            'datakp1' => auth()->user()->kelompok->kp1,
+        ]);
     }
 
     /**

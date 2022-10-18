@@ -16,7 +16,9 @@ class MateriController extends Controller
      */
     public function index()
     {
-        return view('dashboard.daftarmaterikp');
+        return view('dashboard.daftarmaterikp', [
+            'materi' => auth()->user()->kelompok->materi,
+        ]);
     }
 
     /**
@@ -58,7 +60,7 @@ class MateriController extends Controller
             'materi_id' => $current_materi_id,
         ]);
 
-        return redirect('/dashboard')->with('success', 'Pendaftaran KP Berhasil');
+        return redirect('/dashboard')->with('success', 'Pendaftaran materi KP Berhasil');
     }
 
     /**

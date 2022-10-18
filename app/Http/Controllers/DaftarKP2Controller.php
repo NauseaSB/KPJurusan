@@ -17,7 +17,8 @@ class DaftarKP2Controller extends Controller
         return view('dashboard.daftarkp2', [
             'mahasiswa1' => auth()->user()->kelompok->mahasiswa,
             'mahasiswa2' => auth()->user()->kelompok->mahasiswa2,
-            'info_mhs' =>  auth()->user()->kelompok->kp1
+            'info_mhs' =>  auth()->user()->kelompok->kp1,
+            'datakp2' => auth()->user()->kelompok->kp2,
         ]);
     }
 
