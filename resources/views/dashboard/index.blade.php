@@ -33,32 +33,45 @@
                 </tr>
                 <tr>
                     <td> Nomor Telfon </td>
-
-                    <td> </td>
+                    @if (isset($kelompok->mahasiswa))
+                        <td> {{ $kelompok->mahasiswa->telp }} </td>
+                    @endif
                 </tr>
                 <tr>
                     <td> Nama Dosen Wali </td>
-                    <td> </td>
+                    @if (isset($kelompok->mahasiswa))
+                    <td> {{ $kelompok->mahasiswa->doswal }} </td>
+                    @endif
                 </tr>
                 <tr>
                     <td> Peminatan </td>
-                    <td> </td>
+                    @if (isset($kelompok->mahasiswa))
+                    <td> {{ $kelompok->mahasiswa->peminatan }} </td>
+                    @endif
                 </tr>
                 <tr>
                     <td> IPK </td>
-                    <td> </td>
+                    @if (isset($kelompok->mahasiswa))
+                    <td> {{ $kelompok->mahasiswa->ipk }} </td>
+                    @endif
                 </tr>
                 <tr>
                     <td> Total SKS </td>
-                    <td> </td>
+                    @if (isset($kelompok->mahasiswa))
+                    <td> {{ $kelompok->mahasiswa->t_sks }} </td>
+                    @endif
                 </tr>
                 <tr>
                     <td> Semester </td>
-                    <td> </td>
+                    @if (isset($kelompok->mahasiswa))
+                    <td> {{ $kelompok->mahasiswa->semester }} </td>
+                    @endif
                 </tr>
                 <tr>
                     <td> Tahun Akademik </td>
-                    <td> </td>
+                    @if (isset($kelompok->mahasiswa))
+                    <td> {{ $kelompok->mahasiswa->t_akd }} </td>
+                    @endif
                 </tr>
             </table>
         </div>
@@ -86,31 +99,45 @@
                 </tr>
                 <tr>
                     <td> Nomor Telfon </td>
-                    <td> </td>
+                    @if (isset($kelompok->mahasiswa2))
+                    <td> {{ $kelompok->mahasiswa2->telp }} </td>
+                    @endif
                 </tr>
                 <tr>
                     <td> Nama Dosen Wali </td>
-                    <td> </td>
+                    @if (isset($kelompok->mahasiswa2))
+                    <td> {{ $kelompok->mahasiswa2->doswal }} </td>
+                    @endif
                 </tr>
                 <tr>
                     <td> Peminatan </td>
-                    <td> </td>
+                    @if (isset($kelompok->mahasiswa2))
+                    <td> {{ $kelompok->mahasiswa2->peminatan }} </td>
+                    @endif
                 </tr>
                 <tr>
                     <td> IPK </td>
-                    <td> </td>
+                    @if (isset($kelompok->mahasiswa2))
+                    <td> {{ $kelompok->mahasiswa2->ipk }} </td>
+                    @endif
                 </tr>
                 <tr>
                     <td> Total SKS </td>
-                    <td> </td>
+                    @if (isset($kelompok->mahasiswa2))
+                    <td> {{ $kelompok->mahasiswa2->t_sks }} </td>
+                    @endif
                 </tr>
                 <tr>
                     <td> Semester </td>
-                    <td> </td>
+                    @if (isset($kelompok->mahasiswa2))
+                    <td> {{ $kelompok->mahasiswa2->semester }} </td>
+                    @endif
                 </tr>
                 <tr>
                     <td> Tahun Akademik </td>
-                    <td> </td>
+                    @if (isset($kelompok->mahasiswa2))
+                    <td> {{ $kelompok->mahasiswa2->t_akd }} </td>
+                    @endif
                 </tr>
             </table>
         </div>
