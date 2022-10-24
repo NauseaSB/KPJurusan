@@ -17,6 +17,8 @@ class DaftarKPController extends Controller
     {
         return view('dashboard.daftarkp', [
             'kelompok' => auth()->user()->kelompok->mahasiswa,
+            'mhs1' => auth()->user()->kelompok->mahasiswa,
+            'mhs2' => auth()->user()->kelompok->mahasiswa2,
         ]);
     }
 
@@ -38,36 +40,6 @@ class DaftarKPController extends Controller
      */
     public function store(Request $request)
     {
-        // $validatedData =  $request->validate([
-        //     'nim1' => 'required',
-        //     'angkatan1' => 'required',
-        //     'nama1' => 'required',
-        //     'telp1' => 'required',
-        //     'doswal1' => 'required',
-        //     'peminatan1' => 'required',
-        //     'ipk1' => 'required',
-        //     't_sks1' => 'required',
-        //     'semester1' => 'required',
-        //     't_akd1' => 'required',
-        //     'ket_mahasiswa1' => 'required',
-        // ]);
-        // $validatedData2 =  $request->validate([
-        //     'nim2' => 'required',
-        //     'angkatan2' => 'required',
-        //     'nama2' => 'required',
-        //     'telp2' => 'required',
-        //     'doswal2' => 'required',
-        //     'peminatan2' => 'required',
-        //     'ipk2' => 'required',
-        //     't_sks2' => 'required',
-        //     'semester2' => 'required',
-        //     't_akd2' => 'required',
-        //     'ket_mahasiswa2' => 'required',
-        // ]);
-
-        // mahasiswa::create($validatedData);
-        // mahasiswa::create($validatedData2);
-
         $user = auth()->user();
 
         $data = $request->all();

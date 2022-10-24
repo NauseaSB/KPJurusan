@@ -15,7 +15,6 @@
                     <th scope="col">Status Mahasiswa 1</th>
                     <th scope="col">Status Mahasiswa 2</th>
                     <th scope="col">Status Status Kelompok</th>
-                    <th scope="col">Status Akhir</th>
                     <th scope="col">Aksi</th>
                 </tr>
             </thead>
@@ -53,11 +52,37 @@
                                 {{ $item->materi->nama_pembimbing_lapangan }}
                             @endif
                         </td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td>
+                            @if (isset($item->status_mhsw1))
+                                <div
+                                    class="badge @if ($item->status_mhsw1 == 'Memenuhi') bg-success @elseif ($item->status_mhsw1 == 'Tidak Memenuhi') bg-danger @else bg-warning @endif">
+                                    {{ $item->status_mhsw1 }}
+                                </div>
+                            @endif
+                        </td>
+                        <td>
+                            @if (isset($item->status_mhsw2))
+                                <div
+                                    class="badge @if ($item->status_mhsw2 == 'Memenuhi') bg-success @elseif ($item->status_mhsw2 == 'Tidak Memenuhi') bg-danger @else bg-warning @endif">
+                                    {{ $item->status_mhsw2 }}
+                                </div>
+                            @endif
+                        </td>
+                        <td>
+                            @if (isset($item->status_klmpk))
+                                <div
+                                    class="badge @if ($item->status_klmpk == 'Memenuhi') bg-success @elseif ($item->status_klmpk == 'Tidak Memenuhi') bg-danger @else bg-warning @endif">
+                                    {{ $item->status_klmpk }}
+                                </div>
+                            @endif
+                        </td>
+                        <td>
+                            <a href="/koorkp/set-status/{{ $item->id }}" class="btn bg-warning"
+                                style="text-decoration: none">
+                                <span data-feather="edit"></span>
+                                Edit Status
+                            </a>
+                        </td>
                     </tr>
                 @endforeach
             </tbody>

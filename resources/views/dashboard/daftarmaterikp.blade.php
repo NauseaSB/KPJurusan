@@ -99,8 +99,8 @@
                         <div class="form-floating">
                             <select class="form-select" name="jenis_kp" id="jenis_kp">
                                 <option selected>Jenis KP</option>
-                                <option value="A">A</option>
-                                <option value="B">B</option>
+                                <option value="A">Perkerjaan IT</option>
+                                <option value="B">Non Pekerjaan IT</option>
                             </select>
                             <label for="jenis_kp">Jenis Kerja Praktik</label>
                         </div>

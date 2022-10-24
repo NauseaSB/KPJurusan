@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\kp2;
+use App\Models\Kelompok;
 use Illuminate\Http\Request;
 
-class Kp2Controller extends Controller
+class RekapController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,11 +14,9 @@ class Kp2Controller extends Controller
      */
     public function index()
     {
-        return view('dashboard.daftarkp2', [
-            'mahasiswa1' => auth()->user()->kelompok->mahasiswa,
-            'mahasiswa2' => auth()->user()->kelompok->mahasiswa2,
-            'info_mhs' =>  auth()->user()->kelompok->kp1,
-            'datakp2' => auth()->user()->kelompok->kp2,
+        $data = Kelompok::all();
+        return view('dashboard.koordinator.rekap', [
+            'datas' => $data,
         ]);
     }
 
@@ -46,10 +44,10 @@ class Kp2Controller extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\kp2  $kp2
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(kp2 $kp2)
+    public function show($id)
     {
         //
     }
@@ -57,10 +55,10 @@ class Kp2Controller extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\kp2  $kp2
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(kp2 $kp2)
+    public function edit($id)
     {
         //
     }
@@ -69,10 +67,10 @@ class Kp2Controller extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\kp2  $kp2
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, kp2 $kp2)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -80,10 +78,10 @@ class Kp2Controller extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\kp2  $kp2
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(kp2 $kp2)
+    public function destroy($id)
     {
         //
     }

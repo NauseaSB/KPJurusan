@@ -16,6 +16,8 @@ use App\Http\Controllers\DashboardTUController;
 use App\Http\Controllers\DashboardKoorController;
 use App\Http\Controllers\DaftarMateriKPController;
 use App\Http\Controllers\DashboardAdminController;
+use App\Http\Controllers\Kp2Controller;
+use App\Http\Controllers\RekapController;
 
 /*
 |--------------------------------------------------------------------------
@@ -67,7 +69,7 @@ Route::group(['middleware' => 'auth'], function () {
 
         Route::post('/daftar-materi-kp', [MateriController::class, 'store']);
 
-        Route::get('/daftar-kp2', [DaftarKP2Controller::class, 'index'])->middleware('auth');
+        Route::get('/daftar-kp2', [Kp2Controller::class, 'index'])->middleware('auth');
 
         Route::get('/edit-kelompok', [DaftarKPController::class, 'edit']);
 
@@ -77,6 +79,9 @@ Route::group(['middleware' => 'auth'], function () {
     //route group untuk role KOORDINATOR
     Route::group(['middleware' => 'role:koodinatorKP'], function () {
         Route::get('/koorkp', [DashboardKoorController::class, 'index'])->middleware('auth');
+        Route::get('/koorkp/set-status/{id}', [DashboardKoorController::class, 'edit']);
+        Route::post('/koorkp/set-status/{id}', [DashboardKoorController::class, 'update']);
+        Route::get('/rekap-kp', [RekapController::class, 'index']);
     });
 
     //route group untuk role TATA USAHA

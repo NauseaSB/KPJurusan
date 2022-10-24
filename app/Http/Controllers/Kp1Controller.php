@@ -19,6 +19,8 @@ class Kp1Controller extends Controller
     {
         return view('dashboard.daftarkp1', [
             'datakp1' => auth()->user()->kelompok->kp1,
+            'mhs1' => auth()->user()->kelompok->mahasiswa,
+            'mhs2' => auth()->user()->kelompok->mahasiswa2,
         ]);
     }
 
