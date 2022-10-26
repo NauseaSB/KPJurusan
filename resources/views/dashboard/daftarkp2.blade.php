@@ -92,7 +92,7 @@
                         <div class=" form-floating">
                             <input type="text" class="form-control @error('jum_d1') is-invalid rounded @enderror"
                                 name="jum_d1" id="jum_d1" placeholder="Jumlah Nilai D" required
-                                value="{{ $mahasiswa1->jum_d }}" value="{{ old('jum_d1') }}">
+                                value="{{ $info_mhs->jum_d1 }}" value="{{ old('jum_d1') }}">
                             <label for="jum_d1">Jumlah Nilai D</label>
                             @error('jum_d1')
                                 <div class="invalid-feedback">
@@ -101,11 +101,10 @@
                             @enderror
                         </div>
                         <div class=" form-floating">
-                            <input type="text"
-                                class="form-control rounded-top @error('mk_d1') is-invalid rounded @enderror" name="mk_d1"
-                                id="mk_d1" placeholder="MK Nilai D" required value="{{ $mahasiswa1->mk_d }}"
-                                value="{{ old('mk_d1') }}">
-                            <label for="mk_d">MK Nilai D</label>
+                            <input type="text" class="form-control @error('mk_d1') is-invalid rounded @enderror"
+                                name="mk_d1" id="mk_d1" placeholder="Mata Kuliah D" required
+                                value="{{ $info_mhs->mk_d1 }}" value="{{ old('mk_d1') }}">
+                            <label for="mk_d1">MK Nilai D</label>
                             @error('mk_d1')
                                 <div class="invalid-feedback">
                                     {{ $message }}
@@ -113,10 +112,10 @@
                             @enderror
                         </div>
                         <div class=" form-floating">
-                            <input type="text" class="form-control @error('jum_e1') is-invalid rounded @enderror"
+                            <input type="text" class="form-control @error('jum_d1') is-invalid rounded @enderror"
                                 name="jum_e1" id="jum_e1" placeholder="Jumlah Nilai E" required
-                                value="{{ $mahasiswa1->jum_e }}"value="{{ old('jum_e1') }}">
-                            <label for="jum_e">Jumlah Nilai E</label>
+                                value="{{ $info_mhs->jum_e1 }}" value="{{ old('jum_e1') }}">
+                            <label for="jum_e1">Jumlah Nilai E</label>
                             @error('jum_e1')
                                 <div class="invalid-feedback">
                                     {{ $message }}
@@ -124,11 +123,10 @@
                             @enderror
                         </div>
                         <div class=" form-floating">
-                            <input type="text"
-                                class="form-control rounded-top @error('mk_e1') is-invalid rounded @enderror"
-                                name="mk_e1" id="mk_e1" placeholder="MK Nilai E" required
-                                value="{{ $mahasiswa1->mk_e }}" value="{{ old('mk_e1') }}">
-                            <label for="mk_e    ">MK Nilai E</label>
+                            <input type="text" class="form-control @error('mk_e1') is-invalid rounded @enderror"
+                                name="mk_e1" id="mk_e1" placeholder="Mata Kuliah E" required
+                                value="{{ $info_mhs->mk_e1 }}" value="{{ old('mk_e1') }}">
+                            <label for="mk_e1">MK Nilai D</label>
                             @error('mk_e1')
                                 <div class="invalid-feedback">
                                     {{ $message }}
