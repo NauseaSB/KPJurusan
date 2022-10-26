@@ -106,7 +106,9 @@
                         <div class=" form-floating">
                             <input type="text" class="form-control @error('jum_d1') is-invalid rounded @enderror"
                                 name="jum_d1" id="jum_d1" placeholder="Jumlah Nilai D" required
-                                value="{{ old('jum_d1') }}">
+                                @if (isset($datakp1->jum_d1)) value="{{ $datakp1->jum_d1 }}"
+                                @else
+                                    value="{{ old('semester1') }}" @endif>
                             <label for="jum_d1">Jumlah Nilai D</label>
                             @error('jum_d1')
                                 <div class="invalid-feedback">
@@ -150,131 +152,241 @@
                         </div>
                         <div class="form-floating  mt-2">
                             <select class="form-select" name="algo1" id="algo1">
-                                <option selected>Nilai</option>
-                                <option value="A">A</option>
-                                <option value="AB">AB</option>
-                                <option value="B">B</option>
-                                <option value="BC">BC</option>
-                                <option value="C">C</option>
-                                <option value="D">D</option>
-                                <option value="E">E</option>
+                                @if (isset($datakp1))
+                                    <option @if ($datakp1->algoritma1 == null) selected @endif>Nilai</option>
+                                    <option @if ($datakp1->algoritma1 == 'A') selected @endif value="A">A</option>
+                                    <option @if ($datakp1->algoritma1 == 'AB') selected @endif value="AB">AB</option>
+                                    <option @if ($datakp1->algoritma1 == 'B') selected @endif value="B">B</option>
+                                    <option @if ($datakp1->algoritma1 == 'BC') selected @endif value="BC">BC</option>
+                                    <option @if ($datakp1->algoritma1 == 'C') selected @endif value="C">C</option>
+                                    <option @if ($datakp1->algoritma1 == 'D') selected @endif value="D">D</option>
+                                    <option @if ($datakp1->algoritma1 == 'E') selected @endif value="E">E</option>
+                                @else
+                                    <option selected>Nilai</option>
+                                    <option value="A">A</option>
+                                    <option value="AB">AB</option>
+                                    <option value="B">B</option>
+                                    <option value="BC">BC</option>
+                                    <option value="C">C</option>
+                                    <option value="D">D</option>
+                                    <option value="E">E</option>
+                                @endif
                             </select>
                             <label for="algo1">Nilai Algoritma dan Pemrograman</label>
                         </div>
                         <div class="form-floating">
                             <select class="form-select" name="p_algo1" id="p_algo1">
-                                <option selected>Nilai</option>
-                                <option value="A">A</option>
-                                <option value="AB">AB</option>
-                                <option value="B">B</option>
-                                <option value="BC">BC</option>
-                                <option value="C">C</option>
-                                <option value="D">D</option>
-                                <option value="E">E</option>
+                                @if (isset($datakp1))
+                                    <option @if ($datakp1->p_algoritma1 == null) selected @endif>Nilai</option>
+                                    <option @if ($datakp1->p_algoritma1 == 'A') selected @endif value="A">A</option>
+                                    <option @if ($datakp1->p_algoritma1 == 'AB') selected @endif value="AB">AB</option>
+                                    <option @if ($datakp1->p_algoritma1 == 'B') selected @endif value="B">B</option>
+                                    <option @if ($datakp1->p_algoritma1 == 'BC') selected @endif value="BC">BC</option>
+                                    <option @if ($datakp1->p_algoritma1 == 'C') selected @endif value="C">C</option>
+                                    <option @if ($datakp1->p_algoritma1 == 'D') selected @endif value="D">D</option>
+                                    <option @if ($datakp1->p_algoritma1 == 'E') selected @endif value="E">E</option>
+                                @else
+                                    <option selected>Nilai</option>
+                                    <option value="A">A</option>
+                                    <option value="AB">AB</option>
+                                    <option value="B">B</option>
+                                    <option value="BC">BC</option>
+                                    <option value="C">C</option>
+                                    <option value="D">D</option>
+                                    <option value="E">E</option>
+                                @endif
                             </select>
                             <label for="p_algo1">Nilai Praktikum Algoritma dan Pemrograman</label>
                         </div>
                         <div class="form-floating">
                             <select class="form-select" name="strukdat1" id="strukdat1">
-                                <option selected>Nilai</option>
-                                <option value="A">A</option>
-                                <option value="AB">AB</option>
-                                <option value="B">B</option>
-                                <option value="BC">BC</option>
-                                <option value="C">C</option>
-                                <option value="D">D</option>
-                                <option value="E">E</option>
+                                @if (isset($datakp1))
+                                    <option @if ($datakp1->strukdat1 == null) selected @endif>Nilai</option>
+                                    <option @if ($datakp1->strukdat1 == 'A') selected @endif value="A">A</option>
+                                    <option @if ($datakp1->strukdat1 == 'AB') selected @endif value="AB">AB</option>
+                                    <option @if ($datakp1->strukdat1 == 'B') selected @endif value="B">B</option>
+                                    <option @if ($datakp1->strukdat1 == 'BC') selected @endif value="BC">BC</option>
+                                    <option @if ($datakp1->strukdat1 == 'C') selected @endif value="C">C</option>
+                                    <option @if ($datakp1->strukdat1 == 'D') selected @endif value="D">D</option>
+                                    <option @if ($datakp1->strukdat1 == 'E') selected @endif value="E">E</option>
+                                @else
+                                    <option selected>Nilai</option>
+                                    <option value="A">A</option>
+                                    <option value="AB">AB</option>
+                                    <option value="B">B</option>
+                                    <option value="BC">BC</option>
+                                    <option value="C">C</option>
+                                    <option value="D">D</option>
+                                    <option value="E">E</option>
+                                @endif
                             </select>
                             <label for="strukdat1">Nilai Struktur Data</label>
                         </div>
                         <div class="form-floating">
                             <select class="form-select" name="p_strukdat1" id="p_strukdat1">
-                                <option selected>Nilai</option>
-                                <option value="A">A</option>
-                                <option value="AB">AB</option>
-                                <option value="B">B</option>
-                                <option value="BC">BC</option>
-                                <option value="C">C</option>
-                                <option value="D">D</option>
-                                <option value="E">E</option>
+                                @if (isset($datakp1))
+                                    <option @if ($datakp1->p_strukdat1 == null) selected @endif>Nilai</option>
+                                    <option @if ($datakp1->p_strukdat1 == 'A') selected @endif value="A">A</option>
+                                    <option @if ($datakp1->p_strukdat1 == 'AB') selected @endif value="AB">AB</option>
+                                    <option @if ($datakp1->p_strukdat1 == 'B') selected @endif value="B">B</option>
+                                    <option @if ($datakp1->p_strukdat1 == 'BC') selected @endif value="BC">BC</option>
+                                    <option @if ($datakp1->p_strukdat1 == 'C') selected @endif value="C">C</option>
+                                    <option @if ($datakp1->p_strukdat1 == 'D') selected @endif value="D">D</option>
+                                    <option @if ($datakp1->p_strukdat1 == 'E') selected @endif value="E">E</option>
+                                @else
+                                    <option selected>Nilai</option>
+                                    <option value="A">A</option>
+                                    <option value="AB">AB</option>
+                                    <option value="B">B</option>
+                                    <option value="BC">BC</option>
+                                    <option value="C">C</option>
+                                    <option value="D">D</option>
+                                    <option value="E">E</option>
+                                @endif
                             </select>
                             <label for="p_strukdat1">Nilai Praktikum Struktur Data</label>
                         </div>
                         <div class="form-floating">
                             <select class="form-select" name="basdat1" id="basdat1">
-                                <option selected>Nilai</option>
-                                <option value="A">A</option>
-                                <option value="AB">AB</option>
-                                <option value="B">B</option>
-                                <option value="BC">BC</option>
-                                <option value="C">C</option>
-                                <option value="D">D</option>
-                                <option value="E">E</option>
+                                @if (isset($datakp1))
+                                    <option @if ($datakp1->basdat1 == null) selected @endif>Nilai</option>
+                                    <option @if ($datakp1->basdat1 == 'A') selected @endif value="A">A</option>
+                                    <option @if ($datakp1->basdat1 == 'AB') selected @endif value="AB">AB</option>
+                                    <option @if ($datakp1->basdat1 == 'B') selected @endif value="B">B</option>
+                                    <option @if ($datakp1->basdat1 == 'BC') selected @endif value="BC">BC</option>
+                                    <option @if ($datakp1->basdat1 == 'C') selected @endif value="C">C</option>
+                                    <option @if ($datakp1->basdat1 == 'D') selected @endif value="D">D</option>
+                                    <option @if ($datakp1->basdat1 == 'E') selected @endif value="E">E</option>
+                                @else
+                                    <option selected>Nilai</option>
+                                    <option value="A">A</option>
+                                    <option value="AB">AB</option>
+                                    <option value="B">B</option>
+                                    <option value="BC">BC</option>
+                                    <option value="C">C</option>
+                                    <option value="D">D</option>
+                                    <option value="E">E</option>
+                                @endif
                             </select>
                             <label for="basdat1">Nilai Basis Data</label>
                         </div>
                         <div class="form-floating">
                             <select class="form-select" name="p_basdat1" id="p_basdat1">
-                                <option selected>Nilai</option>
-                                <option value="A">A</option>
-                                <option value="AB">AB</option>
-                                <option value="B">B</option>
-                                <option value="BC">BC</option>
-                                <option value="C">C</option>
-                                <option value="D">D</option>
-                                <option value="E">E</option>
+                                @if (isset($datakp1))
+                                    <option @if ($datakp1->p_basdat1 == null) selected @endif>Nilai</option>
+                                    <option @if ($datakp1->p_basdat1 == 'A') selected @endif value="A">A</option>
+                                    <option @if ($datakp1->p_basdat1 == 'AB') selected @endif value="AB">AB</option>
+                                    <option @if ($datakp1->p_basdat1 == 'B') selected @endif value="B">B</option>
+                                    <option @if ($datakp1->p_basdat1 == 'BC') selected @endif value="BC">BC</option>
+                                    <option @if ($datakp1->p_basdat1 == 'C') selected @endif value="C">C</option>
+                                    <option @if ($datakp1->p_basdat1 == 'D') selected @endif value="D">D</option>
+                                    <option @if ($datakp1->p_basdat1 == 'E') selected @endif value="E">E</option>
+                                @else
+                                    <option selected>Nilai</option>
+                                    <option value="A">A</option>
+                                    <option value="AB">AB</option>
+                                    <option value="B">B</option>
+                                    <option value="BC">BC</option>
+                                    <option value="C">C</option>
+                                    <option value="D">D</option>
+                                    <option value="E">E</option>
+                                @endif
                             </select>
                             <label for="p_basdat1">Nilai Praktikum Basis Data</label>
                         </div>
                         <div class="form-floating">
                             <select class="form-select" name="rpl1" id="rpl1">
-                                <option selected>Nilai</option>
-                                <option value="A">A</option>
-                                <option value="AB">AB</option>
-                                <option value="B">B</option>
-                                <option value="BC">BC</option>
-                                <option value="C">C</option>
-                                <option value="D">D</option>
-                                <option value="E">E</option>
+                                @if (isset($datakp1))
+                                    <option @if ($datakp1->rpl1 == null) selected @endif>Nilai</option>
+                                    <option @if ($datakp1->rpl1 == 'A') selected @endif value="A">A</option>
+                                    <option @if ($datakp1->rpl1 == 'AB') selected @endif value="AB">AB</option>
+                                    <option @if ($datakp1->rpl1 == 'B') selected @endif value="B">B</option>
+                                    <option @if ($datakp1->rpl1 == 'BC') selected @endif value="BC">BC</option>
+                                    <option @if ($datakp1->rpl1 == 'C') selected @endif value="C">C</option>
+                                    <option @if ($datakp1->rpl1 == 'D') selected @endif value="D">D</option>
+                                    <option @if ($datakp1->rpl1 == 'E') selected @endif value="E">E</option>
+                                @else
+                                    <option selected>Nilai</option>
+                                    <option value="A">A</option>
+                                    <option value="AB">AB</option>
+                                    <option value="B">B</option>
+                                    <option value="BC">BC</option>
+                                    <option value="C">C</option>
+                                    <option value="D">D</option>
+                                    <option value="E">E</option>
+                                @endif
                             </select>
                             <label for="rpl1">Nilai Rekayasa Perangkat Lunak</label>
                         </div>
                         <div class="form-floating">
                             <select class="form-select" name="appl1" id="appl1">
-                                <option selected>Nilai</option>
-                                <option value="A">A</option>
-                                <option value="AB">AB</option>
-                                <option value="B">B</option>
-                                <option value="BC">BC</option>
-                                <option value="C">C</option>
-                                <option value="D">D</option>
-                                <option value="E">E</option>
+                                @if (isset($datakp1))
+                                    <option @if ($datakp1->appl1 == null) selected @endif>Nilai</option>
+                                    <option @if ($datakp1->appl1 == 'A') selected @endif value="A">A</option>
+                                    <option @if ($datakp1->appl1 == 'AB') selected @endif value="AB">AB</option>
+                                    <option @if ($datakp1->appl1 == 'B') selected @endif value="B">B</option>
+                                    <option @if ($datakp1->appl1 == 'BC') selected @endif value="BC">BC</option>
+                                    <option @if ($datakp1->appl1 == 'C') selected @endif value="C">C</option>
+                                    <option @if ($datakp1->appl1 == 'D') selected @endif value="D">D</option>
+                                    <option @if ($datakp1->appl1 == 'E') selected @endif value="E">E</option>
+                                @else
+                                    <option selected>Nilai</option>
+                                    <option value="A">A</option>
+                                    <option value="AB">AB</option>
+                                    <option value="B">B</option>
+                                    <option value="BC">BC</option>
+                                    <option value="C">C</option>
+                                    <option value="D">D</option>
+                                    <option value="E">E</option>
+                                @endif
                             </select>
                             <label for="appl1">Nilai Analisis dan Perancangan Perangkat Lunak</label>
                         </div>
                         <div class="form-floating">
                             <select class="form-select" name="progweb1" id="progweb1">
-                                <option selected>Nilai</option>
-                                <option value="A">A</option>
-                                <option value="AB">AB</option>
-                                <option value="B">B</option>
-                                <option value="BC">BC</option>
-                                <option value="C">C</option>
-                                <option value="D">D</option>
-                                <option value="E">E</option>
+                                @if (isset($datakp1))
+                                    <option @if ($datakp1->progweb1 == null) selected @endif>Nilai</option>
+                                    <option @if ($datakp1->progweb1 == 'A') selected @endif value="A">A</option>
+                                    <option @if ($datakp1->progweb1 == 'AB') selected @endif value="AB">AB</option>
+                                    <option @if ($datakp1->progweb1 == 'B') selected @endif value="B">B</option>
+                                    <option @if ($datakp1->progweb1 == 'BC') selected @endif value="BC">BC</option>
+                                    <option @if ($datakp1->progweb1 == 'C') selected @endif value="C">C</option>
+                                    <option @if ($datakp1->progweb1 == 'D') selected @endif value="D">D</option>
+                                    <option @if ($datakp1->progweb1 == 'E') selected @endif value="E">E</option>
+                                @else
+                                    <option selected>Nilai</option>
+                                    <option value="A">A</option>
+                                    <option value="AB">AB</option>
+                                    <option value="B">B</option>
+                                    <option value="BC">BC</option>
+                                    <option value="C">C</option>
+                                    <option value="D">D</option>
+                                    <option value="E">E</option>
+                                @endif
                             </select>
                             <label for="progweb1">Nilai Pemrograman Web</label>
                         </div>
                         <div class="form-floating">
                             <select class="form-select" name="p_progweb1" id="p_progweb1">
-                                <option selected>Nilai</option>
-                                <option value="A">A</option>
-                                <option value="AB">AB</option>
-                                <option value="B">B</option>
-                                <option value="BC">BC</option>
-                                <option value="C">C</option>
-                                <option value="D">D</option>
-                                <option value="E">E</option>
+                                @if (isset($datakp1))
+                                    <option @if ($datakp1->p_progweb1 == null) selected @endif>Nilai</option>
+                                    <option @if ($datakp1->p_progweb1 == 'A') selected @endif value="A">A</option>
+                                    <option @if ($datakp1->p_progweb1 == 'AB') selected @endif value="AB">AB</option>
+                                    <option @if ($datakp1->p_progweb1 == 'B') selected @endif value="B">B</option>
+                                    <option @if ($datakp1->p_progweb1 == 'BC') selected @endif value="BC">BC</option>
+                                    <option @if ($datakp1->p_progweb1 == 'C') selected @endif value="C">C</option>
+                                    <option @if ($datakp1->p_progweb1 == 'D') selected @endif value="D">D</option>
+                                    <option @if ($datakp1->p_progweb1 == 'E') selected @endif value="E">E</option>
+                                @else
+                                    <option selected>Nilai</option>
+                                    <option value="A">A</option>
+                                    <option value="AB">AB</option>
+                                    <option value="B">B</option>
+                                    <option value="BC">BC</option>
+                                    <option value="C">C</option>
+                                    <option value="D">D</option>
+                                    <option value="E">E</option>
+                                @endif
                             </select>
                             <label for="p_progweb1">Nilai Praktikum Pemrograman Web</label>
                         </div>
@@ -469,135 +581,265 @@
                                 </div>
                             @enderror
                         </div>
-                        <div class="form-floating mt-2">
+                        <div class="form-floating  mt-2">
                             <select class="form-select" name="algo2" id="algo2">
-                                <option selected>Nilai</option>
-                                <option value="A">A</option>
-                                <option value="AB">AB</option>
-                                <option value="B">B</option>
-                                <option value="BC">BC</option>
-                                <option value="C">C</option>
-                                <option value="D">D</option>
-                                <option value="E">E</option>
+                                @if (isset($datakp1))
+                                    <option @if ($datakp1->algoritma2 == null) selected @endif>Nilai</option>
+                                    <option @if ($datakp1->algoritma2 == 'A') selected @endif value="A">A</option>
+                                    <option @if ($datakp1->algoritma2 == 'AB') selected @endif value="AB">AB
+                                    </option>
+                                    <option @if ($datakp1->algoritma2 == 'B') selected @endif value="B">B</option>
+                                    <option @if ($datakp1->algoritma2 == 'BC') selected @endif value="BC">BC
+                                    </option>
+                                    <option @if ($datakp1->algoritma2 == 'C') selected @endif value="C">C</option>
+                                    <option @if ($datakp1->algoritma2 == 'D') selected @endif value="D">D</option>
+                                    <option @if ($datakp1->algoritma2 == 'E') selected @endif value="E">E</option>
+                                @else
+                                    <option selected>Nilai</option>
+                                    <option value="A">A</option>
+                                    <option value="AB">AB</option>
+                                    <option value="B">B</option>
+                                    <option value="BC">BC</option>
+                                    <option value="C">C</option>
+                                    <option value="D">D</option>
+                                    <option value="E">E</option>
+                                @endif
                             </select>
-                            <label for="algo2">Nilai Algoritma dan Pemrograman</label>
+                            <label for="algo1">Nilai Algoritma dan Pemrograman</label>
                         </div>
                         <div class="form-floating">
                             <select class="form-select" name="p_algo2" id="p_algo2">
-                                <option selected>Nilai</option>
-                                <option value="A">A</option>
-                                <option value="AB">AB</option>
-                                <option value="B">B</option>
-                                <option value="BC">BC</option>
-                                <option value="C">C</option>
-                                <option value="D">D</option>
-                                <option value="E">E</option>
+                                @if (isset($datakp1))
+                                    <option @if ($datakp1->p_algoritma2 == null) selected @endif>Nilai</option>
+                                    <option @if ($datakp1->p_algoritma2 == 'A') selected @endif value="A">A</option>
+                                    <option @if ($datakp1->p_algoritma2 == 'AB') selected @endif value="AB">AB
+                                    </option>
+                                    <option @if ($datakp1->p_algoritma2 == 'B') selected @endif value="B">B</option>
+                                    <option @if ($datakp1->p_algoritma2 == 'BC') selected @endif value="BC">BC
+                                    </option>
+                                    <option @if ($datakp1->p_algoritma2 == 'C') selected @endif value="C">C</option>
+                                    <option @if ($datakp1->p_algoritma2 == 'D') selected @endif value="D">D</option>
+                                    <option @if ($datakp1->p_algoritma2 == 'E') selected @endif value="E">E</option>
+                                @else
+                                    <option selected>Nilai</option>
+                                    <option value="A">A</option>
+                                    <option value="AB">AB</option>
+                                    <option value="B">B</option>
+                                    <option value="BC">BC</option>
+                                    <option value="C">C</option>
+                                    <option value="D">D</option>
+                                    <option value="E">E</option>
+                                @endif
                             </select>
-                            <label for="p_algo2">Nilai Praktikum Algoritma dan Pemrograman</label>
+                            <label for="p_algo1">Nilai Praktikum Algoritma dan Pemrograman</label>
                         </div>
                         <div class="form-floating">
                             <select class="form-select" name="strukdat2" id="strukdat2">
-                                <option selected>Nilai</option>
-                                <option value="A">A</option>
-                                <option value="AB">AB</option>
-                                <option value="B">B</option>
-                                <option value="BC">BC</option>
-                                <option value="C">C</option>
-                                <option value="D">D</option>
-                                <option value="E">E</option>
+                                @if (isset($datakp1))
+                                    <option @if ($datakp1->strukdat2 == null) selected @endif>Nilai</option>
+                                    <option @if ($datakp1->strukdat2 == 'A') selected @endif value="A">A</option>
+                                    <option @if ($datakp1->strukdat2 == 'AB') selected @endif value="AB">AB
+                                    </option>
+                                    <option @if ($datakp1->strukdat2 == 'B') selected @endif value="B">B</option>
+                                    <option @if ($datakp1->strukdat2 == 'BC') selected @endif value="BC">BC
+                                    </option>
+                                    <option @if ($datakp1->strukdat2 == 'C') selected @endif value="C">C</option>
+                                    <option @if ($datakp1->strukdat2 == 'D') selected @endif value="D">D</option>
+                                    <option @if ($datakp1->strukdat2 == 'E') selected @endif value="E">E</option>
+                                @else
+                                    <option selected>Nilai</option>
+                                    <option value="A">A</option>
+                                    <option value="AB">AB</option>
+                                    <option value="B">B</option>
+                                    <option value="BC">BC</option>
+                                    <option value="C">C</option>
+                                    <option value="D">D</option>
+                                    <option value="E">E</option>
+                                @endif
                             </select>
-                            <label for="strukdat2">Nilai Struktur Data</label>
+                            <label for="strukdat1">Nilai Struktur Data</label>
                         </div>
                         <div class="form-floating">
                             <select class="form-select" name="p_strukdat2" id="p_strukdat2">
-                                <option selected>Nilai</option>
-                                <option value="A">A</option>
-                                <option value="AB">AB</option>
-                                <option value="B">B</option>
-                                <option value="BC">BC</option>
-                                <option value="C">C</option>
-                                <option value="D">D</option>
-                                <option value="E">E</option>
+                                @if (isset($datakp1))
+                                    <option @if ($datakp1->p_strukdat2 == null) selected @endif>Nilai</option>
+                                    <option @if ($datakp1->p_strukdat2 == 'A') selected @endif value="A">A</option>
+                                    <option @if ($datakp1->p_strukdat2 == 'AB') selected @endif value="AB">AB
+                                    </option>
+                                    <option @if ($datakp1->p_strukdat2 == 'B') selected @endif value="B">B</option>
+                                    <option @if ($datakp1->p_strukdat2 == 'BC') selected @endif value="BC">BC
+                                    </option>
+                                    <option @if ($datakp1->p_strukdat2 == 'C') selected @endif value="C">C</option>
+                                    <option @if ($datakp1->p_strukdat2 == 'D') selected @endif value="D">D</option>
+                                    <option @if ($datakp1->p_strukdat2 == 'E') selected @endif value="E">E</option>
+                                @else
+                                    <option selected>Nilai</option>
+                                    <option value="A">A</option>
+                                    <option value="AB">AB</option>
+                                    <option value="B">B</option>
+                                    <option value="BC">BC</option>
+                                    <option value="C">C</option>
+                                    <option value="D">D</option>
+                                    <option value="E">E</option>
+                                @endif
                             </select>
-                            <label for="p_strukdat2">Nilai Praktikum Struktur Data</label>
+                            <label for="p_strukdat1">Nilai Praktikum Struktur Data</label>
                         </div>
                         <div class="form-floating">
                             <select class="form-select" name="basdat2" id="basdat2">
-                                <option selected>Nilai</option>
-                                <option value="A">A</option>
-                                <option value="AB">AB</option>
-                                <option value="B">B</option>
-                                <option value="BC">BC</option>
-                                <option value="C">C</option>
-                                <option value="D">D</option>
-                                <option value="E">E</option>
+                                @if (isset($datakp1))
+                                    <option @if ($datakp1->basdat2 == null) selected @endif>Nilai</option>
+                                    <option @if ($datakp1->basdat2 == 'A') selected @endif value="A">A</option>
+                                    <option @if ($datakp1->basdat2 == 'AB') selected @endif value="AB">AB
+                                    </option>
+                                    <option @if ($datakp1->basdat2 == 'B') selected @endif value="B">B</option>
+                                    <option @if ($datakp1->basdat2 == 'BC') selected @endif value="BC">BC
+                                    </option>
+                                    <option @if ($datakp1->basdat2 == 'C') selected @endif value="C">C</option>
+                                    <option @if ($datakp1->basdat2 == 'D') selected @endif value="D">D</option>
+                                    <option @if ($datakp1->basdat2 == 'E') selected @endif value="E">E</option>
+                                @else
+                                    <option selected>Nilai</option>
+                                    <option value="A">A</option>
+                                    <option value="AB">AB</option>
+                                    <option value="B">B</option>
+                                    <option value="BC">BC</option>
+                                    <option value="C">C</option>
+                                    <option value="D">D</option>
+                                    <option value="E">E</option>
+                                @endif
                             </select>
-                            <label for="basdat2">Nilai Basis Data</label>
+                            <label for="basdat1">Nilai Basis Data</label>
                         </div>
                         <div class="form-floating">
                             <select class="form-select" name="p_basdat2" id="p_basdat2">
-                                <option selected>Nilai</option>
-                                <option value="A">A</option>
-                                <option value="AB">AB</option>
-                                <option value="B">B</option>
-                                <option value="BC">BC</option>
-                                <option value="C">C</option>
-                                <option value="D">D</option>
-                                <option value="E">E</option>
+                                @if (isset($datakp1))
+                                    <option @if ($datakp1->p_basdat2 == null) selected @endif>Nilai</option>
+                                    <option @if ($datakp1->p_basdat2 == 'A') selected @endif value="A">A</option>
+                                    <option @if ($datakp1->p_basdat2 == 'AB') selected @endif value="AB">AB
+                                    </option>
+                                    <option @if ($datakp1->p_basdat2 == 'B') selected @endif value="B">B</option>
+                                    <option @if ($datakp1->p_basdat2 == 'BC') selected @endif value="BC">BC
+                                    </option>
+                                    <option @if ($datakp1->p_basdat2 == 'C') selected @endif value="C">C</option>
+                                    <option @if ($datakp1->p_basdat2 == 'D') selected @endif value="D">D</option>
+                                    <option @if ($datakp1->p_basdat2 == 'E') selected @endif value="E">E</option>
+                                @else
+                                    <option selected>Nilai</option>
+                                    <option value="A">A</option>
+                                    <option value="AB">AB</option>
+                                    <option value="B">B</option>
+                                    <option value="BC">BC</option>
+                                    <option value="C">C</option>
+                                    <option value="D">D</option>
+                                    <option value="E">E</option>
+                                @endif
                             </select>
-                            <label for="p_basdat2">Nilai Praktikum Basis Data</label>
+                            <label for="p_basdat1">Nilai Praktikum Basis Data</label>
                         </div>
                         <div class="form-floating">
                             <select class="form-select" name="rpl2" id="rpl2">
-                                <option selected>Nilai</option>
-                                <option value="A">A</option>
-                                <option value="AB">AB</option>
-                                <option value="B">B</option>
-                                <option value="BC">BC</option>
-                                <option value="C">C</option>
-                                <option value="D">D</option>
-                                <option value="E">E</option>
+                                @if (isset($datakp1))
+                                    <option @if ($datakp1->rpl2 == null) selected @endif>Nilai</option>
+                                    <option @if ($datakp1->rpl2 == 'A') selected @endif value="A">A</option>
+                                    <option @if ($datakp1->rpl2 == 'AB') selected @endif value="AB">AB
+                                    </option>
+                                    <option @if ($datakp1->rpl2 == 'B') selected @endif value="B">B</option>
+                                    <option @if ($datakp1->rpl2 == 'BC') selected @endif value="BC">BC
+                                    </option>
+                                    <option @if ($datakp1->rpl2 == 'C') selected @endif value="C">C</option>
+                                    <option @if ($datakp1->rpl2 == 'D') selected @endif value="D">D</option>
+                                    <option @if ($datakp1->rpl2 == 'E') selected @endif value="E">E</option>
+                                @else
+                                    <option selected>Nilai</option>
+                                    <option value="A">A</option>
+                                    <option value="AB">AB</option>
+                                    <option value="B">B</option>
+                                    <option value="BC">BC</option>
+                                    <option value="C">C</option>
+                                    <option value="D">D</option>
+                                    <option value="E">E</option>
+                                @endif
                             </select>
-                            <label for="rpl2">Nilai Rekayasa Perangkat Lunak</label>
+                            <label for="rpl1">Nilai Rekayasa Perangkat Lunak</label>
                         </div>
                         <div class="form-floating">
                             <select class="form-select" name="appl2" id="appl2">
-                                <option selected>Nilai</option>
-                                <option value="A">A</option>
-                                <option value="AB">AB</option>
-                                <option value="B">B</option>
-                                <option value="BC">BC</option>
-                                <option value="C">C</option>
-                                <option value="D">D</option>
-                                <option value="E">E</option>
+                                @if (isset($datakp1))
+                                    <option @if ($datakp1->appl2 == null) selected @endif>Nilai</option>
+                                    <option @if ($datakp1->appl2 == 'A') selected @endif value="A">A</option>
+                                    <option @if ($datakp1->appl2 == 'AB') selected @endif value="AB">AB
+                                    </option>
+                                    <option @if ($datakp1->appl2 == 'B') selected @endif value="B">B</option>
+                                    <option @if ($datakp1->appl2 == 'BC') selected @endif value="BC">BC
+                                    </option>
+                                    <option @if ($datakp1->appl2 == 'C') selected @endif value="C">C</option>
+                                    <option @if ($datakp1->appl2 == 'D') selected @endif value="D">D</option>
+                                    <option @if ($datakp1->appl2 == 'E') selected @endif value="E">E</option>
+                                @else
+                                    <option selected>Nilai</option>
+                                    <option value="A">A</option>
+                                    <option value="AB">AB</option>
+                                    <option value="B">B</option>
+                                    <option value="BC">BC</option>
+                                    <option value="C">C</option>
+                                    <option value="D">D</option>
+                                    <option value="E">E</option>
+                                @endif
                             </select>
-                            <label for="appl2">Nilai Analisis dan Perancangan Perangkat Lunak</label>
+                            <label for="appl1">Nilai Analisis dan Perancangan Perangkat Lunak</label>
                         </div>
                         <div class="form-floating">
                             <select class="form-select" name="progweb2" id="progweb2">
-                                <option selected>Nilai</option>
-                                <option value="A">A</option>
-                                <option value="AB">AB</option>
-                                <option value="B">B</option>
-                                <option value="BC">BC</option>
-                                <option value="C">C</option>
-                                <option value="D">D</option>
-                                <option value="E">E</option>
+                                @if (isset($datakp1))
+                                    <option @if ($datakp1->progweb2 == null) selected @endif>Nilai</option>
+                                    <option @if ($datakp1->progweb2 == 'A') selected @endif value="A">A</option>
+                                    <option @if ($datakp1->progweb2 == 'AB') selected @endif value="AB">AB
+                                    </option>
+                                    <option @if ($datakp1->progweb2 == 'B') selected @endif value="B">B</option>
+                                    <option @if ($datakp1->progweb2 == 'BC') selected @endif value="BC">BC
+                                    </option>
+                                    <option @if ($datakp1->progweb2 == 'C') selected @endif value="C">C</option>
+                                    <option @if ($datakp1->progweb2 == 'D') selected @endif value="D">D</option>
+                                    <option @if ($datakp1->progweb2 == 'E') selected @endif value="E">E</option>
+                                @else
+                                    <option selected>Nilai</option>
+                                    <option value="A">A</option>
+                                    <option value="AB">AB</option>
+                                    <option value="B">B</option>
+                                    <option value="BC">BC</option>
+                                    <option value="C">C</option>
+                                    <option value="D">D</option>
+                                    <option value="E">E</option>
+                                @endif
                             </select>
-                            <label for="progweb2">Nilai Pemrograman Web</label>
+                            <label for="progweb1">Nilai Pemrograman Web</label>
                         </div>
                         <div class="form-floating">
                             <select class="form-select" name="p_progweb2" id="p_progweb2">
-                                <option selected>Nilai</option>
-                                <option value="A">A</option>
-                                <option value="AB">AB</option>
-                                <option value="B">B</option>
-                                <option value="BC">BC</option>
-                                <option value="C">C</option>
-                                <option value="D">D</option>
-                                <option value="E">E</option>
+                                @if (isset($datakp1))
+                                    <option @if ($datakp1->p_progweb2 == null) selected @endif>Nilai</option>
+                                    <option @if ($datakp1->p_progweb2 == 'A') selected @endif value="A">A</option>
+                                    <option @if ($datakp1->p_progweb2 == 'AB') selected @endif value="AB">AB
+                                    </option>
+                                    <option @if ($datakp1->p_progweb2 == 'B') selected @endif value="B">B</option>
+                                    <option @if ($datakp1->p_progweb2 == 'BC') selected @endif value="BC">BC
+                                    </option>
+                                    <option @if ($datakp1->p_progweb2 == 'C') selected @endif value="C">C</option>
+                                    <option @if ($datakp1->p_progweb2 == 'D') selected @endif value="D">D</option>
+                                    <option @if ($datakp1->p_progweb2 == 'E') selected @endif value="E">E</option>
+                                @else
+                                    <option selected>Nilai</option>
+                                    <option value="A">A</option>
+                                    <option value="AB">AB</option>
+                                    <option value="B">B</option>
+                                    <option value="BC">BC</option>
+                                    <option value="C">C</option>
+                                    <option value="D">D</option>
+                                    <option value="E">E</option>
+                                @endif
                             </select>
-                            <label for="p_progweb2">Nilai Praktikum Pemrograman Web</label>
+                            <label for="p_progweb1">Nilai Praktikum Pemrograman Web</label>
                         </div>
                         {{-- <div class="form-floating">
                             <select class="form-select" name="progweb1" id="progweb1">
@@ -667,8 +909,15 @@
 
                 <button class="mt-3 w-100 btn btn-lg btn-primary" type="submit"
                     @if (isset($datakp1)) disabled @endif>Daftar</button>
-                <p class="mt-5 mb-3 text-muted">&copy; 2017–2022</p>
             </form>
+            <a href="/edit-data-kp1">
+                <button class="mt-3 w-100 btn btn-lg bg-warning border-0"
+                    @if (isset($datakp1)) @else
+                disabled @endif
+                    style="text-decoration: none"><span data-feather="edit"></span>
+                    Edit Data</button>
+                <p class="mt-5 mb-3 text-muted">&copy; 2017–2022</p>
+            </a>
         </main>
 
     </body>

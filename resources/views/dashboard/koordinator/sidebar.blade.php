@@ -10,7 +10,7 @@
             <li class="nav-item">
                 <a class="nav-link {{ Request::is('rekap-kp') ? 'active' : '' }}" href="/rekap-kp">
                     <span data-feather="users" class="align-text-bottom"></span>
-                    Daftar Kelompok
+                    Rekapitulasi KP
                 </a>
             </li>
         </ul>

@@ -8,8 +8,6 @@ use App\Http\Controllers\MateriController;
 use App\Http\Controllers\DaftarKPController;
 use App\Http\Controllers\KelompokController;
 use App\Http\Controllers\RegisterController;
-use App\Http\Controllers\DaftarKP1Controller;
-use App\Http\Controllers\DaftarKP2Controller;
 use App\Http\Controllers\DashboardController;
 use Illuminate\Routing\Route as RoutingRoute;
 use App\Http\Controllers\DashboardTUController;
@@ -53,27 +51,38 @@ Route::group(['middleware' => 'auth'], function () {
 
     //route group untuk role MAHASISWA
     Route::group(['middleware' => 'role:mahasiswa'], function () {
+        //halaman utama
         Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
 
+        //halaman daftar kelompok
         Route::get('/daftar-kelompok-kp', [DaftarKPController::class, 'index'])->middleware('auth');
-
         Route::post('/daftar-kelompok', [DaftarKPController::class, 'store']);
 
-        Route::get('/test', [KelompokController::class, 'index']);
+        //halaman edit daftar kelompok
+        Route::get('/edit-kelompok', [DaftarKPController::class, 'edit']);
+        Route::post('/edit-kelompok', [DaftarKPController::class, 'update']);
 
+        //halaman daftar kp1
         Route::get('/daftar-kp1', [Kp1Controller::class, 'index'])->middleware('auth');
-
         Route::post('/daftarkp', [Kp1Controller::class, 'store']);
 
-        Route::get('/daftar-materi-kp', [MateriController::class, 'index'])->middleware('auth');
+        //halaman edit daftar kp1
+        Route::get('/edit-data-kp1', [Kp1Controller::class, 'edit']);
+        Route::post('/edit-data-kp1', [Kp1Controller::class, 'update']);
 
+        //halaman daftar materi kp
+        Route::get('/daftar-materi-kp', [MateriController::class, 'index'])->middleware('auth');
         Route::post('/daftar-materi-kp', [MateriController::class, 'store']);
 
+        //halaman edit daftar materi kp
+
+        //halaman daftar kp2
         Route::get('/daftar-kp2', [Kp2Controller::class, 'index'])->middleware('auth');
 
-        Route::get('/edit-kelompok', [DaftarKPController::class, 'edit']);
+        //halaman edit daftar kp2
 
-        Route::post('/edit-kelompok', [DaftarKPController::class, 'update']);
+        // dummy
+        Route::get('/test', [KelompokController::class, 'index']);
     });
 
     //route group untuk role KOORDINATOR

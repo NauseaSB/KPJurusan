@@ -192,7 +192,12 @@ class Kp1Controller extends Controller
      */
     public function edit(kp1 $kp1)
     {
-        //
+        // ddd(auth()->user()->kelompok->kp1->jum_d1);
+        return view('dashboard.editkp1', [
+            'datakp1' => auth()->user()->kelompok->kp1,
+            'mhs1' => auth()->user()->kelompok->mahasiswa,
+            'mhs2' => auth()->user()->kelompok->mahasiswa2,
+        ]);
     }
 
     /**
