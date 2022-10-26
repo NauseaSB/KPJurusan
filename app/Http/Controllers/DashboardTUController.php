@@ -60,7 +60,10 @@ class DashboardTUController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data = Kelompok::where('id', $id)->with('mahasiswa')->with('mahasiswa2')->with('materi')->with('kp1')->with('kp2')->first();
+        return view('dashboard.tatausaha.set-status', [
+            'datas' => $data,
+        ]);
     }
 
     /**
@@ -72,7 +75,13 @@ class DashboardTUController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->all();
+        Kelompok::where('id', $id)->update([
+            'status_mhsw1' => $data['status_mhsw1'],
+            'status_mhsw2' => $data['status_mhsw2'],
+        ]);
+
+        return redirect('/TU')->with('success', 'Perubahan Status Kelompok KP Berhasil');
     }
 
     /**

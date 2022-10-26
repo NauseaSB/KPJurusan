@@ -87,5 +87,7 @@ Route::group(['middleware' => 'auth'], function () {
     //route group untuk role TATA USAHA
     Route::group(['middleware' => 'role:tataUsaha'], function () {
         Route::get('/TU', [DashboardTUController::class, 'index'])->middleware('auth');
+        Route::get('/TU/set-status/{id}', [DashboardTUController::class, 'edit']);
+        Route::post('/TU/set-status/{id}', [DashboardTUController::class, 'update']);
     });
 });

@@ -62,72 +62,128 @@ class DashboardKoorController extends Controller
 
     public function edit($id)
     {
-        $angka_mutu = ['A','AB','B','BC','C','D','E','Belum Diambil'];
-        $angka_mutu_warning = ['D','E','Belum Diambil'];
+        $angka_mutu = ['A', 'AB', 'B', 'BC', 'C', 'D', 'E', 'Belum Diambil'];
+        $angka_mutu_warning = ['D', 'E', 'Belum Diambil'];
         $data = Kelompok::where('id', $id)->with('mahasiswa')->with('mahasiswa2')->with('materi')->with('kp1')->with('kp2')->first();
         return view('dashboard.koordinator.set-status', [
             'id' => $id,
             'datas' => $data,
             'angka_mutu' => $angka_mutu,
-            'angka_mutu_warning'=>  $angka_mutu_warning,
+            'angka_mutu_warning' =>  $angka_mutu_warning,
             'mahasiswa1' => $data->mahasiswa,
             'mahasiswa2' => $data->mahasiswa2,
             'info_mhs' =>  $data->kp1,
             'datakp2' => $data->kp2
         ]);
     }
-    public static function menghitung_total_tidak_memenuhi($id) {
+
+    public static function menghitung_total_tidak_memenuhi($id)
+    {
         $data = Kelompok::where('id', $id)->with('mahasiswa')->with('mahasiswa2')->with('materi')->with('kp1')->with('kp2')->first()->kp1;
-        $angka_mutu = ['A','AB','B','BC','C','D','E','Belum Diambil'];
-        $angka_mutu_warning = ['D','E','Belum Diambil'];
+        $angka_mutu = ['A', 'AB', 'B', 'BC', 'C', 'D', 'E', 'Belum Diambil'];
+        $angka_mutu_warning = ['D', 'E', 'Belum Diambil'];
         $jumlah = 0;
-        foreach ($angka_mutu_warning as $item){
-            if ($data->algoritma1 == $item){
+
+        //Jumlah data mahasiswa 1
+        foreach ($angka_mutu_warning as $item) {
+            if ($data->algoritma1 == $item) {
                 $jumlah++;
             }
         }
-        foreach ($angka_mutu_warning as $item){
-            if ($data->p_algoritma1 == $item){
+        foreach ($angka_mutu_warning as $item) {
+            if ($data->p_algoritma1 == $item) {
                 $jumlah++;
             }
         }
-        foreach ($angka_mutu_warning as $item){
-            if ($data->strukdat1 == $item){
+        foreach ($angka_mutu_warning as $item) {
+            if ($data->strukdat1 == $item) {
                 $jumlah++;
             }
         }
-        foreach ($angka_mutu_warning as $item){
-            if ($data->p_strukdat1 == $item){
+        foreach ($angka_mutu_warning as $item) {
+            if ($data->p_strukdat1 == $item) {
                 $jumlah++;
             }
         }
-        foreach ($angka_mutu_warning as $item){
-            if ($data->basdat1 == $item){
+        foreach ($angka_mutu_warning as $item) {
+            if ($data->basdat1 == $item) {
                 $jumlah++;
             }
         }
-        foreach ($angka_mutu_warning as $item){
-            if ($data->p_basdat1 == $item){
+        foreach ($angka_mutu_warning as $item) {
+            if ($data->p_basdat1 == $item) {
                 $jumlah++;
             }
         }
-        foreach ($angka_mutu_warning as $item){
-            if ($data->rpl1 == $item){
+        foreach ($angka_mutu_warning as $item) {
+            if ($data->rpl1 == $item) {
                 $jumlah++;
             }
         }
-        foreach ($angka_mutu_warning as $item){
-            if ($data->appl1 == $item){
+        foreach ($angka_mutu_warning as $item) {
+            if ($data->appl1 == $item) {
                 $jumlah++;
             }
         }
-        foreach ($angka_mutu_warning as $item){
-            if ($data->progweb1 == $item){
+        foreach ($angka_mutu_warning as $item) {
+            if ($data->progweb1 == $item) {
                 $jumlah++;
             }
         }
-        foreach ($angka_mutu_warning as $item){
-            if ($data->p_progweb1 == $item){
+        foreach ($angka_mutu_warning as $item) {
+            if ($data->p_progweb1 == $item) {
+                $jumlah++;
+            }
+        }
+
+        //jumlah data mahasiswa 2
+        foreach ($angka_mutu_warning as $item) {
+            if ($data->algoritma2 == $item) {
+                $jumlah++;
+            }
+        }
+        foreach ($angka_mutu_warning as $item) {
+            if ($data->p_algoritma2 == $item) {
+                $jumlah++;
+            }
+        }
+        foreach ($angka_mutu_warning as $item) {
+            if ($data->strukdat2 == $item) {
+                $jumlah++;
+            }
+        }
+        foreach ($angka_mutu_warning as $item) {
+            if ($data->p_strukdat2 == $item) {
+                $jumlah++;
+            }
+        }
+        foreach ($angka_mutu_warning as $item) {
+            if ($data->basdat2 == $item) {
+                $jumlah++;
+            }
+        }
+        foreach ($angka_mutu_warning as $item) {
+            if ($data->p_basdat2 == $item) {
+                $jumlah++;
+            }
+        }
+        foreach ($angka_mutu_warning as $item) {
+            if ($data->rpl2 == $item) {
+                $jumlah++;
+            }
+        }
+        foreach ($angka_mutu_warning as $item) {
+            if ($data->appl2 == $item) {
+                $jumlah++;
+            }
+        }
+        foreach ($angka_mutu_warning as $item) {
+            if ($data->progweb2 == $item) {
+                $jumlah++;
+            }
+        }
+        foreach ($angka_mutu_warning as $item) {
+            if ($data->p_progweb2 == $item) {
                 $jumlah++;
             }
         }

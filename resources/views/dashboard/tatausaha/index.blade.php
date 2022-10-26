@@ -1,6 +1,5 @@
 @extends('dashboard.tatausaha.main')
 @section('container')
-    halaman index tata usaha
     <div class="table-responsive">
         <table class="table table-striped table-sm">
             <thead>
@@ -51,9 +50,29 @@
                                 {{ $item->materi->nama_pembimbing_lapangan }}
                             @endif
                         </td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td>
+                            @if (isset($item->status_mhsw1))
+                                <div
+                                    class="badge @if ($item->status_mhsw1 == 'Memenuhi') bg-success @elseif ($item->status_mhsw1 == 'Tidak Memenuhi') bg-danger @else bg-warning @endif">
+                                    {{ $item->status_mhsw1 }}
+                                </div>
+                            @endif
+                        </td>
+                        <td>
+                            @if (isset($item->status_mhsw2))
+                                <div
+                                    class="badge @if ($item->status_mhsw2 == 'Memenuhi') bg-success @elseif ($item->status_mhsw2 == 'Tidak Memenuhi') bg-danger @else bg-warning @endif">
+                                    {{ $item->status_mhsw2 }}
+                                </div>
+                            @endif
+                        </td>
+                        <td>
+                            <a href="/TU/set-status/{{ $item->id }}" class="btn btn-sm bg-warning"
+                                style="text-decoration: none">
+                                <span data-feather="edit"></span>
+                                Edit Status
+                            </a>
+                        </td>
                     </tr>
                 @endforeach
             </tbody>

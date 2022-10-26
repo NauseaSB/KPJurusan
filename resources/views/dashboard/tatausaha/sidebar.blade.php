@@ -7,12 +7,6 @@
                     Data Pendaftaran KP
                 </a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link {{ Request::is('') ? 'active' : '' }}" href="#">
-                    <span data-feather="users" class="align-text-bottom"></span>
-                    Daftar Kelompok
-                </a>
-            </li>
         </ul>
         <h6 class="sidebar-heading d-flex justify-content-between px-3 mt-4 mb-1 text-muted text-uppercase">
         </h6>

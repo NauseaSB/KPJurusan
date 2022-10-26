@@ -77,7 +77,7 @@
                             @endif
                         </td>
                         <td>
-                            <a href="/koorkp/set-status/{{ $item->id }}" class="btn bg-warning"
+                            <a href="/koorkp/set-status/{{ $item->id }}" class="btn btn-sm bg-warning"
                                 style="text-decoration: none">
                                 <span data-feather="edit"></span>
                                 Edit Status
