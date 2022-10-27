@@ -11,42 +11,42 @@
                 <div class="col">
                     <div class="form-floating">
                         <input type="text" class="form-control rounded-top @error('nim1') is-invalid rounded @enderror"
-                            name="nim1" id="nim1" placeholder="NIM Mahasiswa 1" readonly value="{{ $mahasiswa1->nim }}">
+                            name="nim1" id="nim1" placeholder="NIM Mahasiswa 1" readonly value="{{ $info_mhs->nim1 }}">
                         <label for="nim1">NIM Mahasiswa 1</label>
                     </div>
                     <div class=" form-floating">
                         <input type="text" class="form-control @error('nama1') is-invalid rounded @enderror"
                             name="nama1" id="nama1" placeholder="Nama Mahasiswa 1" readonly
-                            value="{{ $mahasiswa1->nama }}">
+                            value="{{ $info_mhs->nama1 }}">
                         <label for="nama1">Nama Mahasiswa 1</label>
                     </div>
                     <div class=" form-floating">
                         <input type="text" class="form-control @error('doswal1') is-invalid rounded @enderror"
                             name="doswal1" id="doswal1" placeholder="Nama Mahasiswa 1" readonly
-                            value="{{ $mahasiswa1->doswal }}">
+                            value="{{ $info_mhs->doswal1 }}">
                         <label for="doswal1">Nama Dosen Wali</label>
                     </div>
                     <div class=" form-floating">
                         <input type="text" class="form-control @error('peminatan1') is-invalid rounded @enderror"
                             name="peminatan1" id="peminatan1" placeholder="Peminatan" readonly
-                            value="{{ $mahasiswa1->peminatan }}">
+                            value="{{ $info_mhs->peminatan1 }}">
                         <label for="peminatan1">Peminatan</label>
                     </div>
                     <div class=" form-floating">
-                        <input type="text" class="form-control {{ $mahasiswa1->ipk < 2.80 ? 'is-invalid' : '' }} @error('ipk1') is-invalid rounded @enderror"
-                            name="ipk1" id="ipk1" placeholder="IPK" readonly value="{{ $mahasiswa1->ipk }}">
+                        <input type="text" class="form-control {{ $info_mhs->ipk1< 2.80 ? 'is-invalid' : '' }} @error('ipk1') is-invalid rounded @enderror"
+                            name="ipk1" id="ipk1" placeholder="IPK" readonly value="{{ $info_mhs->ipk1 }}">
                         <label for="ipk1">IPK</label>
                     </div>
                     <div class=" form-floating">
-                        <input type="text" class="form-control {{ $mahasiswa1->t_sks < 90 ? 'is-invalid' : '' }} @error('t_sks1') is-invalid rounded @enderror"
-                            name="t_sks1" id="t_sks1" placeholder="Total SKS" readonly value="{{ $mahasiswa1->t_sks }}">
+                        <input type="text" class="form-control {{ $info_mhs->t_sks1 < 90 ? 'is-invalid' : '' }} @error('t_sks1') is-invalid rounded @enderror"
+                            name="t_sks1" id="t_sks1" placeholder="Total SKS" readonly value="{{ $info_mhs->t_sks1 }}">
                         <label for="t_sks1">Total SKS</label>
                     </div>
                     <div class=" form-floating">
                         <input type="text"
                             class="form-control rounded-bottom @error('semester1') is-invalid rounded @enderror"
                             name="semester1" id="semester1" placeholder="Semester" readonly
-                            value="{{ $mahasiswa1->semester }}">
+                            value="{{ $info_mhs->semester1 }}">
                         <label for="semester1">Semester</label>
                     </div>
                     <div class=" form-floating">

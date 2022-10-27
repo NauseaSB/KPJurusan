@@ -146,7 +146,7 @@ class DashboardKoorController extends Controller
             if($datas->ipk1 < 2.80){
                 $jumlah++;
             }
-            if($datas->t_sks < 90){
+            if($datas->t_sks1 < 90){
                 $jumlah++;
             }
             
