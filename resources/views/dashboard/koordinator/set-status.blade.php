@@ -33,12 +33,12 @@
                         <label for="peminatan1">Peminatan</label>
                     </div>
                     <div class=" form-floating">
-                        <input type="text" class="form-control @error('ipk1') is-invalid rounded @enderror"
+                        <input type="text" class="form-control {{ $mahasiswa1->ipk < 2.80 ? 'is-invalid' : '' }} @error('ipk1') is-invalid rounded @enderror"
                             name="ipk1" id="ipk1" placeholder="IPK" readonly value="{{ $mahasiswa1->ipk }}">
                         <label for="ipk1">IPK</label>
                     </div>
                     <div class=" form-floating">
-                        <input type="text" class="form-control @error('t_sks1') is-invalid rounded @enderror"
+                        <input type="text" class="form-control {{ $mahasiswa1->t_sks < 90 ? 'is-invalid' : '' }} @error('t_sks1') is-invalid rounded @enderror"
                             name="t_sks1" id="t_sks1" placeholder="Total SKS" readonly value="{{ $mahasiswa1->t_sks }}">
                         <label for="t_sks1">Total SKS</label>
                     </div>
@@ -219,12 +219,12 @@
                         <label for="peminatan2">Peminatan</label>
                     </div>
                     <div class=" form-floating">
-                        <input type="text" class="form-control @error('ipk2') is-invalid rounded @enderror"
+                        <input type="text" class="form-control {{ $mahasiswa2->ipk < 2.80 ? 'is-invalid' : '' }} @error('ipk2') is-invalid rounded @enderror"
                             name="ipk2" id="ipk2" placeholder="IPK" required value="{{ $mahasiswa2->ipk }}">
                         <label for="ipk2">IPK</label>
                     </div>
                     <div class=" form-floating">
-                        <input type="text" class="form-control @error('t_sks2') is-invalid rounded @enderror"
+                        <input type="text" class="form-control {{ $mahasiswa2->t_sks < 90 ? 'is-invalid' : '' }} @error('t_sks2') is-invalid rounded @enderror"
                             name="t_sks2" id="t_sks2" placeholder="Total SKS" required
                             value="{{ $mahasiswa2->t_sks }}">
                         <label for="t_sks2">Total SKS</label>
@@ -386,12 +386,12 @@
                 <table class="table table-striped table-hover table-sm mt-3 mb-3" cellpadding="10">
                     <tr>
                         <td> Total </td>
-                        <td> 36</td>
+                        <td> 42</td>
                     </tr>
                     <tr>
                         @inject('DashboardKoor', 'App\Http\Controllers\DashboardKoorController')
                         <td> Memenuhi </td>
-                        <td> {{ 36 - $DashboardKoor::menghitung_total_tidak_memenuhi($id) }} </td>
+                        <td> {{ 42 - $DashboardKoor::menghitung_total_tidak_memenuhi($id) }} </td>
                     </tr>
                     <tr>
                         @inject('DashboardKoor', 'App\Http\Controllers\DashboardKoorController')

@@ -23,9 +23,9 @@ class CreateKp1sTable extends Migration
             $table->integer('t_sks1'); // total sks
             $table->string('semester1');
             $table->integer('jum_d1'); // jumlah nilai D
-            $table->string('mk_d1'); // mata kuliah D
+            $table->string('mk_d1')->nullable(); // mata kuliah D
             $table->integer('jum_e1'); // jumlah nilai E
-            $table->string('mk_e1'); // mata kuliah E
+            $table->string('mk_e1')->nullable(); // mata kuliah E
             $table->string('algoritma1'); //algoritma dan pemrograman
             $table->string('p_algoritma1'); // praktikum algoritma dan pemrograman
             $table->string('strukdat1'); // struktur data 
@@ -50,9 +50,9 @@ class CreateKp1sTable extends Migration
             $table->integer('t_sks2'); // total sks
             $table->string('semester2');
             $table->integer('jum_d2'); // jumlah nilai D
-            $table->string('mk_d2'); // mata kuliah D
+            $table->string('mk_d2')->nullable(); // mata kuliah D
             $table->integer('jum_e2'); // jumlah nilai E
-            $table->string('mk_e2'); // mata kuliah E
+            $table->string('mk_e2')->nullable(); // mata kuliah E
             $table->string('algoritma2'); //algoritma dan pemrograman
             $table->string('p_algoritma2'); // praktikum algoritma dan pemrograman
             $table->string('strukdat2'); // struktur data 

@@ -2,6 +2,7 @@
 @section('container')
     <div class="text-center mt-5 mb-5">
         <h1>Data Pendaftaran KP</h1>
+        <a href="/kookp/printpdf" target="_blank" class="btn btn-success">Print PDF</a>
         <div class="table-responsive">
             <table class="table table-striped table-sm">
                 <thead>

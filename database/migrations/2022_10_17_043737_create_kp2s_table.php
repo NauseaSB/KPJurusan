@@ -23,9 +23,9 @@ class CreateKp2sTable extends Migration
             $table->integer('t_sks1'); // total sks
             $table->string('semester1');
             $table->integer('jum_d1'); // jumlah nilai D
-            $table->string('mk_d1'); // mata kuliah D
+            $table->string('mk_d1')->nullable(); // mata kuliah D
             $table->integer('jum_e1'); // jumlah nilai E
-            $table->string('mk_e1'); // mata kuliah E
+            $table->string('mk_e1')->nullable(); // mata kuliah E
             $table->string('algoritma1'); //algoritma dan pemrograman
             $table->string('p_algoritma1'); // praktikum algoritma dan pemrograman
             $table->string('strukdat1'); // struktur data 
@@ -39,29 +39,29 @@ class CreateKp2sTable extends Migration
             $table->string('kontrak')->nullable();
             $table->timestamps();
 
-                  // batas tabel mahasiswa 1
-                  $table->string('nim2');
-                  $table->string('nama2');
-                  $table->string('doswal2'); // Dosen Wali
-                  $table->string('peminatan2');
-                  $table->double('ipk2');
-                  $table->integer('t_sks2'); // total sks
-                  $table->string('semester2');
-                  $table->integer('jum_d2'); // jumlah nilai D
-                  $table->string('mk_d2'); // mata kuliah D
-                  $table->integer('jum_e2'); // jumlah nilai E
-                  $table->string('mk_e2'); // mata kuliah E
-                  $table->string('algoritma2'); //algoritma dan pemrograman
-                  $table->string('p_algoritma2'); // praktikum algoritma dan pemrograman
-                  $table->string('strukdat2'); // struktur data 
-                  $table->string('p_strukdat2'); // praktikum struktur data
-                  $table->string('basdat2'); // basis data
-                  $table->string('p_basdat2'); // praktikum basis data
-                  $table->string('rpl2'); // analisa dan perancangan perangkat lunak
-                  $table->string('appl2'); // analisa dan perancangan perangkat lunak
-                  $table->string('progweb2'); // pemrograman web
-                  $table->string('p_progweb2'); // praktikum pemrograman web
-                  $table->string('kontrak2')->nullable();
+            // batas tabel mahasiswa 1
+            $table->string('nim2');
+            $table->string('nama2');
+            $table->string('doswal2'); // Dosen Wali
+            $table->string('peminatan2');
+            $table->double('ipk2');
+            $table->integer('t_sks2'); // total sks
+            $table->string('semester2');
+            $table->integer('jum_d2'); // jumlah nilai D
+            $table->string('mk_d2')->nullable(); // mata kuliah D
+            $table->integer('jum_e2'); // jumlah nilai E
+            $table->string('mk_e2')->nullable(); // mata kuliah E
+            $table->string('algoritma2'); //algoritma dan pemrograman
+            $table->string('p_algoritma2'); // praktikum algoritma dan pemrograman
+            $table->string('strukdat2'); // struktur data 
+            $table->string('p_strukdat2'); // praktikum struktur data
+            $table->string('basdat2'); // basis data
+            $table->string('p_basdat2'); // praktikum basis data
+            $table->string('rpl2'); // analisa dan perancangan perangkat lunak
+            $table->string('appl2'); // analisa dan perancangan perangkat lunak
+            $table->string('progweb2'); // pemrograman web
+            $table->string('p_progweb2'); // praktikum pemrograman web
+            $table->string('kontrak2')->nullable();
         });
     }
 
