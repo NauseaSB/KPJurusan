@@ -441,7 +441,6 @@
                             <label for="status_klmpk" class="form-label">Status Kelompok</label>
                         </div>
                     </div>
-                </div>
                 <div class="col">
                     <div class="form-floating">
                         <select type="text" class="form-select" name="status_akhir" id="status_akhir">
@@ -451,7 +450,6 @@
                         </select>
                         <label for="status_akhir" class="form-label">Status Akhir</label>
                     </div>
-                </div>
                 </div>
                 <div class="d-grid gap-2 d-md-block">
                     <a href="/koorkp" class="btn bg-primary mt-3" role="button">Kembali</a>
