@@ -69,10 +69,19 @@ class Kp1Controller extends Controller
         $kp1->appl1 = $data['appl1'];
         $kp1->progweb1 = $data['progweb1'];
         $kp1->p_progweb1 = $data['p_progweb1'];
-        $kp1->khs1 = $request->file('khs1')->store('data-mahasiswa');
-        $kp1->krs1 = $request->file('krs1')->store('data-mahasiswa');
-        $kp1->ktm1 = $request->file('ktm1')->store('data-mahasiswa');
-        $kp1->p_foto1 = $request->file('p_foto1')->store('data-mahasiswa');
+
+        if ($request->file('khs1')) {
+            $kp1->khs1 = $request->file('khs1')->store('data-mahasiswa');
+        }
+        if ($request->file('krs1')) {
+            $kp1->krs1 = $request->file('krs1')->store('data-mahasiswa');
+        }
+        if ($request->file('ktm1')) {
+            $kp1->ktm1 = $request->file('ktm1')->store('data-mahasiswa');
+        }
+        if ($request->file('p_foto1')) {
+            $kp1->p_foto1 = $request->file('p_foto1')->store('data-mahasiswa');
+        }
 
         //mahasiswa 2
         $kp1->nim2 = $data['nim2'];
@@ -96,14 +105,27 @@ class Kp1Controller extends Controller
         $kp1->appl2 = $data['appl2'];
         $kp1->progweb2 = $data['progweb2'];
         $kp1->p_progweb2 = $data['p_progweb2'];
-        $kp1->khs2 = $request->file('khs2')->store('data-mahasiswa');
-        $kp1->krs2 = $request->file('krs2')->store('data-mahasiswa');
-        $kp1->ktm2 = $request->file('ktm2')->store('data-mahasiswa');
-        $kp1->p_foto2 = $request->file('p_foto2')->store('data-mahasiswa');
+
+        if ($request->file('khs2')) {
+            $kp1->khs2 = $request->file('khs2')->store('data-mahasiswa');
+        }
+        if ($request->file('krs2')) {
+            $kp1->krs2 = $request->file('krs2')->store('data-mahasiswa');
+        }
+        if ($request->file('ktm2')) {
+            $kp1->ktm2 = $request->file('ktm2')->store('data-mahasiswa');
+        }
+        if ($request->file('p_foto2')) {
+            $kp1->p_foto2 = $request->file('p_foto2')->store('data-mahasiswa');
+        }
 
         //data kelompok
-        $kp1->proposal = $request->file('proposal')->store('data-mahasiswa');
-        $kp1->izin_kp = $request->file('izin_kp')->store('data-mahasiswa');
+        if ($request->file('proposal')) {
+            $kp1->proposal = $request->file('proposal')->store('data-mahasiswa');
+        }
+        if ($request->file('izin_kp')) {
+            $kp1->izin_kp = $request->file('izin_kp')->store('data-mahasiswa');
+        }
 
         $kp1->save();
 

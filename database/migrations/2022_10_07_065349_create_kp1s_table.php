@@ -36,10 +36,10 @@ class CreateKp1sTable extends Migration
             $table->string('appl1'); // analisa dan perancangan perangkat lunak
             $table->string('progweb1'); // pemrograman web
             $table->string('p_progweb1'); // praktikum pemrograman web
-            $table->string('khs1');
-            $table->string('krs1');
-            $table->string('ktm1');
-            $table->string('p_foto1'); //pas foto
+            $table->string('khs1')->nullable();
+            $table->string('krs1')->nullable();
+            $table->string('ktm1')->nullable();
+            $table->string('p_foto1')->nullable(); //pas foto
 
             // batas tabel mahasiswa 1
             $table->string('nim2');
@@ -63,10 +63,10 @@ class CreateKp1sTable extends Migration
             $table->string('appl2'); // analisa dan perancangan perangkat lunak
             $table->string('progweb2'); // pemrograman web
             $table->string('p_progweb2'); // praktikum pemrograman web
-            $table->string('khs2');
-            $table->string('krs2');
-            $table->string('ktm2');
-            $table->string('p_foto2'); //pas foto
+            $table->string('khs2')->nullable();
+            $table->string('krs2')->nullable();
+            $table->string('ktm2')->nullable();
+            $table->string('p_foto2')->nullable(); //pas foto
             // batas tabel mahasiswa 2
 
             $table->string('proposal')->nullable();

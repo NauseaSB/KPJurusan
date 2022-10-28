@@ -118,7 +118,7 @@
                         </div>
                         <div class=" form-floating">
                             <input type="text" class="form-control @error('mk_d1') is-invalid rounded @enderror"
-                                name="mk_d1" id="mk_d1" placeholder="Jumlah Nilai D" required
+                                name="mk_d1" id="mk_d1" placeholder="Jumlah Nilai D"
                                 @if (isset($datakp1->mk_d1)) value="{{ $datakp1->mk_d1 }}"
                                 @else
                                     value="{{ old('semester1') }}" @endif>
@@ -144,7 +144,7 @@
                         </div>
                         <div class=" form-floating">
                             <input type="text" class="form-control @error('mk_e1') is-invalid rounded @enderror"
-                                name="mk_e1" id="mk_e1" placeholder="Jumlah Nilai D" required
+                                name="mk_e1" id="mk_e1" placeholder="Jumlah Nilai D"
                                 @if (isset($datakp1->mk_e1)) value="{{ $datakp1->mk_e1 }}"
                                 @else
                                     value="{{ old('semester1') }}" @endif>
@@ -424,25 +424,25 @@
                         <div class="form-floating">
                             <div class="mb-2">
                                 <label for="khs1" class="form-label mt-2">Upload KHS</label>
-                                <input class="form-control" type="file" id="khs1" required name="khs1">
+                                <input class="form-control" type="file" id="khs1" name="khs1">
                             </div>
                         </div>
                         <div class="form-floating">
                             <div class="mb-2">
                                 <label for="krs1" class="form-label">Upload KRS</label>
-                                <input class="form-control" type="file" id="krs1" required name="krs1">
+                                <input class="form-control" type="file" id="krs1" name="krs1">
                             </div>
                         </div>
                         <div class="form-floating">
                             <div class="mb-2">
                                 <label for="ktm1" class="form-label">Upload KTM</label>
-                                <input class="form-control" type="file" id="ktm1" required name="ktm1">
+                                <input class="form-control" type="file" id="ktm1" name="ktm1">
                             </div>
                         </div>
                         <div class="form-floating">
                             <div class="mb-2">
                                 <label for="p_foto1" class="form-label">Upload Pas Foto</label>
-                                <input class="form-control" type="file" id="p_foto1" required name="p_foto1">
+                                <input class="form-control" type="file" id="p_foto1" name="p_foto1">
                             </div>
                         </div>
                     </div>
@@ -555,7 +555,7 @@
                         </div>
                         <div class=" form-floating">
                             <input type="text" class="form-control @error('mk_d2') is-invalid rounded @enderror"
-                                name="mk_d2" id="mk_d2" placeholder="Jumlah Nilai D" required
+                                name="mk_d2" id="mk_d2" placeholder="Jumlah Nilai D"
                                 @if (isset($datakp1->mk_d2)) value="{{ $datakp1->mk_d2 }}"
                                 @else
                                     value="{{ old('semester1') }}" @endif>
@@ -581,7 +581,7 @@
                         </div>
                         <div class=" form-floating">
                             <input type="text" class="form-control @error('mk_e2') is-invalid rounded @enderror"
-                                name="mk_e2" id="mk_e2" placeholder="Jumlah Nilai D" required
+                                name="mk_e2" id="mk_e2" placeholder="Jumlah Nilai D"
                                 @if (isset($datakp1->mk_e2)) value="{{ $datakp1->mk_e2 }}"
                                 @else
                                     value="{{ old('semester1') }}" @endif>
@@ -881,25 +881,25 @@
                         <div class="form-floating">
                             <div class="mb-2">
                                 <label for="khs2" class="form-label mt-2">Upload KHS</label>
-                                <input class="form-control" type="file" id="khs2" required name="khs2">
+                                <input class="form-control" type="file" id="khs2" name="khs2">
                             </div>
                         </div>
                         <div class="form-floating">
                             <div class="mb-2">
                                 <label for="krs2" class="form-label">Upload KRS</label>
-                                <input class="form-control" type="file" id="krs2" required name="krs2">
+                                <input class="form-control" type="file" id="krs2" name="krs2">
                             </div>
                         </div>
                         <div class="form-floating">
                             <div class="mb-2">
                                 <label for="ktm2" class="form-label">Upload KTM</label>
-                                <input class="form-control" type="file" id="ktm2" required name="ktm2">
+                                <input class="form-control" type="file" id="ktm2" name="ktm2">
                             </div>
                         </div>
                         <div class="form-floating">
                             <div class="mb-2">
                                 <label for="p_foto2" class="form-label">Upload Pas Foto</label>
-                                <input class="form-control" type="file" id="p_foto2" required name="p_foto2">
+                                <input class="form-control" type="file" id="p_foto2" name="p_foto2">
                             </div>
                         </div>
                     </div>
