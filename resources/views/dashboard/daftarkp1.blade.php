@@ -117,9 +117,11 @@
                             @enderror
                         </div>
                         <div class=" form-floating">
-                            <input type="text"
-                                class="form-control rounded-top @error('mk_d1') is-invalid rounded @enderror" name="mk_d1"
-                                id="mk_d1" placeholder="MK Nilai D" required value="{{ old('mk_d1') }}">
+                            <input type="text" class="form-control @error('mk_d1') is-invalid rounded @enderror"
+                                name="mk_d1" id="mk_d1" placeholder="Jumlah Nilai D" required
+                                @if (isset($datakp1->mk_d1)) value="{{ $datakp1->mk_d1 }}"
+                                @else
+                                    value="{{ old('semester1') }}" @endif>
                             <label for="mk_d1">MK Nilai D</label>
                             @error('mk_d1')
                                 <div class="invalid-feedback">
@@ -129,8 +131,10 @@
                         </div>
                         <div class=" form-floating">
                             <input type="text" class="form-control @error('jum_e1') is-invalid rounded @enderror"
-                                name="jum_e1" id="jum_e1" placeholder="Jumlah Nilai E" required
-                                value="{{ old('jum_e1') }}">
+                                name="jum_e1" id="jum_e1" placeholder="Jumlah Nilai D" required
+                                @if (isset($datakp1->jum_e1)) value="{{ $datakp1->jum_e1 }}"
+                                @else
+                                    value="{{ old('semester1') }}" @endif>
                             <label for="jum_e1">Jumlah Nilai E</label>
                             @error('jum_e1')
                                 <div class="invalid-feedback">
@@ -139,10 +143,11 @@
                             @enderror
                         </div>
                         <div class=" form-floating">
-                            <input type="text"
-                                class="form-control rounded-top @error('mk_e1') is-invalid rounded @enderror"
-                                name="mk_e1" id="mk_e1" placeholder="MK Nilai E" required
-                                value="{{ old('mk_e1') }}">
+                            <input type="text" class="form-control @error('mk_e1') is-invalid rounded @enderror"
+                                name="mk_e1" id="mk_e1" placeholder="Jumlah Nilai D" required
+                                @if (isset($datakp1->mk_e1)) value="{{ $datakp1->mk_e1 }}"
+                                @else
+                                    value="{{ old('semester1') }}" @endif>
                             <label for="mk_e1">MK Nilai E</label>
                             @error('mk_e1')
                                 <div class="invalid-feedback">
@@ -536,9 +541,25 @@
                             @enderror
                         </div>
                         <div class=" form-floating">
+                            <input type="text"
+                                class="form-control rounded-bottom @error('semester1') is-invalid rounded @enderror"
+                                name="semester1" id="semester1" placeholder="Semester" required
+                                @if (isset($mhs1->semester)) value="{{ $mhs1->semester }}"
+                                @else
+                                    value="{{ old('semester1') }}" @endif>
+                            <label for="semester1">Semester</label>
+                            @error('semester1')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                        </div>
+                        <div class=" form-floating">
                             <input type="text" class="form-control @error('jum_d2') is-invalid rounded @enderror"
                                 name="jum_d2" id="jum_d2" placeholder="Jumlah Nilai D" required
-                                value="{{ old('jum_d2') }}">
+                                @if (isset($datakp1->jum_d2)) value="{{ $datakp1->jum_d2 }}"
+                                @else
+                                    value="{{ old('semester1') }}" @endif>
                             <label for="jum_d2">Jumlah Nilai D</label>
                             @error('jum_d2')
                                 <div class="invalid-feedback">
@@ -547,10 +568,11 @@
                             @enderror
                         </div>
                         <div class=" form-floating">
-                            <input type="text"
-                                class="form-control rounded-top @error('mk_d2') is-invalid rounded @enderror"
-                                name="mk_d2" id="mk_d2" placeholder="MK Nilai D" required
-                                value="{{ old('mk_d2') }}">
+                            <input type="text" class="form-control @error('mk_d2') is-invalid rounded @enderror"
+                                name="mk_d2" id="mk_d2" placeholder="Jumlah Nilai D" required
+                                @if (isset($datakp1->mk_d2)) value="{{ $datakp1->mk_d2 }}"
+                                @else
+                                    value="{{ old('semester1') }}" @endif>
                             <label for="mk_d2">MK Nilai D</label>
                             @error('mk_d2')
                                 <div class="invalid-feedback">
@@ -560,8 +582,10 @@
                         </div>
                         <div class=" form-floating">
                             <input type="text" class="form-control @error('jum_e2') is-invalid rounded @enderror"
-                                name="jum_e2" id="jum_e2" placeholder="Jumlah Nilai E" required
-                                value="{{ old('jum_e2') }}">
+                                name="jum_e2" id="jum_e2" placeholder="Jumlah Nilai D" required
+                                @if (isset($datakp1->jum_e2)) value="{{ $datakp1->jum_e2 }}"
+                                @else
+                                    value="{{ old('semester1') }}" @endif>
                             <label for="jum_e2">Jumlah Nilai E</label>
                             @error('jum_e2')
                                 <div class="invalid-feedback">
@@ -570,10 +594,11 @@
                             @enderror
                         </div>
                         <div class=" form-floating">
-                            <input type="text"
-                                class="form-control rounded-top @error('mk_e2') is-invalid rounded @enderror"
-                                name="mk_e2" id="mk_e2" placeholder="MK Nilai E" required
-                                value="{{ old('mk_e2') }}">
+                            <input type="text" class="form-control @error('mk_e2') is-invalid rounded @enderror"
+                                name="mk_e2" id="mk_e2" placeholder="Jumlah Nilai D" required
+                                @if (isset($datakp1->mk_e2)) value="{{ $datakp1->mk_e2 }}"
+                                @else
+                                    value="{{ old('semester1') }}" @endif>
                             <label for="mk_e2">MK Nilai E</label>
                             @error('mk_e2')
                                 <div class="invalid-feedback">
