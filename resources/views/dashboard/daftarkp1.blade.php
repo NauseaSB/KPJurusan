@@ -424,25 +424,25 @@
                         <div class="form-floating">
                             <div class="mb-2">
                                 <label for="khs1" class="form-label mt-2">Upload KHS</label>
-                                <input class="form-control" type="file" id="khs1" name="khs1">
+                                <input class="form-control" type="file" id="khs1" required name="khs1">
                             </div>
                         </div>
                         <div class="form-floating">
                             <div class="mb-2">
                                 <label for="krs1" class="form-label">Upload KRS</label>
-                                <input class="form-control" type="file" id="krs1" name="krs1">
+                                <input class="form-control" type="file" id="krs1" required name="krs1">
                             </div>
                         </div>
                         <div class="form-floating">
                             <div class="mb-2">
                                 <label for="ktm1" class="form-label">Upload KTM</label>
-                                <input class="form-control" type="file" id="ktm1" name="ktm1">
+                                <input class="form-control" type="file" id="ktm1" required name="ktm1">
                             </div>
                         </div>
                         <div class="form-floating">
                             <div class="mb-2">
                                 <label for="p_foto1" class="form-label">Upload Pas Foto</label>
-                                <input class="form-control" type="file" id="p_foto1" name="p_foto1">
+                                <input class="form-control" type="file" id="p_foto1" required name="p_foto1">
                             </div>
                         </div>
                     </div>
@@ -535,20 +535,6 @@
                                     value="{{ old('semester2') }}" @endif>
                             <label for="semester2">Semester</label>
                             @error('semester2')
-                                <div class="invalid-feedback">
-                                    {{ $message }}
-                                </div>
-                            @enderror
-                        </div>
-                        <div class=" form-floating">
-                            <input type="text"
-                                class="form-control rounded-bottom @error('semester1') is-invalid rounded @enderror"
-                                name="semester1" id="semester1" placeholder="Semester" required
-                                @if (isset($mhs1->semester)) value="{{ $mhs1->semester }}"
-                                @else
-                                    value="{{ old('semester1') }}" @endif>
-                            <label for="semester1">Semester</label>
-                            @error('semester1')
                                 <div class="invalid-feedback">
                                     {{ $message }}
                                 </div>
@@ -895,25 +881,25 @@
                         <div class="form-floating">
                             <div class="mb-2">
                                 <label for="khs2" class="form-label mt-2">Upload KHS</label>
-                                <input class="form-control" type="file" id="khs2" name="khs2">
+                                <input class="form-control" type="file" id="khs2" required name="khs2">
                             </div>
                         </div>
                         <div class="form-floating">
                             <div class="mb-2">
                                 <label for="krs2" class="form-label">Upload KRS</label>
-                                <input class="form-control" type="file" id="krs2" name="krs2">
+                                <input class="form-control" type="file" id="krs2" required name="krs2">
                             </div>
                         </div>
                         <div class="form-floating">
                             <div class="mb-2">
                                 <label for="ktm2" class="form-label">Upload KTM</label>
-                                <input class="form-control" type="file" id="ktm2" name="ktm2">
+                                <input class="form-control" type="file" id="ktm2" required name="ktm2">
                             </div>
                         </div>
                         <div class="form-floating">
                             <div class="mb-2">
                                 <label for="p_foto2" class="form-label">Upload Pas Foto</label>
-                                <input class="form-control" type="file" id="p_foto2" name="p_foto2">
+                                <input class="form-control" type="file" id="p_foto2" required name="p_foto2">
                             </div>
                         </div>
                     </div>

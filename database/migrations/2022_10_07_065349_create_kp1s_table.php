@@ -69,8 +69,8 @@ class CreateKp1sTable extends Migration
             $table->string('p_foto2'); //pas foto
             // batas tabel mahasiswa 2
 
-            $table->string('proposal');
-            $table->string('izin_kp');
+            $table->string('proposal')->nullable();
+            $table->string('izin_kp')->nullable();
 
             $table->timestamps();
         });
