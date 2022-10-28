@@ -232,6 +232,7 @@ class DashboardKoorController extends Controller
             'status_mhsw1' => $data['status_mhsw1'],
             'status_mhsw2' => $data['status_mhsw2'],
             'status_klmpk' => $data['status_klmpk'],
+            'status_akhir' => $data['status_akhir'],
         ]);
 
         return redirect('/koorkp')->with('success', 'Perubahan Status Kelompok KP Berhasil');

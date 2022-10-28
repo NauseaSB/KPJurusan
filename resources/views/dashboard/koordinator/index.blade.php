@@ -16,7 +16,8 @@
                         <th scope="col">Pembimbing</th>
                         <th scope="col">Status Mahasiswa 1</th>
                         <th scope="col">Status Mahasiswa 2</th>
-                        <th scope="col">Status Status Kelompok</th>
+                        <th scope="col">Status Kelompok</th>
+                        <th scope="col">Status Akhir</th>
                         <th scope="col">Aksi</th>
                     </tr>
                 </thead>
@@ -75,6 +76,14 @@
                                     <div
                                         class="badge @if ($item->status_klmpk == 'Memenuhi') bg-success @elseif ($item->status_klmpk == 'Tidak Memenuhi') bg-danger @else bg-warning @endif">
                                         {{ $item->status_klmpk }}
+                                    </div>
+                                @endif
+                            </td>
+                            <td>
+                                @if (isset($item->status_akhir))
+                                    <div
+                                        class="badge @if ($item->status_akhir == 'Memenuhi') bg-success @elseif ($item->status_akhir == 'Tidak Memenuhi') bg-danger @else bg-warning @endif">
+                                        {{ $item->status_akhir }}
                                     </div>
                                 @endif
                             </td>

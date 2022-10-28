@@ -24,6 +24,7 @@ class CreateKelompoksTable extends Migration
             $table->String('status_mhsw1')->nullable();
             $table->String('status_mhsw2')->nullable();
             $table->String('status_klmpk')->nullable();
+            $table->String('status_akhir')->nullable();
             $table->timestamps();
         });
     }
