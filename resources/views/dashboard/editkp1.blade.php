@@ -4,7 +4,7 @@
 
     <body>
         <main class="form-signin text-center">
-            <form action="/daftar-kelompok" method="post">
+            <form action="/edit-data-kp1" method="post" enctype="multipart/form-data">
                 @csrf
                 <h1 class="h3 mt-3 mb-3 fw-normal">Edit Data KP1</h1>
 
@@ -118,7 +118,7 @@
                         <div class=" form-floating">
                             <input type="text"
                                 class="form-control rounded-top @error('mk_d1') is-invalid rounded @enderror" name="mk_d1"
-                                id="mk_d1" placeholder="MK Nilai D" required
+                                id="mk_d1" placeholder="MK Nilai D"
                                 @if (isset($datakp1->mk_d1)) value="{{ $datakp1->mk_d1 }}"
                                 @else
                                     value="{{ old('mk_d1') }}" @endif>
@@ -145,7 +145,7 @@
                         <div class=" form-floating">
                             <input type="text"
                                 class="form-control rounded-top @error('mk_e1') is-invalid rounded @enderror"
-                                name="mk_e1" id="mk_e1" placeholder="MK Nilai E" required
+                                name="mk_e1" id="mk_e1" placeholder="MK Nilai E"
                                 @if (isset($datakp1->mk_e1)) value="{{ $datakp1->mk_e1 }}"
                                 @else
                                     value="{{ old('mk_e1') }}" @endif>
@@ -531,7 +531,7 @@
                         <div class=" form-floating">
                             <input type="text"
                                 class="form-control rounded-top @error('mk_d2') is-invalid rounded @enderror"
-                                name="mk_d2" id="mk_d2" placeholder="MK Nilai D" required
+                                name="mk_d2" id="mk_d2" placeholder="MK Nilai D"
                                 @if (isset($datakp1->mk_d2)) value="{{ $datakp1->mk_d2 }}"
                                 @else
                                     value="{{ old('mk_d2') }}" @endif>
@@ -558,7 +558,7 @@
                         <div class=" form-floating">
                             <input type="text"
                                 class="form-control rounded-top @error('mk_e2') is-invalid rounded @enderror"
-                                name="mk_e2" id="mk_e2" placeholder="MK Nilai E" required
+                                name="mk_e2" id="mk_e2" placeholder="MK Nilai E"
                                 @if (isset($datakp1->mk_e2)) value="{{ $datakp1->mk_e2 }}"
                                 @else
                                     value="{{ old('mk_e2') }}" @endif>

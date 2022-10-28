@@ -231,7 +231,168 @@ class Kp1Controller extends Controller
      */
     public function update(Updatekp1Request $request, kp1 $kp1)
     {
-        //
+        // ddd(auth()->user()->kelompok->kp1->id);
+        //mahasiswa 1
+        $data = $request->all();
+
+        $kp1_nim1 = $data['nim1'];
+        $kp1_nama1 = $data['nama1'];
+        $kp1_doswal1 = $data['doswal1'];
+        $kp1_peminatan1 = $data['peminatan1'];
+        $kp1_ipk1 = $data['ipk1'];
+        $kp1_t_sks1 = $data['t_sks1'];
+        $kp1_semester1 = $data['semester1'];
+        $kp1_jum_d1 = $data['jum_d1'];
+        $kp1_mk_d1 = $data['mk_d1'];
+        $kp1_jum_e1 = $data['jum_e1'];
+        $kp1_mk_e1 = $data['mk_e1'];
+        $kp1_algoritma1 = $data['algo1'];
+        $kp1_p_algoritma1 = $data['p_algo1'];
+        $kp1_strukdat1 = $data['strukdat1'];
+        $kp1_p_strukdat1 = $data['p_strukdat1'];
+        $kp1_basdat1 = $data['basdat1'];
+        $kp1_p_basdat1 = $data['p_basdat1'];
+        $kp1_rpl1 = $data['rpl1'];
+        $kp1_appl1 = $data['appl1'];
+        $kp1_progweb1 = $data['progweb1'];
+        $kp1_p_progweb1 = $data['p_progweb1'];
+
+        //mahasiswa 2
+        $kp1_nim2 = $data['nim2'];
+        $kp1_nama2 = $data['nama2'];
+        $kp1_doswal2 = $data['doswal2'];
+        $kp1_peminatan2 = $data['peminatan2'];
+        $kp1_ipk2 = $data['ipk2'];
+        $kp1_t_sks2 = $data['t_sks2'];
+        $kp1_semester2 = $data['semester2'];
+        $kp1_jum_d2 = $data['jum_d2'];
+        $kp1_mk_d2 = $data['mk_d2'];
+        $kp1_jum_e2 = $data['jum_e2'];
+        $kp1_mk_e2 = $data['mk_e2'];
+        $kp1_algoritma2 = $data['algo2'];
+        $kp1_p_algoritma2 = $data['p_algo2'];
+        $kp1_strukdat2 = $data['strukdat2'];
+        $kp1_p_strukdat2 = $data['p_strukdat2'];
+        $kp1_basdat2 = $data['basdat2'];
+        $kp1_p_basdat2 = $data['p_basdat2'];
+        $kp1_rpl2 = $data['rpl2'];
+        $kp1_appl2 = $data['appl2'];
+        $kp1_progweb2 = $data['progweb2'];
+        $kp1_p_progweb2 = $data['p_progweb2'];
+
+        $current_kp_id = auth()->user()->kelompok->kp1->id;
+
+        kp1::where('id', $current_kp_id)->update([
+            //mahasiswa 1
+            'nim1' => $kp1_nim1,
+            'nama1' => $kp1_nama1,
+            'doswal1' => $kp1_doswal1,
+            'peminatan1' => $kp1_peminatan1,
+            'ipk1' => $kp1_ipk1,
+            't_sks1' => $kp1_t_sks1,
+            'semester1' => $kp1_semester1,
+            'jum_d1' => $kp1_jum_d1,
+            'mk_d1' => $kp1_mk_d1,
+            'jum_e1' => $kp1_jum_e1,
+            'mk_e1' => $kp1_mk_e1,
+            'algoritma1' => $kp1_algoritma1,
+            'p_algoritma1' => $kp1_p_algoritma1,
+            'strukdat1' => $kp1_strukdat1,
+            'p_strukdat1' => $kp1_p_strukdat1,
+            'basdat1' => $kp1_basdat1,
+            'p_basdat1' => $kp1_p_basdat1,
+            'rpl1' => $kp1_rpl1,
+            'appl1' => $kp1_appl1,
+            'progweb1' => $kp1_progweb1,
+            'p_progweb1' => $kp1_p_progweb1,
+
+            //mahasiswa 2
+            'nim2' => $kp1_nim2,
+            'nama2' => $kp1_nama2,
+            'doswal2' => $kp1_doswal2,
+            'peminatan2' => $kp1_peminatan2,
+            'ipk2' => $kp1_ipk2,
+            't_sks2' => $kp1_t_sks2,
+            'semester2' => $kp1_semester2,
+            'jum_d2' => $kp1_jum_d2,
+            'mk_d2' => $kp1_mk_d2,
+            'jum_e2' => $kp1_jum_e2,
+            'mk_e2' => $kp1_mk_e2,
+            'algoritma2' => $kp1_algoritma2,
+            'p_algoritma2' => $kp1_p_algoritma2,
+            'strukdat2' => $kp1_strukdat2,
+            'p_strukdat2' => $kp1_p_strukdat2,
+            'basdat2' => $kp1_basdat2,
+            'p_basdat2' => $kp1_p_basdat2,
+            'rpl2' => $kp1_rpl2,
+            'appl2' => $kp1_appl2,
+            'progweb2' => $kp1_progweb2,
+            'p_progweb2' => $kp1_p_progweb2,
+        ]);
+
+        //data kelompok
+        if ($request->file('khs1')) {
+            $kp1_khs1 = $request->file('khs1')->store('data-mahasiswa');
+            kp1::where('id', $current_kp_id)->update([
+                'khs1' => $kp1_khs1,
+            ]);
+        }
+        if ($request->file('krs1')) {
+            $kp1_krs1 = $request->file('krs1')->store('data-mahasiswa');
+            kp1::where('id', $current_kp_id)->update([
+                'krs1' => $kp1_krs1,
+            ]);
+        }
+        if ($request->file('ktm1')) {
+            $kp1_ktm1 = $request->file('ktm1')->store('data-mahasiswa');
+            kp1::where('id', $current_kp_id)->update([
+                'ktm1' => $kp1_ktm1,
+            ]);
+        }
+        if ($request->file('p_foto1')) {
+            $kp1_p_foto1 = $request->file('p_foto1')->store('data-mahasiswa');
+            kp1::where('id', $current_kp_id)->update([
+                'p_foto1' => $kp1_p_foto1,
+            ]);
+        }
+        if ($request->file('khs2')) {
+            $kp1_khs2 = $request->file('khs2')->store('data-mahasiswa');
+            kp1::where('id', $current_kp_id)->update([
+                'khs2' => $kp1_khs2,
+            ]);
+        }
+        if ($request->file('krs2')) {
+            $kp1_krs2 = $request->file('krs2')->store('data-mahasiswa');
+            kp1::where('id', $current_kp_id)->update([
+                'krs2' => $kp1_krs2,
+            ]);
+        }
+        if ($request->file('ktm2')) {
+            $kp1_ktm2 = $request->file('ktm2')->store('data-mahasiswa');
+            kp1::where('id', $current_kp_id)->update([
+                'ktm2' => $kp1_ktm2,
+            ]);
+        }
+        if ($request->file('p_foto2')) {
+            $kp1_p_foto2 = $request->file('p_foto2')->store('data-mahasiswa');
+            kp1::where('id', $current_kp_id)->update([
+                'p_foto2' => $kp1_p_foto2,
+            ]);
+        }
+        if ($request->file('proposal')) {
+            $kp1_proposal = $request->file('proposal')->store('data-mahasiswa');
+            kp1::where('id', $current_kp_id)->update([
+                'proposal' => $kp1_proposal,
+            ]);
+        }
+        if ($request->file('izin_kp')) {
+            $kp1_izin_kp = $request->file('izin_kp')->store('data-mahasiswa');
+            kp1::where('id', $current_kp_id)->update([
+                'izin_kp' => $kp1_izin_kp,
+            ]);
+        }
+
+        return redirect('/dashboard')->with('success', 'Ubah Data KP1 Berhasil');
     }
 
     /**

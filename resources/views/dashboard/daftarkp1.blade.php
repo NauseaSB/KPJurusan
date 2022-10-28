@@ -429,8 +429,24 @@
                         </div>
                         <div class="form-floating">
                             <div class="mb-2">
+                                @if (isset($datakp1->khs1))
+                                    <a href="storage/{{ $datakp1->khs1 }}" target="_blank" class="btn btn-primary">Lihat
+                                        Data KHS</a>
+                                @endif
+                            </div>
+                        </div>
+                        <div class="form-floating">
+                            <div class="mb-2">
                                 <label for="krs1" class="form-label">Upload KRS</label>
                                 <input class="form-control" type="file" id="krs1" name="krs1">
+                            </div>
+                        </div>
+                        <div class="form-floating">
+                            <div class="mb-2">
+                                @if (isset($datakp1->krs1))
+                                    <a href="storage/{{ $datakp1->krs1 }}" target="_blank" class="btn btn-primary">Lihat
+                                        Data KRS</a>
+                                @endif
                             </div>
                         </div>
                         <div class="form-floating">
@@ -441,8 +457,24 @@
                         </div>
                         <div class="form-floating">
                             <div class="mb-2">
+                                @if (isset($datakp1->ktm1))
+                                    <a href="storage/{{ $datakp1->ktm1 }}" target="_blank" class="btn btn-primary">Lihat
+                                        Data KTM</a>
+                                @endif
+                            </div>
+                        </div>
+                        <div class="form-floating">
+                            <div class="mb-2">
                                 <label for="p_foto1" class="form-label">Upload Pas Foto</label>
                                 <input class="form-control" type="file" id="p_foto1" name="p_foto1">
+                            </div>
+                        </div>
+                        <div class="form-floating">
+                            <div class="mb-2">
+                                @if (isset($datakp1->p_foto1))
+                                    <a href="storage/{{ $datakp1->p_foto1 }}" target="_blank"
+                                        class="btn btn-primary">Lihat Data Pas Foto</a>
+                                @endif
                             </div>
                         </div>
                     </div>
@@ -886,8 +918,24 @@
                         </div>
                         <div class="form-floating">
                             <div class="mb-2">
+                                @if (isset($datakp1->khs2))
+                                    <a href="storage/{{ $datakp1->khs2 }}" target="_blank" class="btn btn-primary">Lihat
+                                        Data KHS</a>
+                                @endif
+                            </div>
+                        </div>
+                        <div class="form-floating">
+                            <div class="mb-2">
                                 <label for="krs2" class="form-label">Upload KRS</label>
                                 <input class="form-control" type="file" id="krs2" name="krs2">
+                            </div>
+                        </div>
+                        <div class="form-floating">
+                            <div class="mb-2">
+                                @if (isset($datakp1->krs2))
+                                    <a href="storage/{{ $datakp1->krs2 }}" target="_blank" class="btn btn-primary">Lihat
+                                        Data KRS</a>
+                                @endif
                             </div>
                         </div>
                         <div class="form-floating">
@@ -898,8 +946,24 @@
                         </div>
                         <div class="form-floating">
                             <div class="mb-2">
+                                @if (isset($datakp1->ktm2))
+                                    <a href="storage/{{ $datakp1->ktm2 }}" target="_blank" class="btn btn-primary">Lihat
+                                        Data KTM</a>
+                                @endif
+                            </div>
+                        </div>
+                        <div class="form-floating">
+                            <div class="mb-2">
                                 <label for="p_foto2" class="form-label">Upload Pas Foto</label>
                                 <input class="form-control" type="file" id="p_foto2" name="p_foto2">
+                            </div>
+                        </div>
+                        <div class="form-floating">
+                            <div class="mb-2">
+                                @if (isset($datakp1->p_foto2))
+                                    <a href="storage/{{ $datakp1->p_foto2 }}" target="_blank"
+                                        class="btn btn-primary">Lihat Data Pas Foto</a>
+                                @endif
                             </div>
                         </div>
                     </div>
@@ -910,9 +974,25 @@
                         </div>
                     </div>
                     <div class="form-floating">
+                        <div class="mb-2">
+                            @if (isset($datakp1->proposal))
+                                <a href="storage/{{ $datakp1->proposal }}" target="_blank" class="btn btn-primary">Lihat
+                                    Data Proposal</a>
+                            @endif
+                        </div>
+                    </div>
+                    <div class="form-floating">
                         <div class="mb-3">
                             <label for="izin_kp" class="form-label">Upload Pernyataan Izin KP</label>
                             <input class="form-control" type="file" id="izin_kp" name="izin_kp">
+                        </div>
+                    </div>
+                    <div class="form-floating">
+                        <div class="mb-2">
+                            @if (isset($datakp1->izin_kp))
+                                <a href="storage/{{ $datakp1->izin_kp }}" target="_blank" class="btn btn-primary">Lihat
+                                    Data Izin KP</a>
+                            @endif
                         </div>
                     </div>
                 </div>

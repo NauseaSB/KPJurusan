@@ -9,6 +9,8 @@ class kp1 extends Model
 {
     use HasFactory;
 
+    protected $guarded = ['id'];
+
     public function kelompok()
     {
         return $this->hasOne(Kelompok::class);
