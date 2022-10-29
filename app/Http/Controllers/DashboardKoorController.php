@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Kelompok;
+use Dompdf\Dompdf;
 use Illuminate\Http\Request;
 
 class DashboardKoorController extends Controller
@@ -14,7 +15,7 @@ class DashboardKoorController extends Controller
      */
     public function index()
     {
-        $data = Kelompok::all();
+        $data = Kelompok::paginate(10);
         return view('dashboard.koordinator.index', [
             'datas' => $data
         ]);
@@ -137,19 +138,19 @@ class DashboardKoorController extends Controller
                 $jumlah++;
             }
         }
-            if($datas->jum_d1 > 0){
-                $jumlah++;
-            }
-            if($datas->jum_e1 > 0){
-                $jumlah++;
-            }
-            if($datas->ipk1 < 2.80){
-                $jumlah++;
-            }
-            if($datas->t_sks1 < 90){
-                $jumlah++;
-            }
-            
+        if ($datas->jum_d1 > 0) {
+            $jumlah++;
+        }
+        if ($datas->jum_e1 > 0) {
+            $jumlah++;
+        }
+        if ($datas->ipk1 < 2.80) {
+            $jumlah++;
+        }
+        if ($datas->t_sks1 < 90) {
+            $jumlah++;
+        }
+
 
         //jumlah datas mahasiswa 2
         foreach ($angka_mutu_warning as $item) {
@@ -202,16 +203,16 @@ class DashboardKoorController extends Controller
                 $jumlah++;
             }
         }
-        if($datas->jum_d2 > 0){
+        if ($datas->jum_d2 > 0) {
             $jumlah++;
         }
-        if($datas->jum_e2 > 0){
+        if ($datas->jum_e2 > 0) {
             $jumlah++;
         }
-        if($datas->ipk2 < 2.80){
+        if ($datas->ipk2 < 2.80) {
             $jumlah++;
         }
-        if($datas->t_sks2 < 90){
+        if ($datas->t_sks2 < 90) {
             $jumlah++;
         }
 
@@ -247,5 +248,26 @@ class DashboardKoorController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function rpdf()
+    {
+        $data = Kelompok::all();
+        $dompdf = new Dompdf();
+
+        $kertas = view('dashboard.koordinator.daftar-pdf', [
+            'datas' => $data,
+        ]);
+
+        $dompdf->loadHtml($kertas);
+
+        // (Optional) Setup the paper size and orientation
+        $dompdf->setPaper('A4', 'landscape');
+
+        // Render the HTML as PDF
+        $dompdf->render();
+
+        // Output the generated PDF to Browser
+        $dompdf->stream('rekap.pdf');
     }
 }

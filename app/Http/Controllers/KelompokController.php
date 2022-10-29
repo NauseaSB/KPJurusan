@@ -24,10 +24,13 @@ class KelompokController extends Controller
 
         // dd($data->toArray());
 
-        return view('bebas', [
+        // return view('bebas', [
+        //     'datas' => $data,
+        //     'mahasiswa1' => $mahasiswa1,
+        //     'mahasiswa2' => $mahasiswa2
+        // ]);
+        return view('dashboard.koordinator.printpdf', [
             'datas' => $data,
-            'mahasiswa1' => $mahasiswa1,
-            'mahasiswa2' => $mahasiswa2
         ]);
     }
 

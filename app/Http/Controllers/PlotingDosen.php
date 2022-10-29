@@ -17,7 +17,7 @@ class PlotingDosen extends Controller
      */
     public function index()
     {
-        $data = Kelompok::all();
+        $data = Kelompok::paginate(10);
         return view('dashboard.koordinator.ploting', [
             'datas' => $data
         ]);

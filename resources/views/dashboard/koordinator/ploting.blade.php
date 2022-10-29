@@ -34,15 +34,19 @@
                             </td>
 
                             <td>
-                                <a href="{{ route('ploting-dosen.show', $item->id) }}" class="btn bg-warning" style="text-decoration: none">
-                                    <span data-feather="file-text"></span>
-                                    Lihat Detail
-                                </a>
+                                @if (isset($item->materi->ajuan_pembimbing1))
+                                    <a href="{{ route('ploting-dosen.show', $item->id) }}" class="btn bg-warning"
+                                        style="text-decoration: none">
+                                        <span data-feather="edit"></span>
+                                        Plot Pembimbing
+                                    </a>
+                                @endif
                             </td>
                         </tr>
                     @endforeach
                 </tbody>
             </table>
+            {{ $datas->links() }}
         </div>
     </div>
 @endsection

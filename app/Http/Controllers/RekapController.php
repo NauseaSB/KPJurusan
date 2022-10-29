@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Kelompok;
+use Dompdf\Dompdf;
 use Illuminate\Http\Request;
 
 class RekapController extends Controller
@@ -14,7 +15,7 @@ class RekapController extends Controller
      */
     public function index()
     {
-        $data = Kelompok::all();
+        $data = Kelompok::paginate(10);
         return view('dashboard.koordinator.rekap', [
             'datas' => $data,
         ]);
@@ -84,5 +85,26 @@ class RekapController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function rpdf()
+    {
+        $data = Kelompok::all();
+        $dompdf = new Dompdf();
+
+        $kertas = view('dashboard.koordinator.rekap-pdf', [
+            'datas' => $data,
+        ]);
+
+        $dompdf->loadHtml($kertas);
+
+        // (Optional) Setup the paper size and orientation
+        $dompdf->setPaper('A4', 'landscape');
+
+        // Render the HTML as PDF
+        $dompdf->render();
+
+        // Output the generated PDF to Browser
+        $dompdf->stream('rekap.pdf');
     }
 }

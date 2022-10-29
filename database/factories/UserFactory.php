@@ -15,11 +15,9 @@ class UserFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->name(),
-            'role_id'=> $this->faker->rand(1, 4),
-            'email' => $this->faker->unique()->safeEmail(),
-            'email_verified_at' => now(),
-            'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
+            'role_id' => '2',
+            'username' => 'mahasiswa' . $this->faker->firstName(),
+            'password' => bcrypt('mahasiswa123'), // password
             'remember_token' => Str::random(10),
         ];
     }

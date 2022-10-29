@@ -89,9 +89,11 @@ Route::group(['middleware' => 'auth'], function () {
     //route group untuk role KOORDINATOR
     Route::group(['middleware' => 'role:koodinatorKP'], function () {
         Route::get('/koorkp', [DashboardKoorController::class, 'index'])->middleware('auth');
+        Route::get('/koorkp/rekap-pdf', [DashboardKoorController::class, 'rpdf']);
         Route::get('/koorkp/set-status/{id}', [DashboardKoorController::class, 'edit']);
         Route::post('/koorkp/set-status/{id}', [DashboardKoorController::class, 'update']);
         Route::get('/rekap-kp', [RekapController::class, 'index']);
+        Route::get('/rekap-kp/rekap-pdf', [RekapController::class, 'rpdf']);
         Route::resource('/ploting-dosen', PlotingDosen::class);
     });
 

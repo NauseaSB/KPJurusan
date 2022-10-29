@@ -2,6 +2,7 @@
 @section('container')
     <div class="text-center mt-5 mb-5">
         <h1>Rekap Data KP</h1>
+        <a href="/rekap-kp/rekap-pdf" target="_blank" class="btn btn-success mt-2 mb-2">Print PDF</a>
         <div class="table-responsive">
             <table class="table table-striped table-sm">
                 <thead>
@@ -34,8 +35,8 @@
                                 @endif
                             </td>
                             <td>
-                                @if (isset($item->materi))
-                                    {{ $item->materi->ajuan_pembimbing1 }}
+                                @if (isset($item->dosbim))
+                                    {{ $item->dosbim }}
                                 @endif
                             </td>
 
@@ -49,6 +50,7 @@
                     @endforeach
                 </tbody>
             </table>
+            {{ $datas->links() }}
         </div>
     </div>
 @endsection
