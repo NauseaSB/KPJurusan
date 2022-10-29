@@ -51,8 +51,8 @@
                                 @endif
                             </td>
                             <td>
-                                @if (isset($item->materi))
-                                    {{ $item->materi->nama_pembimbing_lapangan }}
+                                @if (isset($item->dosbim))
+                                    {{ $item->dosbim }}
                                 @endif
                             </td>
                             <td>

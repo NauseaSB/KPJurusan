@@ -2,8 +2,11 @@
 
 use App\Models\kp1;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PlotingDosen;
 use App\Http\Controllers\Kp1Controller;
+use App\Http\Controllers\Kp2Controller;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RekapController;
 use App\Http\Controllers\MateriController;
 use App\Http\Controllers\DaftarKPController;
 use App\Http\Controllers\KelompokController;
@@ -14,8 +17,6 @@ use App\Http\Controllers\DashboardTUController;
 use App\Http\Controllers\DashboardKoorController;
 use App\Http\Controllers\DaftarMateriKPController;
 use App\Http\Controllers\DashboardAdminController;
-use App\Http\Controllers\Kp2Controller;
-use App\Http\Controllers\RekapController;
 
 /*
 |--------------------------------------------------------------------------
@@ -91,6 +92,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/koorkp/set-status/{id}', [DashboardKoorController::class, 'edit']);
         Route::post('/koorkp/set-status/{id}', [DashboardKoorController::class, 'update']);
         Route::get('/rekap-kp', [RekapController::class, 'index']);
+        Route::resource('/ploting-dosen', PlotingDosen::class);
     });
 
     //route group untuk role TATA USAHA

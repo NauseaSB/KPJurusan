@@ -107,18 +107,20 @@
                     </div>
                     <div class="col">
                         <div class="form-floating">
-                            <select class="form-select mt-2" name="p_kp1" id="p_kp1">
+                            <select class="form-select" name="p_kp1" id="p_kp1">
                                 <option selected>Pembimbing</option>
-                                <option value="A">A</option>
-                                <option value="B">B</option>
+                                @foreach ($dosens as $dosen)
+                                <option> {{ $dosen->nama }}</option>
+                                @endforeach
                             </select>
                             <label for="p_kp1">Ajuan Pembimbing (Alternatif 1)</label>
                         </div>
                         <div class="form-floating">
                             <select class="form-select" name="p_kp2" id="p_kp2">
                                 <option selected>Pembimbing</option>
-                                <option value="A">A</option>
-                                <option value="B">B</option>
+                                @foreach ($dosens as $dosen)
+                                <option> {{ $dosen->nama }}</option>
+                                @endforeach
                             </select>
                             <label for="p_kp2">Ajuan Pembimbing (Alternatif 2)</label>
                         </div>

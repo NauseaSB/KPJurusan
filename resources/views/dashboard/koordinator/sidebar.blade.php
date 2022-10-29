@@ -13,6 +13,12 @@
                     Rekapitulasi KP
                 </a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link {{ Request::is('ploting-dosen') ? 'active' : '' }}" href="{{ route('ploting-dosen.index') }}">
+                    <span data-feather="users" class="align-text-bottom"></span>
+                    Ploting Dosen Pembimbing
+                </a>
+            </li>
         </ul>
         <h6 class="sidebar-heading d-flex justify-content-between px-3 mt-4 mb-1 text-muted text-uppercase">
         </h6>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Materi;
 use App\Models\Kelompok;
+use App\Models\Dosen;
 use App\Http\Requests\StoreMateriRequest;
 use App\Http\Requests\UpdateMateriRequest;
 
@@ -16,8 +17,10 @@ class MateriController extends Controller
      */
     public function index()
     {
+        $dosen = Dosen::all();
         return view('dashboard.daftarmaterikp', [
             'materi' => auth()->user()->kelompok->materi,
+            'dosens' => $dosen
         ]);
     }
 
