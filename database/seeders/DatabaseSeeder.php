@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\Role;
 use App\Models\Kelompok;
 use App\Models\Mahasiswa;
+use App\Models\Dosen;
 use Illuminate\Database\Seeder;
 use App\Models\User;
 
@@ -96,5 +97,70 @@ class DatabaseSeeder extends Seeder
             'username' => 'tatausaha',
             'password' => bcrypt('tatausaha123')
         ]);
+        Dosen::create([
+            'nama' => 'Ade Kanianingsih, S.Si., M.Stat',
+            'code'=> 'AKH'
+        ]);
+        Dosen::create([
+            'nama' => 'Agus Komarudin, S.Kom, M.T',
+            'code'=> 'AGK'
+        ]);
+        Dosen::create([
+            'nama' => 'Asep Id Hadiana, S.Si., M.Kom',
+            'code'=> 'AIH'
+        ]);
+        Dosen::create([
+            'nama' => 'Dr. Esmeralda Contessa Djamal, S.T., MT',
+            'code'=> 'ECD'
+        ]);
+        
+        Dosen::create([
+            'nama' => 'Eddie Krishna Putra, Drs., M.T',
+            'code'=> 'EKP'
+        ]);
+        Dosen::create([
+            'nama' => 'Edvin Ramadhan, S.Kom., M.T',
+            'code'=> 'EDR'
+        ]);
+        Dosen::create([
+            'nama' => 'Fajri Rakhmat Umbara, S.T., M.T',
+            'code'=> 'FRU'
+        ]);
+        Dosen::create([
+            'nama' => 'Fatan Kasyidi, S.Kom., M.T.',
+            'code'=> 'FKI'
+        ]);
+        Dosen::create([
+            'nama' => 'Gunawan Abdillah, S.Si., M.Cs.',
+            'code'=> 'GAH'
+        ]);
+        Dosen::create([
+            'nama' => 'Herdi Ashaury, S.Kom., M.T',
+            'code'=> 'HAY'
+        ]);
+        Dosen::create([
+            'nama' => 'Melina, S.Si., M.Si.',
+            'code'=> 'MLA'
+        ]);
+        Dosen::create([
+            'nama' => 'Puspita Nurul Sabrina, S.Kom., M.T',
+            'code'=> 'PNS'
+        ]);
+        Dosen::create([
+            'nama' => 'Rezki Yuniarti, S.Si, M.T.',
+            'code'=> 'RZY'
+        ]);
+        Dosen::create([
+            'nama' => 'Ridwan Ilyas, S.Kom., M.T',
+            'code'=> 'RIS'
+        ]);
+        Dosen::create([
+            'nama' => 'Wina Witanti, S.T, M.T.',
+            'code'=> 'WNI'
+        ]);
+        Dosen::create([
+            'nama' => 'Yulison Herry Chrisnanto, S.T., M.T.',
+            'code'=> 'YHC'
+        ]);   
     }
 }
