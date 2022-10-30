@@ -373,8 +373,8 @@
                             </select>
                             <label for="p_progweb1">Nilai Praktikum Pemrograman Web</label>
                         </div>
-                        {{-- <div class="form-floating">
-                            <select class="form-select" name="progweb1" id="progweb1">
+                        <div class="form-floating">
+                            <select class="form-select" name="po1" id="po1">
                                 <option selected>Nilai</option>
                                 <option value="A">A</option>
                                 <option value="AB">AB</option>
@@ -384,10 +384,10 @@
                                 <option value="D">D</option>
                                 <option value="E">E</option>
                             </select>
-                            <label for="progweb1">Nilai Pemrograman Web</label>
+                            <label for="po1">Nilai Pemrograman Web</label>
                         </div>
                         <div class="form-floating">
-                            <select class="form-select" name="p_progweb1" id="p_progweb1">
+                            <select class="form-select" name="p_po1" id="p_po1">
                                 <option selected>Nilai</option>
                                 <option value="A">A</option>
                                 <option value="AB">AB</option>
@@ -397,8 +397,8 @@
                                 <option value="D">D</option>
                                 <option value="E">E</option>
                             </select>
-                            <label for="p_progweb1">Nilai Praktikum Pemrograman Web</label>
-                        </div> --}}
+                            <label for="p_po1">Nilai Praktikum Pemrograman Web</label>
+                        </div>
                         <div class="form-floating">
                             <select class="form-select" name="mk_kp" id="mk_kp">
                                 <option selected>Kontrak</option>
@@ -793,8 +793,8 @@
                             </select>
                             <label for="p_progweb1">Nilai Praktikum Pemrograman Web</label>
                         </div>
-                        {{-- <div class="form-floating">
-                            <select class="form-select" name="progweb1" id="progweb1">
+                        <div class="form-floating">
+                            <select class="form-select" name="po2" id="po2">
                                 <option selected>Nilai</option>
                                 <option value="A">A</option>
                                 <option value="AB">AB</option>
@@ -804,10 +804,10 @@
                                 <option value="D">D</option>
                                 <option value="E">E</option>
                             </select>
-                            <label for="progweb1">Nilai Pemrograman Web</label>
+                            <label for="po2">Nilai Pemrograman Web</label>
                         </div>
                         <div class="form-floating">
-                            <select class="form-select" name="p_progweb1" id="p_progweb1">
+                            <select class="form-select" name="p_po2" id="p_po2">
                                 <option selected>Nilai</option>
                                 <option value="A">A</option>
                                 <option value="AB">AB</option>
@@ -817,8 +817,8 @@
                                 <option value="D">D</option>
                                 <option value="E">E</option>
                             </select>
-                            <label for="p_progweb1">Nilai Praktikum Pemrograman Web</label>
-                        </div> --}}
+                            <label for="p_po2">Nilai Praktikum Pemrograman Web</label>
+                        </div>
                         <div class="form-floating">
                             <select class="form-select" name="mk_kp" id="mk_kp">
                                 <option selected>Kontrak</option>

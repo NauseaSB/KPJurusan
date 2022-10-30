@@ -69,6 +69,8 @@ class Kp1Controller extends Controller
         $kp1->appl1 = $data['appl1'];
         $kp1->progweb1 = $data['progweb1'];
         $kp1->p_progweb1 = $data['p_progweb1'];
+        $kp1->po1 = $data['po1'];
+        $kp1->p_po1 = $data['p_po1'];
 
         if ($request->file('khs1')) {
             $kp1->khs1 = $request->file('khs1')->store('data-mahasiswa');
@@ -105,6 +107,8 @@ class Kp1Controller extends Controller
         $kp1->appl2 = $data['appl2'];
         $kp1->progweb2 = $data['progweb2'];
         $kp1->p_progweb2 = $data['p_progweb2'];
+        $kp1->po2 = $data['po2'];
+        $kp1->p_po2 = $data['p_po2'];
 
         if ($request->file('khs2')) {
             $kp1->khs2 = $request->file('khs2')->store('data-mahasiswa');
@@ -158,6 +162,8 @@ class Kp1Controller extends Controller
         $kp2->appl1 = $data['appl1'];
         $kp2->progweb1 = $data['progweb1'];
         $kp2->p_progweb1 = $data['p_progweb1'];
+        $kp2->po1 = $data['po1'];
+        $kp2->p_po1 = $data['p_po1'];
         $kp2->kontrak = null;
 
         //Mahasiswa2
@@ -182,6 +188,8 @@ class Kp1Controller extends Controller
         $kp2->appl2 = $data['appl2'];
         $kp2->progweb2 = $data['progweb2'];
         $kp2->p_progweb2 = $data['p_progweb2'];
+        $kp2->po2 = $data['po2'];
+        $kp2->p_po2 = $data['p_po2'];
         $kp2->kontrak2 = null;
 
         $kp2->save();

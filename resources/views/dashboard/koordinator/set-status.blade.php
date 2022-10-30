@@ -33,12 +33,14 @@
                         <label for="peminatan1">Peminatan</label>
                     </div>
                     <div class=" form-floating">
-                        <input type="text" class="form-control {{ $info_mhs->ipk1< 2.80 ? 'is-invalid' : '' }} @error('ipk1') is-invalid rounded @enderror"
+                        <input type="text"
+                            class="form-control {{ $info_mhs->ipk1 < 2.8 ? 'is-invalid' : '' }} @error('ipk1') is-invalid rounded @enderror"
                             name="ipk1" id="ipk1" placeholder="IPK" readonly value="{{ $info_mhs->ipk1 }}">
                         <label for="ipk1">IPK</label>
                     </div>
                     <div class=" form-floating">
-                        <input type="text" class="form-control {{ $info_mhs->t_sks1 < 90 ? 'is-invalid' : '' }} @error('t_sks1') is-invalid rounded @enderror"
+                        <input type="text"
+                            class="form-control {{ $info_mhs->t_sks1 < 90 ? 'is-invalid' : '' }} @error('t_sks1') is-invalid rounded @enderror"
                             name="t_sks1" id="t_sks1" placeholder="Total SKS" readonly value="{{ $info_mhs->t_sks1 }}">
                         <label for="t_sks1">Total SKS</label>
                     </div>
@@ -190,6 +192,30 @@
                             name="p_progweb1" id="p_progweb1" readonly value="{{ $info_mhs->p_progweb1 }}">
                         <label for="p_progweb1" class="form-label">Nilai Praktikum Pemograman Web</label>
                     </div>
+                    <div class="form-floating  mt-2">
+                        <input type="text"
+                            class="form-control {{ $info_mhs->po1 != 'A' &&
+                            $info_mhs->po1 != 'AB' &&
+                            $info_mhs->po1 != 'B' &&
+                            $info_mhs->po1 != 'BC' &&
+                            $info_mhs->po1 != 'C'
+                                ? 'is-invalid'
+                                : '' }}"
+                            name="po1" id="po1" readonly value="{{ $info_mhs->po1 }}">
+                        <label for="po1" class="form-label">Nilai Pemograman Object</label>
+                    </div>
+                    <div class="form-floating  mt-2">
+                        <input type="text"
+                            class="form-control {{ $info_mhs->p_po1 != 'A' &&
+                            $info_mhs->p_po1 != 'AB' &&
+                            $info_mhs->p_po1 != 'B' &&
+                            $info_mhs->p_po1 != 'BC' &&
+                            $info_mhs->p_po1 != 'C'
+                                ? 'is-invalid'
+                                : '' }}"
+                            name="p_po1" id="p_po1" readonly value="{{ $info_mhs->p_po1 }}">
+                        <label for="p_po1" class="form-label">Nilai Praktikum Pemograman Object</label>
+                    </div>
                 </div>
 
                 {{-- Mahasiswa 2 --}}
@@ -219,12 +245,14 @@
                         <label for="peminatan2">Peminatan</label>
                     </div>
                     <div class=" form-floating">
-                        <input type="text" class="form-control {{ $info_mhs->ipk2 < 2.80 ? 'is-invalid' : '' }} @error('ipk2') is-invalid rounded @enderror"
+                        <input type="text"
+                            class="form-control {{ $info_mhs->ipk2 < 2.8 ? 'is-invalid' : '' }} @error('ipk2') is-invalid rounded @enderror"
                             name="ipk2" id="ipk2" placeholder="IPK" required value="{{ $info_mhs->ipk2 }}">
                         <label for="ipk2">IPK</label>
                     </div>
                     <div class=" form-floating">
-                        <input type="text" class="form-control {{ $info_mhs->t_sks2 < 90 ? 'is-invalid' : '' }} @error('t_sks2') is-invalid rounded @enderror"
+                        <input type="text"
+                            class="form-control {{ $info_mhs->t_sks2 < 90 ? 'is-invalid' : '' }} @error('t_sks2') is-invalid rounded @enderror"
                             name="t_sks2" id="t_sks2" placeholder="Total SKS" required
                             value="{{ $info_mhs->t_sks2 }}">
                         <label for="t_sks2">Total SKS</label>
@@ -378,6 +406,30 @@
                             name="p_progweb2" id="p_progweb2" readonly value="{{ $info_mhs->p_progweb2 }}">
                         <label for="p_progweb2" class="form-label">Nilai Praktikum Pemograman Web</label>
                     </div>
+                    <div class="form-floating  mt-2">
+                        <input type="text"
+                            class="form-control {{ $info_mhs->po2 != 'A' &&
+                            $info_mhs->po2 != 'AB' &&
+                            $info_mhs->po2 != 'B' &&
+                            $info_mhs->po2 != 'BC' &&
+                            $info_mhs->po2 != 'C'
+                                ? 'is-invalid'
+                                : '' }}"
+                            name="po2" id="po2" readonly value="{{ $info_mhs->po2 }}">
+                        <label for="po2" class="form-label">Nilai Pemograman Object</label>
+                    </div>
+                    <div class="form-floating  mt-2">
+                        <input type="text"
+                            class="form-control {{ $info_mhs->p_po2 != 'A' &&
+                            $info_mhs->p_po2 != 'AB' &&
+                            $info_mhs->p_po2 != 'B' &&
+                            $info_mhs->p_po2 != 'BC' &&
+                            $info_mhs->p_po2 != 'C'
+                                ? 'is-invalid'
+                                : '' }}"
+                            name="p_po2" id="p_po2" readonly value="{{ $info_mhs->p_po2 }}">
+                        <label for="p_po2" class="form-label">Nilai Praktikum Pemograman Object</label>
+                    </div>
                 </div>
             </div>
 
@@ -441,20 +493,20 @@
                             <label for="status_klmpk" class="form-label">Status Kelompok</label>
                         </div>
                     </div>
-                <div class="col">
-                    <div class="form-floating">
-                        <select type="text" class="form-select" name="status_akhir" id="status_akhir">
-                            <option>Memenuhi </option>
-                            <option>Tidak Memenuhi </option>
-                            <option>Bersyarat </option>
-                        </select>
-                        <label for="status_akhir" class="form-label">Status Akhir</label>
+                    <div class="col">
+                        <div class="form-floating">
+                            <select type="text" class="form-select" name="status_akhir" id="status_akhir">
+                                <option>Memenuhi </option>
+                                <option>Tidak Memenuhi </option>
+                                <option>Bersyarat </option>
+                            </select>
+                            <label for="status_akhir" class="form-label">Status Akhir</label>
+                        </div>
                     </div>
-                </div>
-                <div class="d-grid gap-2 d-md-block">
-                    <a href="/koorkp" class="btn bg-primary mt-3" role="button">Kembali</a>
-                    <button type="submit" class="btn bg-warning mt-3">Ubah Status</button>
-                </div>
+                    <div class="d-grid gap-2 d-md-block">
+                        <a href="/koorkp" class="btn bg-primary mt-3" role="button">Kembali</a>
+                        <button type="submit" class="btn bg-warning mt-3">Ubah Status</button>
+                    </div>
             </form>
         </div>
     </main>

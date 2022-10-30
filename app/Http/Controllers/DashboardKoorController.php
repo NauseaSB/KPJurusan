@@ -138,6 +138,16 @@ class DashboardKoorController extends Controller
                 $jumlah++;
             }
         }
+        foreach ($angka_mutu_warning as $item) {
+            if ($datas->po1 == $item) {
+                $jumlah++;
+            }
+        }
+        foreach ($angka_mutu_warning as $item) {
+            if ($datas->p_po1 == $item) {
+                $jumlah++;
+            }
+        }
         if ($datas->jum_d1 > 0) {
             $jumlah++;
         }
@@ -200,6 +210,16 @@ class DashboardKoorController extends Controller
         }
         foreach ($angka_mutu_warning as $item) {
             if ($datas->p_progweb2 == $item) {
+                $jumlah++;
+            }
+        }
+        foreach ($angka_mutu_warning as $item) {
+            if ($datas->po2 == $item) {
+                $jumlah++;
+            }
+        }
+        foreach ($angka_mutu_warning as $item) {
+            if ($datas->p_po2 == $item) {
                 $jumlah++;
             }
         }

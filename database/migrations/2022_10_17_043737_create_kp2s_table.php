@@ -36,6 +36,8 @@ class CreateKp2sTable extends Migration
             $table->string('appl1'); // analisa dan perancangan perangkat lunak
             $table->string('progweb1'); // pemrograman web
             $table->string('p_progweb1'); // praktikum pemrograman web
+            $table->string('po1'); // pemrograman web
+            $table->string('p_po1'); // praktikum pemrograman web
             $table->string('kontrak')->nullable();
             $table->timestamps();
 
@@ -61,6 +63,8 @@ class CreateKp2sTable extends Migration
             $table->string('appl2'); // analisa dan perancangan perangkat lunak
             $table->string('progweb2'); // pemrograman web
             $table->string('p_progweb2'); // praktikum pemrograman web
+            $table->string('po2'); // pemrograman web
+            $table->string('p_po2'); // praktikum pemrograman web
             $table->string('kontrak2')->nullable();
         });
     }
