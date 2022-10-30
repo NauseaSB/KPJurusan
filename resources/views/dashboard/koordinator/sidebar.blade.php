@@ -19,6 +19,12 @@
                     Ploting Dosen Pembimbing
                 </a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link {{ Request::is('bukatutupform') ? 'active' : '' }}" href="/bukatutupform">
+                    <span data-feather="users" class="align-text-bottom"></span>
+                    Buka Tutup Form
+                </a>
+            </li>
         </ul>
         <h6 class="sidebar-heading d-flex justify-content-between px-3 mt-4 mb-1 text-muted text-uppercase">
         </h6>

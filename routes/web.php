@@ -11,6 +11,7 @@ use App\Http\Controllers\MateriController;
 use App\Http\Controllers\DaftarKPController;
 use App\Http\Controllers\KelompokController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\BukaTutupController;
 use App\Http\Controllers\DashboardController;
 use Illuminate\Routing\Route as RoutingRoute;
 use App\Http\Controllers\DashboardTUController;
@@ -95,6 +96,8 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/rekap-kp', [RekapController::class, 'index']);
         Route::get('/rekap-kp/rekap-pdf', [RekapController::class, 'rpdf']);
         Route::resource('/ploting-dosen', PlotingDosen::class);
+        Route::get('/bukatutupform', [BukaTutupController::class, 'index']);
+        Route::post('/bukatutupform', [BukaTutupController::class, 'lockKP1']);
     });
 
     //route group untuk role TATA USAHA

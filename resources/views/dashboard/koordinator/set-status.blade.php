@@ -443,7 +443,7 @@
                     <tr>
                         @inject('DashboardKoor', 'App\Http\Controllers\DashboardKoorController')
                         <td> Memenuhi </td>
-                        <td> {{ 42 - $DashboardKoor::menghitung_total_tidak_memenuhi($id) }} </td>
+                        <td> {{ 42 - ($DashboardKoor::menghitung_total_tidak_memenuhi($id) + $DashboardKoor::menghitung_total_bersyarat($id)) }} </td>
                     </tr>
                     <tr>
                         @inject('DashboardKoor', 'App\Http\Controllers\DashboardKoorController')
@@ -451,8 +451,9 @@
                         <td> {{ $DashboardKoor::menghitung_total_tidak_memenuhi($id) }} </td>
                     </tr>
                     <tr>
-                        <td> Bersyarat </td>
-                        <td> 1</td>
+                        @inject('DashboardKoor', 'App\Http\Controllers\DashboardKoorController')
+                        <td> Bersyarat
+                        <td> {{ $DashboardKoor::menghitung_total_bersyarat($id) }} </td>
                     </tr>
                 </table>
             </div>

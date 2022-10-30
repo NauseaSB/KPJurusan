@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\kp2;
 use App\Models\kp1;
 use App\Models\Kelompok;
+use App\Models\BukaTutup;
 use App\Http\Requests\Storekp1Request;
 use App\Http\Requests\Updatekp1Request;
 
@@ -17,6 +18,9 @@ class Kp1Controller extends Controller
      */
     public function index()
     {
+        if(BukaTutup::first()->kp1 == 1){ 
+            return redirect()->back();
+        }
         return view('dashboard.daftarkp1', [
             'datakp1' => auth()->user()->kelompok->kp1,
             'mhs1' => auth()->user()->kelompok->mahasiswa,

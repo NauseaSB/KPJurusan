@@ -123,31 +123,6 @@ class DashboardKoorController extends Controller
                 $jumlah++;
             }
         }
-        foreach ($angka_mutu_warning as $item) {
-            if ($datas->appl1 == $item) {
-                $jumlah++;
-            }
-        }
-        foreach ($angka_mutu_warning as $item) {
-            if ($datas->progweb1 == $item) {
-                $jumlah++;
-            }
-        }
-        foreach ($angka_mutu_warning as $item) {
-            if ($datas->p_progweb1 == $item) {
-                $jumlah++;
-            }
-        }
-        foreach ($angka_mutu_warning as $item) {
-            if ($datas->po1 == $item) {
-                $jumlah++;
-            }
-        }
-        foreach ($angka_mutu_warning as $item) {
-            if ($datas->p_po1 == $item) {
-                $jumlah++;
-            }
-        }
         if ($datas->jum_d1 > 0) {
             $jumlah++;
         }
@@ -160,7 +135,6 @@ class DashboardKoorController extends Controller
         if ($datas->t_sks1 < 90) {
             $jumlah++;
         }
-
 
         //jumlah datas mahasiswa 2
         foreach ($angka_mutu_warning as $item) {
@@ -193,11 +167,56 @@ class DashboardKoorController extends Controller
                 $jumlah++;
             }
         }
+        if ($datas->jum_d2 > 0) {
+            $jumlah++;
+        }
+        if ($datas->jum_e2 > 0) {
+            $jumlah++;
+        }
+        if ($datas->ipk2 < 2.80) {
+            $jumlah++;
+        }
+        if ($datas->t_sks2 < 90) {
+            $jumlah++;
+        }
+
+        return $jumlah;
+    }
+    public static function menghitung_total_bersyarat($id)
+    {
+        $data = Kelompok::where('id', $id)->with('mahasiswa')->with('mahasiswa2')->with('materi')->with('kp1')->with('kp2')->first();
+        $datas = $data->kp1;
+        $angka_mutu = ['A', 'AB', 'B', 'BC', 'C', 'D', 'E', 'Belum Diambil'];
+        $angka_mutu_warning = ['D', 'E', 'Belum Diambil'];
+        $jumlah = 0;
+
+        //Jumlah data mahasiswa 1
         foreach ($angka_mutu_warning as $item) {
-            if ($datas->rpl2 == $item) {
+            if ($datas->appl1 == $item) {
                 $jumlah++;
             }
         }
+        foreach ($angka_mutu_warning as $item) {
+            if ($datas->progweb1 == $item) {
+                $jumlah++;
+            }
+        }
+        foreach ($angka_mutu_warning as $item) {
+            if ($datas->p_progweb1 == $item) {
+                $jumlah++;
+            }
+        }
+        foreach ($angka_mutu_warning as $item) {
+            if ($datas->p_po1 == $item) {
+                $jumlah++;
+            }
+        }
+        foreach ($angka_mutu_warning as $item) {
+            if ($datas->p_po1 == $item) {
+                $jumlah++;
+            }
+        }
+        //jumlah datas mahasiswa 2
         foreach ($angka_mutu_warning as $item) {
             if ($datas->appl2 == $item) {
                 $jumlah++;
@@ -222,18 +241,6 @@ class DashboardKoorController extends Controller
             if ($datas->p_po2 == $item) {
                 $jumlah++;
             }
-        }
-        if ($datas->jum_d2 > 0) {
-            $jumlah++;
-        }
-        if ($datas->jum_e2 > 0) {
-            $jumlah++;
-        }
-        if ($datas->ipk2 < 2.80) {
-            $jumlah++;
-        }
-        if ($datas->t_sks2 < 90) {
-            $jumlah++;
         }
 
         return $jumlah;
