@@ -97,7 +97,8 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/rekap-kp/rekap-pdf', [RekapController::class, 'rpdf']);
         Route::resource('/ploting-dosen', PlotingDosen::class);
         Route::get('/bukatutupform', [BukaTutupController::class, 'index']);
-        Route::post('/bukatutupform', [BukaTutupController::class, 'lockKP1']);
+        Route::post('/bukatutupkp1', [BukaTutupController::class, 'lockKP1']);
+        Route::post('/bukatutupkp2', [BukaTutupController::class, 'lockKP2']);
     });
 
     //route group untuk role TATA USAHA

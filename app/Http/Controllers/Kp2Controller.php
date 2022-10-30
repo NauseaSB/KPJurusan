@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\kp2;
+use App\Models\BukaTutup;
 use Illuminate\Http\Request;
 
 class Kp2Controller extends Controller
@@ -14,11 +15,17 @@ class Kp2Controller extends Controller
      */
     public function index()
     {
+        if (BukaTutup::first()->kp2 == 0) {
+            return view('dashboard.form-tutup', [
+                'title' => 'Daftar KP2',
+            ]);
+        }
         return view('dashboard.daftarkp2', [
             'mahasiswa1' => auth()->user()->kelompok->mahasiswa,
             'mahasiswa2' => auth()->user()->kelompok->mahasiswa2,
             'info_mhs' =>  auth()->user()->kelompok->kp1,
             'datakp2' => auth()->user()->kelompok->kp2,
+            'title' => 'Daftar KP2',
         ]);
     }
 

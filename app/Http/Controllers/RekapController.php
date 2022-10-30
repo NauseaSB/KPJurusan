@@ -18,6 +18,7 @@ class RekapController extends Controller
         $data = Kelompok::paginate(10);
         return view('dashboard.koordinator.rekap', [
             'datas' => $data,
+            'title' => 'Rekapitulasi KP',
         ]);
     }
 

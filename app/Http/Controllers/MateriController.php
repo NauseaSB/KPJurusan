@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Materi;
 use App\Models\Kelompok;
 use App\Models\Dosen;
+use App\Models\BukaTutup;
 use App\Http\Requests\StoreMateriRequest;
 use App\Http\Requests\UpdateMateriRequest;
 
@@ -18,9 +19,15 @@ class MateriController extends Controller
     public function index()
     {
         $dosen = Dosen::all();
+        if (BukaTutup::first()->kp1 == 0) {
+            return view('dashboard.form-tutup', [
+                'title' => 'Daftar KP1',
+            ]);
+        }
         return view('dashboard.daftarmaterikp', [
             'materi' => auth()->user()->kelompok->materi,
-            'dosens' => $dosen
+            'dosens' => $dosen,
+            'title' => 'Daftar Materi KP',
         ]);
     }
 

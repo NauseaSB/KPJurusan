@@ -17,6 +17,7 @@ class DashboardAdminController extends Controller
         $data = User::all();
         return view('dashboard.admin.index', [
             'datas' => $data,
+            'title' => 'Dashboard',
         ]);
     }
 

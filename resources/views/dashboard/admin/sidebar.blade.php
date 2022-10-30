@@ -2,17 +2,12 @@
     <div class="position-sticky pt-3 sidebar-sticky">
         <ul class="nav flex-column mb-2">
             <li class="nav-item">
-                <a class="nav-link {{ Request::is('koorkp') ? 'active' : '' }}" aria-current="page" href="/koorkp">
+                <a class="nav-link {{ Request::is('admin') ? 'active' : '' }}" aria-current="page" href="/admin">
                     <span data-feather="list" class="align-text-bottom"></span>
                     Data Pendaftaran KP
                 </a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link {{ Request::is('rekap-kp') ? 'active' : '' }}" href="/rekap-kp">
-                    <span data-feather="users" class="align-text-bottom"></span>
-                    Daftar Kelompok
-                </a>
-            </li>
+
         </ul>
         <h6 class="sidebar-heading d-flex justify-content-between px-3 mt-4 mb-1 text-muted text-uppercase">
         </h6>

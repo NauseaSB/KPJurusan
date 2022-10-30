@@ -14,7 +14,8 @@ class DashboardController extends Controller
         $user = auth()->user()->kelompok;
         // dd(auth()->user()->kelompok->mahasiswa2);
         return view('dashboard.index', [
-            'kelompok' => $user
+            'kelompok' => $user,
+            'title' => 'Dashboard',
         ]);
     }
 }

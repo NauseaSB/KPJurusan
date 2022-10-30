@@ -17,7 +17,8 @@ class DashboardKoorController extends Controller
     {
         $data = Kelompok::paginate(10);
         return view('dashboard.koordinator.index', [
-            'datas' => $data
+            'datas' => $data,
+            'title' => 'Data Pendaftaran KP',
         ]);
     }
 
@@ -75,7 +76,8 @@ class DashboardKoorController extends Controller
             'mahasiswa1' => $data->mahasiswa,
             'mahasiswa2' => $data->mahasiswa2,
             'info_mhs' =>  $data->kp1,
-            'datakp2' => $data->kp2
+            'datakp2' => $data->kp2,
+            'title' => 'Set Status Mahasiswa',
         ]);
     }
 

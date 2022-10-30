@@ -17,6 +17,7 @@ class DashboardTUController extends Controller
         $data = Kelompok::all();
         return view('dashboard.tatausaha.index', [
             'datas' => $data,
+            'title' => 'Data Pendaftaran KP',
         ]);
     }
 
@@ -63,6 +64,7 @@ class DashboardTUController extends Controller
         $data = Kelompok::where('id', $id)->with('mahasiswa')->with('mahasiswa2')->with('materi')->with('kp1')->with('kp2')->first();
         return view('dashboard.tatausaha.set-status', [
             'datas' => $data,
+            'title' => 'Set Status Mahasiswa',
         ]);
     }
 

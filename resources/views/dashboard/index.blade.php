@@ -40,37 +40,37 @@
                 <tr>
                     <td> Nama Dosen Wali </td>
                     @if (isset($kelompok->mahasiswa))
-                    <td> {{ $kelompok->mahasiswa->doswal }} </td>
+                        <td> {{ $kelompok->mahasiswa->doswal }} </td>
                     @endif
                 </tr>
                 <tr>
                     <td> Peminatan </td>
                     @if (isset($kelompok->mahasiswa))
-                    <td> {{ $kelompok->mahasiswa->peminatan }} </td>
+                        <td> {{ $kelompok->mahasiswa->peminatan }} </td>
                     @endif
                 </tr>
                 <tr>
                     <td> IPK </td>
                     @if (isset($kelompok->mahasiswa))
-                    <td> {{ $kelompok->mahasiswa->ipk }} </td>
+                        <td> {{ $kelompok->mahasiswa->ipk }} </td>
                     @endif
                 </tr>
                 <tr>
                     <td> Total SKS </td>
                     @if (isset($kelompok->mahasiswa))
-                    <td> {{ $kelompok->mahasiswa->t_sks }} </td>
+                        <td> {{ $kelompok->mahasiswa->t_sks }} </td>
                     @endif
                 </tr>
                 <tr>
                     <td> Semester </td>
                     @if (isset($kelompok->mahasiswa))
-                    <td> {{ $kelompok->mahasiswa->semester }} </td>
+                        <td> {{ $kelompok->mahasiswa->semester }} </td>
                     @endif
                 </tr>
                 <tr>
                     <td> Tahun Akademik </td>
                     @if (isset($kelompok->mahasiswa))
-                    <td> {{ $kelompok->mahasiswa->t_akd }} </td>
+                        <td> {{ $kelompok->mahasiswa->t_akd }} </td>
                     @endif
                 </tr>
             </table>
@@ -100,43 +100,43 @@
                 <tr>
                     <td> Nomor Telfon </td>
                     @if (isset($kelompok->mahasiswa2))
-                    <td> {{ $kelompok->mahasiswa2->telp }} </td>
+                        <td> {{ $kelompok->mahasiswa2->telp }} </td>
                     @endif
                 </tr>
                 <tr>
                     <td> Nama Dosen Wali </td>
                     @if (isset($kelompok->mahasiswa2))
-                    <td> {{ $kelompok->mahasiswa2->doswal }} </td>
+                        <td> {{ $kelompok->mahasiswa2->doswal }} </td>
                     @endif
                 </tr>
                 <tr>
                     <td> Peminatan </td>
                     @if (isset($kelompok->mahasiswa2))
-                    <td> {{ $kelompok->mahasiswa2->peminatan }} </td>
+                        <td> {{ $kelompok->mahasiswa2->peminatan }} </td>
                     @endif
                 </tr>
                 <tr>
                     <td> IPK </td>
                     @if (isset($kelompok->mahasiswa2))
-                    <td> {{ $kelompok->mahasiswa2->ipk }} </td>
+                        <td> {{ $kelompok->mahasiswa2->ipk }} </td>
                     @endif
                 </tr>
                 <tr>
                     <td> Total SKS </td>
                     @if (isset($kelompok->mahasiswa2))
-                    <td> {{ $kelompok->mahasiswa2->t_sks }} </td>
+                        <td> {{ $kelompok->mahasiswa2->t_sks }} </td>
                     @endif
                 </tr>
                 <tr>
                     <td> Semester </td>
                     @if (isset($kelompok->mahasiswa2))
-                    <td> {{ $kelompok->mahasiswa2->semester }} </td>
+                        <td> {{ $kelompok->mahasiswa2->semester }} </td>
                     @endif
                 </tr>
                 <tr>
                     <td> Tahun Akademik </td>
                     @if (isset($kelompok->mahasiswa2))
-                    <td> {{ $kelompok->mahasiswa2->t_akd }} </td>
+                        <td> {{ $kelompok->mahasiswa2->t_akd }} </td>
                     @endif
                 </tr>
             </table>

@@ -18,13 +18,16 @@ class Kp1Controller extends Controller
      */
     public function index()
     {
-        if(BukaTutup::first()->kp1 == 1){ 
-            return redirect()->back();
+        if (BukaTutup::first()->kp1 == 0) {
+            return view('dashboard.form-tutup', [
+                'title' => 'Daftar KP1',
+            ]);
         }
         return view('dashboard.daftarkp1', [
             'datakp1' => auth()->user()->kelompok->kp1,
             'mhs1' => auth()->user()->kelompok->mahasiswa,
             'mhs2' => auth()->user()->kelompok->mahasiswa2,
+            'title' => 'Daftar KP1',
         ]);
     }
 
@@ -231,6 +234,7 @@ class Kp1Controller extends Controller
             'datakp1' => auth()->user()->kelompok->kp1,
             'mhs1' => auth()->user()->kelompok->mahasiswa,
             'mhs2' => auth()->user()->kelompok->mahasiswa2,
+            'title' => 'Edit Daftar KP1',
         ]);
     }
 

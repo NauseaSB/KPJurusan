@@ -19,7 +19,8 @@ class PlotingDosen extends Controller
     {
         $data = Kelompok::paginate(10);
         return view('dashboard.koordinator.ploting', [
-            'datas' => $data
+            'datas' => $data,
+            'title' => 'Ploting Dosen',
         ]);
     }
 
@@ -60,7 +61,8 @@ class PlotingDosen extends Controller
             'datas' => $data,
             'dosens' => $dosen,
             'jumlah_ajuan_dosbim1' => $jumlah_ajuan_dosbim1,
-            'jumlah_ajuan_dosbim2' => $jumlah_ajuan_dosbim2
+            'jumlah_ajuan_dosbim2' => $jumlah_ajuan_dosbim2,
+            'title' => 'Ploting Dosen',
         ]);
     }
 

@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\BukaTutup;
 use App\Models\Role;
 use App\Models\Kelompok;
 use App\Models\Mahasiswa;
@@ -162,6 +163,10 @@ class DatabaseSeeder extends Seeder
         Dosen::create([
             'nama' => 'Yulison Herry Chrisnanto, S.T., M.T.',
             'code' => 'YHC'
+        ]);
+        BukaTutup::create([
+            'kp1' => '0',
+            'kp2' => '0',
         ]);
     }
 }

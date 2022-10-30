@@ -13,6 +13,5 @@ class BukaTutupSeeder extends Seeder
      */
     public function run()
     {
-        //
     }
 }

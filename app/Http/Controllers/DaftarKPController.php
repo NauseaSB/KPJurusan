@@ -19,6 +19,7 @@ class DaftarKPController extends Controller
             'kelompok' => auth()->user()->kelompok->mahasiswa,
             'mhs1' => auth()->user()->kelompok->mahasiswa,
             'mhs2' => auth()->user()->kelompok->mahasiswa2,
+            'title' => 'Daftar Kelompok KP',
         ]);
     }
 
@@ -103,6 +104,7 @@ class DaftarKPController extends Controller
     {
         return view('dashboard.editkelompok', [
             'datakelompok' => auth()->user()->kelompok,
+            'title' => 'Edit Daftar Kelompok KP',
         ]);
     }
 

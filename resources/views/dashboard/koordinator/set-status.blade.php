@@ -216,6 +216,23 @@
                             name="p_po1" id="p_po1" readonly value="{{ $info_mhs->p_po1 }}">
                         <label for="p_po1" class="form-label">Nilai Praktikum Pemograman Object</label>
                     </div>
+                    <div class="form-floating mt-2">
+                        <input type="text" name="khs2" id="khs2" value="Data KHS">
+                        <a href="/storage/{{ $info_mhs->khs2 }}" target="_blank" class="btn btn-primary">Lihat Data</a>
+                    </div>
+                    <div class="form-floating mt-2">
+                        <input type="text" name="krs2" id="krs2" value="Data KRS">
+                        <a href="/storage/{{ $info_mhs->krs2 }}" target="_blank" class="btn btn-primary">Lihat Data</a>
+                    </div>
+                    <div class="form-floating mt-2">
+                        <input type="text" name="ktm2" id="ktm2" value="Data KTM">
+                        <a href="/storage/{{ $info_mhs->ktm2 }}" target="_blank" class="btn btn-primary">Lihat Data</a>
+                    </div>
+                    <div class="form-floating mt-2">
+                        <input type="text" name="p_foto2" id="p_foto2" value="Data Pas Foto">
+                        <a href="/storage/{{ $info_mhs->p_foto2 }}" target="_blank" class="btn btn-primary">Lihat
+                            Data</a>
+                    </div>
                 </div>
 
                 {{-- Mahasiswa 2 --}}
@@ -430,6 +447,31 @@
                             name="p_po2" id="p_po2" readonly value="{{ $info_mhs->p_po2 }}">
                         <label for="p_po2" class="form-label">Nilai Praktikum Pemograman Object</label>
                     </div>
+                    <div class="form-floating mt-2">
+                        <input type="text" name="khs2" id="khs2" value="Data KHS">
+                        <a href="/storage/{{ $info_mhs->khs2 }}" target="_blank" class="btn btn-primary">Lihat Data</a>
+                    </div>
+                    <div class="form-floating mt-2">
+                        <input type="text" name="krs2" id="krs2" value="Data KRS">
+                        <a href="/storage/{{ $info_mhs->krs2 }}" target="_blank" class="btn btn-primary">Lihat Data</a>
+                    </div>
+                    <div class="form-floating mt-2">
+                        <input type="text" name="ktm2" id="ktm2" value="Data KTM">
+                        <a href="/storage/{{ $info_mhs->ktm2 }}" target="_blank" class="btn btn-primary">Lihat Data</a>
+                    </div>
+                    <div class="form-floating mt-2">
+                        <input type="text" name="p_foto2" id="p_foto2" value="Data Pas Foto">
+                        <a href="/storage/{{ $info_mhs->p_foto2 }}" target="_blank" class="btn btn-primary">Lihat
+                            Data</a>
+                    </div>
+                </div>
+                <div class="form-floating mt-2">
+                    <input type="text" name="proposal" id="proposal" value="Data Proposal">
+                    <a href="/storage/{{ $info_mhs->proposal }}" target="_blank" class="btn btn-primary">Lihat Data</a>
+                </div>
+                <div class="form-floating mt-2">
+                    <input type="text" name="izin_kp" id="izin_kp" value="Data Izin KP">
+                    <a href="/storage/{{ $info_mhs->izin_kp }}" target="_blank" class="btn btn-primary">Lihat Data</a>
                 </div>
             </div>
 
@@ -443,7 +485,8 @@
                     <tr>
                         @inject('DashboardKoor', 'App\Http\Controllers\DashboardKoorController')
                         <td> Memenuhi </td>
-                        <td> {{ 42 - ($DashboardKoor::menghitung_total_tidak_memenuhi($id) + $DashboardKoor::menghitung_total_bersyarat($id)) }} </td>
+                        <td> {{ 42 - ($DashboardKoor::menghitung_total_tidak_memenuhi($id) + $DashboardKoor::menghitung_total_bersyarat($id)) }}
+                        </td>
                     </tr>
                     <tr>
                         @inject('DashboardKoor', 'App\Http\Controllers\DashboardKoorController')
