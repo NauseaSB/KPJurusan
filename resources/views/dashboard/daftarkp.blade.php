@@ -315,13 +315,12 @@
             </form>
             <a href="/edit-kelompok">
                 <button class="mt-3 w-100 btn btn-lg bg-warning border-0"
-                    @if (isset($kelompok)) @else
-                disabled @endif
-                    style="text-decoration: none"><span data-feather="edit"></span>
+                    @if (isset($kelompok)) @else disabled @endif style="text-decoration: none"><span
+                        data-feather="edit"></span>
                     Edit
                     Data</button>
-                <p class="mt-5 mb-3 text-muted">&copy; 2017–2022</p>
             </a>
+            <p class="mt-5 mb-3 text-muted">&copy; 2017–2022</p>
         </main>
 
 

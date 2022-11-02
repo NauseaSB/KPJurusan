@@ -5,9 +5,9 @@
     <body>
 
         <main class="form-signin text-center">
-            <form action="/daftar-materi-kp" method="post">
+            <form action="/edit-data-kp" method="post">
                 @csrf
-                <h1 class="h3 mt-3 mb-3 fw-normal">Daftar Materi KP</h1>
+                <h1 class="h3 mt-3 mb-3 fw-normal">Edit Materi KP</h1>
 
                 <div class="form-floating">
                     <input type="text" class="form-control rounded-top @error('judul') is-invalid rounded @enderror"
@@ -161,15 +161,8 @@
                     </div>
                 </div>
 
-                <button class="mt-3 w-100 btn btn-lg btn-primary" type="submit"
-                    @if (isset($materi)) disabled @endif>Daftar</button>
+                <button class="mt-3 w-100 btn btn-lg btn-primary" type="submit">Edit Data</button>
             </form>
-            <a href="/edit-data-kp">
-                <button class="mt-3 w-100 btn btn-lg bg-warning border-0"
-                    @if (isset($materi)) @else disabled @endif style="text-decoration: none">
-                    <span data-feather="edit"></span> Edit Data
-                </button>
-            </a>
             <p class="mt-5 mb-3 text-muted">&copy; 2017–2022</p>
         </main>
 

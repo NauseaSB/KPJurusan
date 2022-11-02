@@ -266,6 +266,8 @@
                         </div>
                     </div>
                 </div>
+                <input type="hidden" id="id1" name="id1" value="{{ $datakelompok->mahasiswa->id }}">
+                <input type="hidden" id="id2" name="id2"value="{{ $datakelompok->mahasiswa2->id }}">
                 <button class="mt-3 w-100 btn btn-lg btn-primary" type="submit">Ubah Data</button>
                 <p class="mt-5 mb-3 text-muted">&copy; 2017–2022</p>
             </form>

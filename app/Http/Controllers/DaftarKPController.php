@@ -142,8 +142,8 @@ class DaftarKPController extends Controller
         $m2_t_akd = $data['t_akd2'];
         $m2_ket_mahasiswa = $data['ket_mahasiswa2'];
 
-        $current_mahasiswa_id = auth()->user()->kelompok->mahasiswa;
-        $current_mahasiswa_id2 = auth()->user()->kelompok->mahasiswa2;
+        $current_mahasiswa_id = auth()->user()->kelompok->mahasiswa->id;
+        $current_mahasiswa_id2 = auth()->user()->kelompok->mahasiswa2->id;
 
         mahasiswa::where('id', $current_mahasiswa_id)->update([
             'nim' => $m1_nim,

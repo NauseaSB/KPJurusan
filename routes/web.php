@@ -77,6 +77,8 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('/daftar-materi-kp', [MateriController::class, 'store']);
 
         //halaman edit daftar materi kp
+        Route::get('/edit-data-kp', [MateriController::class, 'edit']);
+        Route::post('/edit-data-kp', [MateriController::class, 'update']);
 
         //halaman daftar kp2
         Route::get('/daftar-kp2', [Kp2Controller::class, 'index'])->middleware('auth');

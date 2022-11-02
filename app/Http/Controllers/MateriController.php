@@ -92,7 +92,12 @@ class MateriController extends Controller
      */
     public function edit(Materi $materi)
     {
-        //
+        $dosen = Dosen::all();
+        return view('dashboard.editmateri', [
+            'materi' => auth()->user()->kelompok->materi,
+            'dosens' => $dosen,
+            'title' => 'Edit Daftar Materi KP',
+        ]);
     }
 
     /**
@@ -104,7 +109,36 @@ class MateriController extends Controller
      */
     public function update(UpdateMateriRequest $request, Materi $materi)
     {
-        //
+        $data = $request->all();
+        $current_materi_id = auth()->user()->kelompok->materi->id;
+
+        // $judul = $data['judul'];
+        // $tempat = $data['tempat'];
+        // $divisi = $data['divisi'];
+        // $alamat = $data['alamat'];
+        // $telp = $data['telpkp'];
+        // $pem_lapangan = $data['p_lapangan'];
+        // $pen_lapangan = $data['penanggung_jawab'];
+        // $status = $data['status_judul'];
+        // $jenis = $data['jenis_kp'];
+        // $p1 = $data['p_kp1'];
+        // $p2 = $data['p_kp2'];
+
+        materi::where('id', $current_materi_id)->update([
+            'judul_kp' => $data['judul'],
+            'tempat_kp_lapangan' => $data['tempat'],
+            'divisi' => $data['divisi'],
+            'alamat' => $data['alamat'],
+            'telp_tempat_kp' => $data['telpkp'],
+            'nama_pembimbing_lapangan' => $data['p_lapangan'],
+            'nama_penanggung_jawab_lapangan' => $data['penanggung_jawab'],
+            'status_judul' => $data['status_judul'],
+            'jenis_kp' => $data['jenis_kp'],
+            'ajuan_pembimbing1' => $data['p_kp1'],
+            'ajuan_pembimbing2' => $data['p_kp2'],
+        ]);
+
+        return redirect('/dashboard')->with('success', 'Ubah Data Materi Berhasil');
     }
 
     /**
