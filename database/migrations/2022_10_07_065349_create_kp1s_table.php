@@ -14,7 +14,10 @@ class CreateKp1sTable extends Migration
     public function up()
     {
         Schema::create('kp1s', function (Blueprint $table) {
+            // s_ = status
+
             $table->id();
+            // Mahasiswa 1
             $table->string('nim1');
             $table->string('nama1');
             $table->string('doswal1'); // Dosen Wali
@@ -42,8 +45,9 @@ class CreateKp1sTable extends Migration
             $table->string('krs1')->nullable();
             $table->string('ktm1')->nullable();
             $table->string('p_foto1')->nullable(); //pas foto
-
             // batas tabel mahasiswa 1
+
+            // Mahasiswa 2
             $table->string('nim2');
             $table->string('nama2');
             $table->string('doswal2'); // Dosen Wali
@@ -65,14 +69,15 @@ class CreateKp1sTable extends Migration
             $table->string('appl2'); // analisa dan perancangan perangkat lunak
             $table->string('progweb2'); // pemrograman web
             $table->string('p_progweb2'); // praktikum pemrograman web
-            $table->string('po2'); // pemrograman web
-            $table->string('p_po2'); // praktikum pemrograman web
+            $table->string('po2'); // pemrograman object
+            $table->string('p_po2'); // praktikum pemrograman object
             $table->string('khs2')->nullable();
             $table->string('krs2')->nullable();
             $table->string('ktm2')->nullable();
             $table->string('p_foto2')->nullable(); //pas foto
             // batas tabel mahasiswa 2
 
+            // Kelompok
             $table->string('proposal')->nullable();
             $table->string('izin_kp')->nullable();
 

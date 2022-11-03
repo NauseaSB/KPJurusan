@@ -10,6 +10,8 @@
                 <h1 class="h3 mt-3 mb-3 fw-normal">Daftar KP Tahap 1</h1>
 
                 <div class="row">
+
+                    {{-- Mahasiswa 1 --}}
                     <div class="col">
                         <div class="form-floating">
                             <input type="text" class="form-control rounded-top @error('nim1') is-invalid rounded @enderror"
@@ -166,6 +168,10 @@
                                     <option @if ($datakp1->algoritma1 == 'C') selected @endif value="C">C</option>
                                     <option @if ($datakp1->algoritma1 == 'D') selected @endif value="D">D</option>
                                     <option @if ($datakp1->algoritma1 == 'E') selected @endif value="E">E</option>
+                                    <option @if ($datakp1->algoritma1 == 'Sedang Diambil') selected @endif value="Sedang Diambil">
+                                        Sedang Diambil</option>
+                                    <option @if ($datakp1->algoritma1 == 'Belum Diambil') selected @endif value="Belum Diambil">Belum
+                                        Diambil</option>
                                 @else
                                     <option selected>Nilai</option>
                                     <option value="A">A</option>
@@ -175,6 +181,8 @@
                                     <option value="C">C</option>
                                     <option value="D">D</option>
                                     <option value="E">E</option>
+                                    <option value="Sedang Diambil">Sedang Diambil</option>
+                                    <option value="Belum Diambil">Belum Diambil</option>
                                 @endif
                             </select>
                             <label for="algo1">Nilai Algoritma dan Pemrograman</label>
@@ -190,6 +198,10 @@
                                     <option @if ($datakp1->p_algoritma1 == 'C') selected @endif value="C">C</option>
                                     <option @if ($datakp1->p_algoritma1 == 'D') selected @endif value="D">D</option>
                                     <option @if ($datakp1->p_algoritma1 == 'E') selected @endif value="E">E</option>
+                                    <option @if ($datakp1->p_algoritma1 == 'Sedang Diambil') selected @endif value="Sedang Diambil">
+                                        Sedang Diambil</option>
+                                    <option @if ($datakp1->p_algoritma1 == 'Belum Diambil') selected @endif value="Belum Diambil">Belum
+                                        Diambil</option>
                                 @else
                                     <option selected>Nilai</option>
                                     <option value="A">A</option>
@@ -199,6 +211,8 @@
                                     <option value="C">C</option>
                                     <option value="D">D</option>
                                     <option value="E">E</option>
+                                    <option value="Sedang Diambil">Sedang Diambil</option>
+                                    <option value="Belum Diambil">Belum Diambil</option>
                                 @endif
                             </select>
                             <label for="p_algo1">Nilai Praktikum Algoritma dan Pemrograman</label>
@@ -214,6 +228,10 @@
                                     <option @if ($datakp1->strukdat1 == 'C') selected @endif value="C">C</option>
                                     <option @if ($datakp1->strukdat1 == 'D') selected @endif value="D">D</option>
                                     <option @if ($datakp1->strukdat1 == 'E') selected @endif value="E">E</option>
+                                    <option @if ($datakp1->strukdat1 == 'Sedang Diambil') selected @endif value="Sedang Diambil">
+                                        Sedang Diambil</option>
+                                    <option @if ($datakp1->strukdat1 == 'Belum Diambil') selected @endif value="Belum Diambil">Belum
+                                        Diambil</option>
                                 @else
                                     <option selected>Nilai</option>
                                     <option value="A">A</option>
@@ -223,6 +241,8 @@
                                     <option value="C">C</option>
                                     <option value="D">D</option>
                                     <option value="E">E</option>
+                                    <option value="Sedang Diambil">Sedang Diambil</option>
+                                    <option value="Belum Diambil">Belum Diambil</option>
                                 @endif
                             </select>
                             <label for="strukdat1">Nilai Struktur Data</label>
@@ -238,6 +258,10 @@
                                     <option @if ($datakp1->p_strukdat1 == 'C') selected @endif value="C">C</option>
                                     <option @if ($datakp1->p_strukdat1 == 'D') selected @endif value="D">D</option>
                                     <option @if ($datakp1->p_strukdat1 == 'E') selected @endif value="E">E</option>
+                                    <option @if ($datakp1->p_strukdat1 == 'Sedang Diambil') selected @endif value="Sedang Diambil">
+                                        Sedang Diambil</option>
+                                    <option @if ($datakp1->p_strukdat1 == 'Belum Diambil') selected @endif value="Belum Diambil">Belum
+                                        Diambil</option>
                                 @else
                                     <option selected>Nilai</option>
                                     <option value="A">A</option>
@@ -247,6 +271,8 @@
                                     <option value="C">C</option>
                                     <option value="D">D</option>
                                     <option value="E">E</option>
+                                    <option value="Sedang Diambil">Sedang Diambil</option>
+                                    <option value="Belum Diambil">Belum Diambil</option>
                                 @endif
                             </select>
                             <label for="p_strukdat1">Nilai Praktikum Struktur Data</label>
@@ -262,6 +288,10 @@
                                     <option @if ($datakp1->basdat1 == 'C') selected @endif value="C">C</option>
                                     <option @if ($datakp1->basdat1 == 'D') selected @endif value="D">D</option>
                                     <option @if ($datakp1->basdat1 == 'E') selected @endif value="E">E</option>
+                                    <option @if ($datakp1->basdat1 == 'Sedang Diambil') selected @endif value="Sedang Diambil">
+                                        Sedang Diambil</option>
+                                    <option @if ($datakp1->basdat1 == 'Belum Diambil') selected @endif value="Belum Diambil">Belum
+                                        Diambil</option>
                                 @else
                                     <option selected>Nilai</option>
                                     <option value="A">A</option>
@@ -271,6 +301,8 @@
                                     <option value="C">C</option>
                                     <option value="D">D</option>
                                     <option value="E">E</option>
+                                    <option value="Sedang Diambil">Sedang Diambil</option>
+                                    <option value="Belum Diambil">Belum Diambil</option>
                                 @endif
                             </select>
                             <label for="basdat1">Nilai Basis Data</label>
@@ -286,6 +318,10 @@
                                     <option @if ($datakp1->p_basdat1 == 'C') selected @endif value="C">C</option>
                                     <option @if ($datakp1->p_basdat1 == 'D') selected @endif value="D">D</option>
                                     <option @if ($datakp1->p_basdat1 == 'E') selected @endif value="E">E</option>
+                                    <option @if ($datakp1->p_basdat1 == 'Sedang Diambil') selected @endif value="Sedang Diambil">
+                                        Sedang Diambil</option>
+                                    <option @if ($datakp1->p_basdat1 == 'Belum Diambil') selected @endif value="Belum Diambil">Belum
+                                        Diambil</option>
                                 @else
                                     <option selected>Nilai</option>
                                     <option value="A">A</option>
@@ -295,6 +331,8 @@
                                     <option value="C">C</option>
                                     <option value="D">D</option>
                                     <option value="E">E</option>
+                                    <option value="Sedang Diambil">Sedang Diambil</option>
+                                    <option value="Belum Diambil">Belum Diambil</option>
                                 @endif
                             </select>
                             <label for="p_basdat1">Nilai Praktikum Basis Data</label>
@@ -310,6 +348,10 @@
                                     <option @if ($datakp1->rpl1 == 'C') selected @endif value="C">C</option>
                                     <option @if ($datakp1->rpl1 == 'D') selected @endif value="D">D</option>
                                     <option @if ($datakp1->rpl1 == 'E') selected @endif value="E">E</option>
+                                    <option @if ($datakp1->rpl1 == 'Sedang Diambil') selected @endif value="Sedang Diambil">
+                                        Sedang Diambil</option>
+                                    <option @if ($datakp1->rpl1 == 'Belum Diambil') selected @endif value="Belum Diambil">Belum
+                                        Diambil</option>
                                 @else
                                     <option selected>Nilai</option>
                                     <option value="A">A</option>
@@ -319,6 +361,8 @@
                                     <option value="C">C</option>
                                     <option value="D">D</option>
                                     <option value="E">E</option>
+                                    <option value="Sedang Diambil">Sedang Diambil</option>
+                                    <option value="Belum Diambil">Belum Diambil</option>
                                 @endif
                             </select>
                             <label for="rpl1">Nilai Rekayasa Perangkat Lunak</label>
@@ -334,6 +378,10 @@
                                     <option @if ($datakp1->appl1 == 'C') selected @endif value="C">C</option>
                                     <option @if ($datakp1->appl1 == 'D') selected @endif value="D">D</option>
                                     <option @if ($datakp1->appl1 == 'E') selected @endif value="E">E</option>
+                                    <option @if ($datakp1->appl1 == 'Sedang Diambil') selected @endif value="Sedang Diambil">
+                                        Sedang Diambil</option>
+                                    <option @if ($datakp1->appl1 == 'Belum Diambil') selected @endif value="Belum Diambil">Belum
+                                        Diambil</option>
                                 @else
                                     <option selected>Nilai</option>
                                     <option value="A">A</option>
@@ -343,6 +391,8 @@
                                     <option value="C">C</option>
                                     <option value="D">D</option>
                                     <option value="E">E</option>
+                                    <option value="Sedang Diambil">Sedang Diambil</option>
+                                    <option value="Belum Diambil">Belum Diambil</option>
                                 @endif
                             </select>
                             <label for="appl1">Nilai Analisis dan Perancangan Perangkat Lunak</label>
@@ -358,6 +408,11 @@
                                     <option @if ($datakp1->progweb1 == 'C') selected @endif value="C">C</option>
                                     <option @if ($datakp1->progweb1 == 'D') selected @endif value="D">D</option>
                                     <option @if ($datakp1->progweb1 == 'E') selected @endif value="E">E</option>
+                                    <option @if ($datakp1->progweb1 == 'Sedang Diambil') selected @endif value="Sedang Diambil">
+                                        Sedang Diambil</option>
+                                    <option @if ($datakp1->progweb1 == 'Belum Diambil') selected @endif value="Belum Diambil">
+                                        Belum
+                                        Diambil</option>
                                 @else
                                     <option selected>Nilai</option>
                                     <option value="A">A</option>
@@ -367,6 +422,8 @@
                                     <option value="C">C</option>
                                     <option value="D">D</option>
                                     <option value="E">E</option>
+                                    <option value="Sedang Diambil">Sedang Diambil</option>
+                                    <option value="Belum Diambil">Belum Diambil</option>
                                 @endif
                             </select>
                             <label for="progweb1">Nilai Pemrograman Web</label>
@@ -376,12 +433,19 @@
                                 @if (isset($datakp1))
                                     <option @if ($datakp1->p_progweb1 == null) selected @endif>Nilai</option>
                                     <option @if ($datakp1->p_progweb1 == 'A') selected @endif value="A">A</option>
-                                    <option @if ($datakp1->p_progweb1 == 'AB') selected @endif value="AB">AB</option>
+                                    <option @if ($datakp1->p_progweb1 == 'AB') selected @endif value="AB">AB
+                                    </option>
                                     <option @if ($datakp1->p_progweb1 == 'B') selected @endif value="B">B</option>
-                                    <option @if ($datakp1->p_progweb1 == 'BC') selected @endif value="BC">BC</option>
+                                    <option @if ($datakp1->p_progweb1 == 'BC') selected @endif value="BC">BC
+                                    </option>
                                     <option @if ($datakp1->p_progweb1 == 'C') selected @endif value="C">C</option>
                                     <option @if ($datakp1->p_progweb1 == 'D') selected @endif value="D">D</option>
                                     <option @if ($datakp1->p_progweb1 == 'E') selected @endif value="E">E</option>
+                                    <option @if ($datakp1->p_progweb1 == 'Sedang Diambil') selected @endif value="Sedang Diambil">
+                                        Sedang Diambil</option>
+                                    <option @if ($datakp1->p_progweb1 == 'Belum Diambil') selected @endif value="Belum Diambil">
+                                        Belum
+                                        Diambil</option>
                                 @else
                                     <option selected>Nilai</option>
                                     <option value="A">A</option>
@@ -391,33 +455,75 @@
                                     <option value="C">C</option>
                                     <option value="D">D</option>
                                     <option value="E">E</option>
+                                    <option value="Sedang Diambil">Sedang Diambil</option>
+                                    <option value="Belum Diambil">Belum Diambil</option>
                                 @endif
                             </select>
                             <label for="p_progweb1">Nilai Praktikum Pemrograman Web</label>
                         </div>
                         <div class="form-floating">
                             <select class="form-select" name="po1" id="po1">
-                                <option selected>Nilai</option>
-                                <option value="A">A</option>
-                                <option value="AB">AB</option>
-                                <option value="B">B</option>
-                                <option value="BC">BC</option>
-                                <option value="C">C</option>
-                                <option value="D">D</option>
-                                <option value="E">E</option>
+                                @if (isset($datakp1))
+                                    <option @if ($datakp1->po1 == null) selected @endif>Nilai</option>
+                                    <option @if ($datakp1->po1 == 'A') selected @endif value="A">A</option>
+                                    <option @if ($datakp1->po1 == 'AB') selected @endif value="AB">AB
+                                    </option>
+                                    <option @if ($datakp1->po1 == 'B') selected @endif value="B">B</option>
+                                    <option @if ($datakp1->po1 == 'BC') selected @endif value="BC">BC
+                                    </option>
+                                    <option @if ($datakp1->po1 == 'C') selected @endif value="C">C</option>
+                                    <option @if ($datakp1->po1 == 'D') selected @endif value="D">D</option>
+                                    <option @if ($datakp1->po1 == 'E') selected @endif value="E">E</option>
+                                    <option @if ($datakp1->po1 == 'Sedang Diambil') selected @endif value="Sedang Diambil">
+                                        Sedang Diambil</option>
+                                    <option @if ($datakp1->po1 == 'Belum Diambil') selected @endif value="Belum Diambil">
+                                        Belum
+                                        Diambil</option>
+                                @else
+                                    <option selected>Nilai</option>
+                                    <option value="A">A</option>
+                                    <option value="AB">AB</option>
+                                    <option value="B">B</option>
+                                    <option value="BC">BC</option>
+                                    <option value="C">C</option>
+                                    <option value="D">D</option>
+                                    <option value="E">E</option>
+                                    <option value="Sedang Diambil">Sedang Diambil</option>
+                                    <option value="Belum Diambil">Belum Diambil</option>
+                                @endif
                             </select>
                             <label for="po1">Nilai Pemrograman Object</label>
                         </div>
                         <div class="form-floating">
                             <select class="form-select" name="p_po1" id="p_po1">
-                                <option selected>Nilai</option>
-                                <option value="A">A</option>
-                                <option value="AB">AB</option>
-                                <option value="B">B</option>
-                                <option value="BC">BC</option>
-                                <option value="C">C</option>
-                                <option value="D">D</option>
-                                <option value="E">E</option>
+                                @if (isset($datakp1))
+                                    <option @if ($datakp1->p_po1 == null) selected @endif>Nilai</option>
+                                    <option @if ($datakp1->p_po1 == 'A') selected @endif value="A">A</option>
+                                    <option @if ($datakp1->p_po1 == 'AB') selected @endif value="AB">AB
+                                    </option>
+                                    <option @if ($datakp1->p_po1 == 'B') selected @endif value="B">B</option>
+                                    <option @if ($datakp1->p_po1 == 'BC') selected @endif value="BC">BC
+                                    </option>
+                                    <option @if ($datakp1->p_po1 == 'C') selected @endif value="C">C</option>
+                                    <option @if ($datakp1->p_po1 == 'D') selected @endif value="D">D</option>
+                                    <option @if ($datakp1->p_po1 == 'E') selected @endif value="E">E</option>
+                                    <option @if ($datakp1->p_po1 == 'Sedang Diambil') selected @endif value="Sedang Diambil">
+                                        Sedang Diambil</option>
+                                    <option @if ($datakp1->p_po1 == 'Belum Diambil') selected @endif value="Belum Diambil">
+                                        Belum
+                                        Diambil</option>
+                                @else
+                                    <option selected>Nilai</option>
+                                    <option value="A">A</option>
+                                    <option value="AB">AB</option>
+                                    <option value="B">B</option>
+                                    <option value="BC">BC</option>
+                                    <option value="C">C</option>
+                                    <option value="D">D</option>
+                                    <option value="E">E</option>
+                                    <option value="Sedang Diambil">Sedang Diambil</option>
+                                    <option value="Belum Diambil">Belum Diambil</option>
+                                @endif
                             </select>
                             <label for="p_po1">Nilai Praktikum Pemrograman Object</label>
                         </div>
@@ -478,6 +584,8 @@
                             </div>
                         </div>
                     </div>
+
+                    {{-- Mahasiswa 2 --}}
                     <div class="col">
                         <div class="form-floating">
                             <input type="text"
@@ -637,6 +745,11 @@
                                     <option @if ($datakp1->algoritma2 == 'C') selected @endif value="C">C</option>
                                     <option @if ($datakp1->algoritma2 == 'D') selected @endif value="D">D</option>
                                     <option @if ($datakp1->algoritma2 == 'E') selected @endif value="E">E</option>
+                                    <option @if ($datakp1->algoritma2 == 'Sedang Diambil') selected @endif value="Sedang Diambil">
+                                        Sedang Diambil</option>
+                                    <option @if ($datakp1->algoritma2 == 'Belum Diambil') selected @endif value="Belum Diambil">
+                                        Belum
+                                        Diambil</option>
                                 @else
                                     <option selected>Nilai</option>
                                     <option value="A">A</option>
@@ -646,6 +759,8 @@
                                     <option value="C">C</option>
                                     <option value="D">D</option>
                                     <option value="E">E</option>
+                                    <option value="Sedang Diambil">Sedang Diambil</option>
+                                    <option value="Belum Diambil">Belum Diambil</option>
                                 @endif
                             </select>
                             <label for="algo1">Nilai Algoritma dan Pemrograman</label>
@@ -663,6 +778,11 @@
                                     <option @if ($datakp1->p_algoritma2 == 'C') selected @endif value="C">C</option>
                                     <option @if ($datakp1->p_algoritma2 == 'D') selected @endif value="D">D</option>
                                     <option @if ($datakp1->p_algoritma2 == 'E') selected @endif value="E">E</option>
+                                    <option @if ($datakp1->p_algoritma2 == 'Sedang Diambil') selected @endif value="Sedang Diambil">
+                                        Sedang Diambil</option>
+                                    <option @if ($datakp1->p_algoritma2 == 'Belum Diambil') selected @endif value="Belum Diambil">
+                                        Belum
+                                        Diambil</option>
                                 @else
                                     <option selected>Nilai</option>
                                     <option value="A">A</option>
@@ -672,6 +792,8 @@
                                     <option value="C">C</option>
                                     <option value="D">D</option>
                                     <option value="E">E</option>
+                                    <option value="Sedang Diambil">Sedang Diambil</option>
+                                    <option value="Belum Diambil">Belum Diambil</option>
                                 @endif
                             </select>
                             <label for="p_algo1">Nilai Praktikum Algoritma dan Pemrograman</label>
@@ -689,6 +811,11 @@
                                     <option @if ($datakp1->strukdat2 == 'C') selected @endif value="C">C</option>
                                     <option @if ($datakp1->strukdat2 == 'D') selected @endif value="D">D</option>
                                     <option @if ($datakp1->strukdat2 == 'E') selected @endif value="E">E</option>
+                                    <option @if ($datakp1->strukdat2 == 'Sedang Diambil') selected @endif value="Sedang Diambil">
+                                        Sedang Diambil</option>
+                                    <option @if ($datakp1->strukdat2 == 'Belum Diambil') selected @endif value="Belum Diambil">
+                                        Belum
+                                        Diambil</option>
                                 @else
                                     <option selected>Nilai</option>
                                     <option value="A">A</option>
@@ -698,6 +825,8 @@
                                     <option value="C">C</option>
                                     <option value="D">D</option>
                                     <option value="E">E</option>
+                                    <option value="Sedang Diambil">Sedang Diambil</option>
+                                    <option value="Belum Diambil">Belum Diambil</option>
                                 @endif
                             </select>
                             <label for="strukdat1">Nilai Struktur Data</label>
@@ -715,6 +844,11 @@
                                     <option @if ($datakp1->p_strukdat2 == 'C') selected @endif value="C">C</option>
                                     <option @if ($datakp1->p_strukdat2 == 'D') selected @endif value="D">D</option>
                                     <option @if ($datakp1->p_strukdat2 == 'E') selected @endif value="E">E</option>
+                                    <option @if ($datakp1->p_strukdat2 == 'Sedang Diambil') selected @endif value="Sedang Diambil">
+                                        Sedang Diambil</option>
+                                    <option @if ($datakp1->p_strukdat2 == 'Belum Diambil') selected @endif value="Belum Diambil">
+                                        Belum
+                                        Diambil</option>
                                 @else
                                     <option selected>Nilai</option>
                                     <option value="A">A</option>
@@ -724,6 +858,8 @@
                                     <option value="C">C</option>
                                     <option value="D">D</option>
                                     <option value="E">E</option>
+                                    <option value="Sedang Diambil">Sedang Diambil</option>
+                                    <option value="Belum Diambil">Belum Diambil</option>
                                 @endif
                             </select>
                             <label for="p_strukdat1">Nilai Praktikum Struktur Data</label>
@@ -741,6 +877,11 @@
                                     <option @if ($datakp1->basdat2 == 'C') selected @endif value="C">C</option>
                                     <option @if ($datakp1->basdat2 == 'D') selected @endif value="D">D</option>
                                     <option @if ($datakp1->basdat2 == 'E') selected @endif value="E">E</option>
+                                    <option @if ($datakp1->basdat2 == 'Sedang Diambil') selected @endif value="Sedang Diambil">
+                                        Sedang Diambil</option>
+                                    <option @if ($datakp1->basdat2 == 'Belum Diambil') selected @endif value="Belum Diambil">
+                                        Belum
+                                        Diambil</option>
                                 @else
                                     <option selected>Nilai</option>
                                     <option value="A">A</option>
@@ -750,6 +891,8 @@
                                     <option value="C">C</option>
                                     <option value="D">D</option>
                                     <option value="E">E</option>
+                                    <option value="Sedang Diambil">Sedang Diambil</option>
+                                    <option value="Belum Diambil">Belum Diambil</option>
                                 @endif
                             </select>
                             <label for="basdat1">Nilai Basis Data</label>
@@ -767,6 +910,11 @@
                                     <option @if ($datakp1->p_basdat2 == 'C') selected @endif value="C">C</option>
                                     <option @if ($datakp1->p_basdat2 == 'D') selected @endif value="D">D</option>
                                     <option @if ($datakp1->p_basdat2 == 'E') selected @endif value="E">E</option>
+                                    <option @if ($datakp1->p_basdat2 == 'Sedang Diambil') selected @endif value="Sedang Diambil">
+                                        Sedang Diambil</option>
+                                    <option @if ($datakp1->p_basdat2 == 'Belum Diambil') selected @endif value="Belum Diambil">
+                                        Belum
+                                        Diambil</option>
                                 @else
                                     <option selected>Nilai</option>
                                     <option value="A">A</option>
@@ -776,6 +924,8 @@
                                     <option value="C">C</option>
                                     <option value="D">D</option>
                                     <option value="E">E</option>
+                                    <option value="Sedang Diambil">Sedang Diambil</option>
+                                    <option value="Belum Diambil">Belum Diambil</option>
                                 @endif
                             </select>
                             <label for="p_basdat1">Nilai Praktikum Basis Data</label>
@@ -793,6 +943,11 @@
                                     <option @if ($datakp1->rpl2 == 'C') selected @endif value="C">C</option>
                                     <option @if ($datakp1->rpl2 == 'D') selected @endif value="D">D</option>
                                     <option @if ($datakp1->rpl2 == 'E') selected @endif value="E">E</option>
+                                    <option @if ($datakp1->rpl2 == 'Sedang Diambil') selected @endif value="Sedang Diambil">
+                                        Sedang Diambil</option>
+                                    <option @if ($datakp1->rpl2 == 'Belum Diambil') selected @endif value="Belum Diambil">
+                                        Belum
+                                        Diambil</option>
                                 @else
                                     <option selected>Nilai</option>
                                     <option value="A">A</option>
@@ -802,6 +957,8 @@
                                     <option value="C">C</option>
                                     <option value="D">D</option>
                                     <option value="E">E</option>
+                                    <option value="Sedang Diambil">Sedang Diambil</option>
+                                    <option value="Belum Diambil">Belum Diambil</option>
                                 @endif
                             </select>
                             <label for="rpl1">Nilai Rekayasa Perangkat Lunak</label>
@@ -819,6 +976,11 @@
                                     <option @if ($datakp1->appl2 == 'C') selected @endif value="C">C</option>
                                     <option @if ($datakp1->appl2 == 'D') selected @endif value="D">D</option>
                                     <option @if ($datakp1->appl2 == 'E') selected @endif value="E">E</option>
+                                    <option @if ($datakp1->appl2 == 'Sedang Diambil') selected @endif value="Sedang Diambil">
+                                        Sedang Diambil</option>
+                                    <option @if ($datakp1->appl2 == 'Belum Diambil') selected @endif value="Belum Diambil">
+                                        Belum
+                                        Diambil</option>
                                 @else
                                     <option selected>Nilai</option>
                                     <option value="A">A</option>
@@ -828,6 +990,8 @@
                                     <option value="C">C</option>
                                     <option value="D">D</option>
                                     <option value="E">E</option>
+                                    <option value="Sedang Diambil">Sedang Diambil</option>
+                                    <option value="Belum Diambil">Belum Diambil</option>
                                 @endif
                             </select>
                             <label for="appl1">Nilai Analisis dan Perancangan Perangkat Lunak</label>
@@ -845,6 +1009,11 @@
                                     <option @if ($datakp1->progweb2 == 'C') selected @endif value="C">C</option>
                                     <option @if ($datakp1->progweb2 == 'D') selected @endif value="D">D</option>
                                     <option @if ($datakp1->progweb2 == 'E') selected @endif value="E">E</option>
+                                    <option @if ($datakp1->progweb2 == 'Sedang Diambil') selected @endif value="Sedang Diambil">
+                                        Sedang Diambil</option>
+                                    <option @if ($datakp1->progweb2 == 'Belum Diambil') selected @endif value="Belum Diambil">
+                                        Belum
+                                        Diambil</option>
                                 @else
                                     <option selected>Nilai</option>
                                     <option value="A">A</option>
@@ -854,6 +1023,8 @@
                                     <option value="C">C</option>
                                     <option value="D">D</option>
                                     <option value="E">E</option>
+                                    <option value="Sedang Diambil">Sedang Diambil</option>
+                                    <option value="Belum Diambil">Belum Diambil</option>
                                 @endif
                             </select>
                             <label for="progweb1">Nilai Pemrograman Web</label>
@@ -871,6 +1042,11 @@
                                     <option @if ($datakp1->p_progweb2 == 'C') selected @endif value="C">C</option>
                                     <option @if ($datakp1->p_progweb2 == 'D') selected @endif value="D">D</option>
                                     <option @if ($datakp1->p_progweb2 == 'E') selected @endif value="E">E</option>
+                                    <option @if ($datakp1->p_progweb2 == 'Sedang Diambil') selected @endif value="Sedang Diambil">
+                                        Sedang Diambil</option>
+                                    <option @if ($datakp1->p_progweb2 == 'Belum Diambil') selected @endif value="Belum Diambil">
+                                        Belum
+                                        Diambil</option>
                                 @else
                                     <option selected>Nilai</option>
                                     <option value="A">A</option>
@@ -880,33 +1056,75 @@
                                     <option value="C">C</option>
                                     <option value="D">D</option>
                                     <option value="E">E</option>
+                                    <option value="Sedang Diambil">Sedang Diambil</option>
+                                    <option value="Belum Diambil">Belum Diambil</option>
                                 @endif
                             </select>
                             <label for="p_progweb1">Nilai Praktikum Pemrograman Web</label>
                         </div>
                         <div class="form-floating">
                             <select class="form-select" name="po2" id="po2">
-                                <option selected>Nilai</option>
-                                <option value="A">A</option>
-                                <option value="AB">AB</option>
-                                <option value="B">B</option>
-                                <option value="BC">BC</option>
-                                <option value="C">C</option>
-                                <option value="D">D</option>
-                                <option value="E">E</option>
+                                @if (isset($datakp1))
+                                    <option @if ($datakp1->po2 == null) selected @endif>Nilai</option>
+                                    <option @if ($datakp1->po2 == 'A') selected @endif value="A">A</option>
+                                    <option @if ($datakp1->po2 == 'AB') selected @endif value="AB">AB
+                                    </option>
+                                    <option @if ($datakp1->po2 == 'B') selected @endif value="B">B</option>
+                                    <option @if ($datakp1->po2 == 'BC') selected @endif value="BC">BC
+                                    </option>
+                                    <option @if ($datakp1->po2 == 'C') selected @endif value="C">C</option>
+                                    <option @if ($datakp1->po2 == 'D') selected @endif value="D">D</option>
+                                    <option @if ($datakp1->po2 == 'E') selected @endif value="E">E</option>
+                                    <option @if ($datakp1->po2 == 'Sedang Diambil') selected @endif value="Sedang Diambil">
+                                        Sedang Diambil</option>
+                                    <option @if ($datakp1->po2 == 'Belum Diambil') selected @endif value="Belum Diambil">
+                                        Belum
+                                        Diambil</option>
+                                @else
+                                    <option selected>Nilai</option>
+                                    <option value="A">A</option>
+                                    <option value="AB">AB</option>
+                                    <option value="B">B</option>
+                                    <option value="BC">BC</option>
+                                    <option value="C">C</option>
+                                    <option value="D">D</option>
+                                    <option value="E">E</option>
+                                    <option value="Sedang Diambil">Sedang Diambil</option>
+                                    <option value="Belum Diambil">Belum Diambil</option>
+                                @endif
                             </select>
                             <label for="po2">Nilai Pemrograman Object</label>
                         </div>
                         <div class="form-floating">
                             <select class="form-select" name="p_po2" id="p_po2">
-                                <option selected>Nilai</option>
-                                <option value="A">A</option>
-                                <option value="AB">AB</option>
-                                <option value="B">B</option>
-                                <option value="BC">BC</option>
-                                <option value="C">C</option>
-                                <option value="D">D</option>
-                                <option value="E">E</option>
+                                @if (isset($datakp1))
+                                    <option @if ($datakp1->p_po2 == null) selected @endif>Nilai</option>
+                                    <option @if ($datakp1->p_po2 == 'A') selected @endif value="A">A</option>
+                                    <option @if ($datakp1->p_po2 == 'AB') selected @endif value="AB">AB
+                                    </option>
+                                    <option @if ($datakp1->p_po2 == 'B') selected @endif value="B">B</option>
+                                    <option @if ($datakp1->p_po2 == 'BC') selected @endif value="BC">BC
+                                    </option>
+                                    <option @if ($datakp1->p_po2 == 'C') selected @endif value="C">C</option>
+                                    <option @if ($datakp1->p_po2 == 'D') selected @endif value="D">D</option>
+                                    <option @if ($datakp1->p_po2 == 'E') selected @endif value="E">E</option>
+                                    <option @if ($datakp1->p_po2 == 'Sedang Diambil') selected @endif value="Sedang Diambil">
+                                        Sedang Diambil</option>
+                                    <option @if ($datakp1->p_po2 == 'Belum Diambil') selected @endif value="Belum Diambil">
+                                        Belum
+                                        Diambil</option>
+                                @else
+                                    <option selected>Nilai</option>
+                                    <option value="A">A</option>
+                                    <option value="AB">AB</option>
+                                    <option value="B">B</option>
+                                    <option value="BC">BC</option>
+                                    <option value="C">C</option>
+                                    <option value="D">D</option>
+                                    <option value="E">E</option>
+                                    <option value="Sedang Diambil">Sedang Diambil</option>
+                                    <option value="Belum Diambil">Belum Diambil</option>
+                                @endif
                             </select>
                             <label for="p_po2">Nilai Praktikum Pemrograman Object</label>
                         </div>
@@ -967,6 +1185,8 @@
                             </div>
                         </div>
                     </div>
+
+                    {{-- Kelompok --}}
                     <div class="form-floating">
                         <div class="mb-3">
                             <label for="proposal" class="form-label">Upload Proposal</label>

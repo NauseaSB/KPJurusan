@@ -21,6 +21,7 @@ class CreateKelompoksTable extends Migration
             $table->integer('materi_id')->references('id')->on('materis')->nullable();
             $table->integer('kp_id')->references('id')->on('kp1s')->nullable();
             $table->integer('kp2_id')->references('id')->on('kp2s')->nullable();
+            $table->String('s_kp1')->references('id')->on('status1s')->nullable();
             $table->String('status_mhsw1')->nullable();
             $table->String('status_mhsw2')->nullable();
             $table->String('status_klmpk')->nullable();

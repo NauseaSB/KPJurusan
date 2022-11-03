@@ -12,7 +12,9 @@
                 <div class="form-floating">
                     <input type="text" class="form-control rounded-top @error('judul') is-invalid rounded @enderror"
                         name="judul" id="judul" placeholder="Judul Kerja Praktik" required
-                        value="{{ old('judul', $materi->judul_kp) }}">
+                        @if (isset($materi)) value="{{ $materi->judul_kp }}"
+                        @else
+                            value="{{ old('judul') }}" @endif>
                     <label for="judul">Judul Kerja Praktik</label>
                     @error('judul')
                         <div class="invalid-feedback">
@@ -23,7 +25,9 @@
                 <div class="form-floating">
                     <input type="text" class="form-control rounded-top @error('tempat') is-invalid rounded @enderror"
                         name="tempat" id="tempat" placeholder="Tempat Kerja Praktik" required
-                        value="{{ old('tempat', $materi->tempat_kp_lapangan) }}">
+                        @if (isset($materi)) value="{{ $materi->tempat_kp_lapangan }}"
+                        @else
+                            value="{{ old('tempat') }}" @endif>
                     <label for="tempat">Tempat Kerja Praktik</label>
                     @error('tempat')
                         <div class="invalid-feedback">
@@ -34,7 +38,9 @@
                 <div class="form-floating">
                     <input type="text" class="form-control rounded-top @error('divisi') is-invalid rounded @enderror"
                         name="divisi" id="divisi" placeholder="Divisi" required
-                        value="{{ old('divisi', $materi->divisi) }}">
+                        @if (isset($materi)) value="{{ $materi->divisi }}"
+                        @else
+                            value="{{ old('divisi') }}" @endif>
                     <label for="divisi">Divisi</label>
                     @error('divisi')
                         <div class="invalid-feedback">
@@ -45,7 +51,9 @@
                 <div class="form-floating">
                     <input type="text" class="form-control rounded-top @error('alamat') is-invalid rounded @enderror"
                         name="alamat" id="alamat" placeholder="Alamat Kerja Praktik" required
-                        value="{{ old('alamat', $materi->alamat) }}">
+                        @if (isset($materi)) value="{{ $materi->alamat }}"
+                        @else
+                            value="{{ old('alamat') }}" @endif>
                     <label for="alamat">Alamat Kerja Praktik</label>
                     @error('alamat')
                         <div class="invalid-feedback">
@@ -56,7 +64,9 @@
                 <div class="form-floating">
                     <input type="text" class="form-control rounded-top @error('telpkp') is-invalid rounded @enderror"
                         name="telpkp" id="telpkp" placeholder="Nomor Telepon Tempat Kerja Praktik" required
-                        value="{{ old('telpkp', $materi->telp_tempat_kp) }}">
+                        @if (isset($materi)) value="{{ $materi->telp_tempat_kp }}"
+                        @else
+                            value="{{ old('telpkp') }}" @endif>
                     <label for="telpkp">Nomor Telepon Tempat Kerja Praktik</label>
                     @error('telpkp')
                         <div class="invalid-feedback">
@@ -67,7 +77,9 @@
                 <div class="form-floating">
                     <input type="text" class="form-control rounded-top @error('p_lapangan') is-invalid rounded @enderror"
                         name="p_lapangan" id="p_lapangan" placeholder="Nama Pembimbing Lapangan" required
-                        value="{{ old('p_lapangan', $materi->nama_pembimbing_lapangan) }}">
+                        @if (isset($materi)) value="{{ $materi->nama_pembimbing_lapangan }}"
+                        @else
+                            value="{{ old('p_lapangan') }}" @endif>
                     <label for="p_lapangan">Nama Pembimbing Lapangan</label>
                     @error('p_lapangan')
                         <div class="invalid-feedback">
@@ -79,7 +91,9 @@
                     <input type="text"
                         class="form-control rounded-top @error('penanggung_jawab') is-invalid rounded @enderror"
                         name="penanggung_jawab" id="penanggung_jawab" placeholder="Penanggung Jawab Lapangan" required
-                        value="{{ old('penanggung_jawab', $materi->nama_penanggung_jawab_lapangan) }}">
+                        @if (isset($materi)) value="{{ $materi->nama_penanggung_jawab_lapangan }}"
+                        @else
+                            value="{{ old('judul') }}" @endif>
                     <label for="penanggung_jawab">Penanggung Jawab Lapangan</label>
                     @error('penanggung_jawab')
                         <div class="invalid-feedback">
