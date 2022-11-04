@@ -91,13 +91,24 @@ Route::group(['middleware' => 'auth'], function () {
 
     //route group untuk role KOORDINATOR
     Route::group(['middleware' => 'role:koodinatorKP'], function () {
+        //halaman utama
         Route::get('/koorkp', [DashboardKoorController::class, 'index'])->middleware('auth');
+
+        //halaman rekap data pendaftaran kp
         Route::get('/koorkp/rekap-pdf', [DashboardKoorController::class, 'rpdf']);
+
+        //halaman edit status mahasiswa
         Route::get('/koorkp/set-status/{id}', [DashboardKoorController::class, 'edit']);
         Route::post('/koorkp/set-status/{id}', [DashboardKoorController::class, 'update']);
+
+        //halaman rekap
         Route::get('/rekap-kp', [RekapController::class, 'index']);
         Route::get('/rekap-kp/rekap-pdf', [RekapController::class, 'rpdf']);
+
+        //halaman ploting dosen
         Route::resource('/ploting-dosen', PlotingDosen::class);
+
+        //halaman switch form
         Route::get('/bukatutupform', [BukaTutupController::class, 'index']);
         Route::post('/bukatutupkp1', [BukaTutupController::class, 'lockKP1']);
         Route::post('/bukatutupkp2', [BukaTutupController::class, 'lockKP2']);
