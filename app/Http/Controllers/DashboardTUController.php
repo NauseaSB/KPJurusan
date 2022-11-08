@@ -14,7 +14,7 @@ class DashboardTUController extends Controller
      */
     public function index()
     {
-        $data = Kelompok::all();
+        $data = Kelompok::paginate(10);
         return view('dashboard.tatausaha.index', [
             'datas' => $data,
             'title' => 'Data Pendaftaran KP',
@@ -61,10 +61,14 @@ class DashboardTUController extends Controller
      */
     public function edit($id)
     {
-        $data = Kelompok::where('id', $id)->with('mahasiswa')->with('mahasiswa2')->with('materi')->with('kp1')->with('kp2')->first();
+        $data = Kelompok::where('id', $id)->with('mahasiswa')->with('mahasiswa2')->with('materi')->with('kp1')->with('kp2')->with('status1')->first();
         return view('dashboard.tatausaha.set-status', [
             'datas' => $data,
             'title' => 'Set Status Mahasiswa',
+            'mahasiswa1' => $data->mahasiswa,
+            'mahasiswa2' => $data->mahasiswa2,
+            'info_mhs' =>  $data->kp1,
+            'status1' => $data->status1,
         ]);
     }
 

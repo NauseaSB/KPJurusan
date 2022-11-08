@@ -165,7 +165,7 @@ class DatabaseSeeder extends Seeder
             'code' => 'YHC'
         ]);
         BukaTutup::create([
-            'kp1' => '0',
+            'kp1' => '1',
             'kp2' => '0',
         ]);
     }

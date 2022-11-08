@@ -1,6 +1,11 @@
 @extends('dashboard.tatausaha.main')
 @section('container')
     <div class="text-center mt-5 mb-5">
+        @if (session()->has('success'))
+            <div class="alert alert-success" role="alert">
+                {{ session('success') }}
+            </div>
+        @endif
         <h1>Data Pendaftaran KP</h1>
         <div class="table-responsive">
             <table class="table table-striped table-sm">
@@ -12,7 +17,7 @@
                         <th scope="col">Nama Mahasiswa 2</th>
                         <th scope="col">NIM Mahasiswa 2</th>
                         <th scope="col">Judul</th>
-                        <th scope="col">Pembimbing</th>
+                        <th scope="col">Dosen Pembimbing</th>
                         <th scope="col">Status Mahasiswa 1</th>
                         <th scope="col">Status Mahasiswa 2</th>
                         <th scope="col">Aksi</th>
@@ -48,8 +53,8 @@
                                 @endif
                             </td>
                             <td>
-                                @if (isset($item->materi))
-                                    {{ $item->materi->nama_pembimbing_lapangan }}
+                                @if (isset($item->dosbim))
+                                    {{ $item->dosbim }}
                                 @endif
                             </td>
                             <td>

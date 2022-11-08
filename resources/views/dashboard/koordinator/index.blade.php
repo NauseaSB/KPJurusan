@@ -1,6 +1,11 @@
 @extends('dashboard.koordinator.main')
 @section('container')
     <div class="text-center mt-5 mb-5">
+        @if (session()->has('success'))
+            <div class="alert alert-success" role="alert">
+                {{ session('success') }}
+            </div>
+        @endif
         <h1>Data Pendaftaran KP</h1>
         <a href="/koorkp/rekap-pdf" target="_blank" class="btn btn-success mt-2 mb-2">Print PDF</a>
         <div class="table-responsive">
@@ -13,7 +18,7 @@
                         <th scope="col">Nama Mahasiswa 2</th>
                         <th scope="col">NIM Mahasiswa 2</th>
                         <th scope="col">Judul</th>
-                        <th scope="col">Pembimbing</th>
+                        <th scope="col">Dosen Pembimbing</th>
                         <th scope="col">Status Mahasiswa 1</th>
                         <th scope="col">Status Mahasiswa 2</th>
                         <th scope="col">Status Kelompok</th>

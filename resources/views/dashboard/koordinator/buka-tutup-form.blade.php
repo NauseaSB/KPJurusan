@@ -6,57 +6,58 @@
                 {{ session('success') }}
             </div>
         @endif
-        <h3>Status Form KP1 : @if ($bukatutupform->kp1 == 0)
-                Tutup
-            @elseif ($bukatutupform->kp1 == 1)
-                Buka
-            @endif
-        </h3>
-        @if ($bukatutupform->kp1 == 0)
-            <form action="/bukatutupkp1" method="post">
-                @csrf
-                <button class="btn btn-primary" type="submit">
-                    <input type="hidden" name="kp1" value=1>
-                    <i class="fa-solid fa-unlock fa-lg"></i>
-                    Buka Form
-                </button>
-            </form>
-        @elseif ($bukatutupform->kp1 == 1)
+
+        @if ($bukatutupform->kp1 == 1)
+            <div class="row justify-content-center">
+                <div class="col-auto">
+                    <table class="table table responsive">
+                        <tr>
+                            <th>KP 1 :</th>
+                            <th><span class="badge bg-success">Buka</span></th>
+                        </tr>
+                        <tr>
+                            <th>KP 2 :</th>
+                            <th><span class="badge bg-danger">Tutup</span></th>
+                        </tr>
+                    </table>
+                </div>
+            </div>
             <form action="/bukatutupkp1" method="post">
                 @csrf
                 <button class="btn btn-primary" type="submit">
                     <input type="hidden" name="kp1" value=0>
+                    <input type="hidden" name="kp2" value=1>
                     <i class="fa-solid fa-unlock fa-lg"></i>
-                    Tutup Form
+                    Tutup KP1
+                </button>
+            </form>
+        @else
+            <div class="row justify-content-center">
+                <div class="col-auto">
+                    <table class="table table responsive">
+                        <tr>
+                            <th>KP 1 :</th>
+                            <th><span class="badge bg-danger">Tutup</span></th>
+                        </tr>
+                        <tr>
+                            <th>KP 2 :</th>
+                            <th><span class="badge bg-success">Buka</span></th>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <form action="/bukatutupkp2" method="post">
+                @csrf
+                <button class="btn btn-primary" type="submit">
+                    <input type="hidden" name="kp1" value=1>
+                    <input type="hidden" name="kp2" value=0>
+                    <i class="fa-solid fa-unlock fa-lg"></i>
+                    Tutup KP2
                 </button>
             </form>
         @endif
 
-        <h3 class="mt-5">Status Form KP2 : @if ($bukatutupform->kp2 == 0)
-                Tutup
-            @elseif ($bukatutupform->kp2 == 1)
-                Buka
-            @endif
-        </h3>
-        @if ($bukatutupform->kp2 == 0)
-            <form action="/bukatutupkp2" method="post">
-                @csrf
-                <button class="btn btn-primary" type="submit">
-                    <input type="hidden" name="kp2" value=1>
-                    <i class="fa-solid fa-unlock fa-lg"></i>
-                    Buka Form
-                </button>
-            </form>
-        @elseif ($bukatutupform->kp2 == 1)
-            <form action="/bukatutupkp2" method="post">
-                @csrf
-                <button class="btn btn-primary" type="submit">
-                    <input type="hidden" name="kp2" value=0>
-                    <i class="fa-solid fa-unlock fa-lg"></i>
-                    Tutup Form
-                </button>
-            </form>
-        @endif
+
 
     </div>
 @endsection

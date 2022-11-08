@@ -4,7 +4,7 @@
             <li class="nav-item">
                 <a class="nav-link {{ Request::is('admin') ? 'active' : '' }}" aria-current="page" href="/admin">
                     <span data-feather="list" class="align-text-bottom"></span>
-                    Data Pendaftaran KP
+                    Kelola Akun
                 </a>
             </li>
 

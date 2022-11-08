@@ -20,11 +20,14 @@
             @method('PUT')
             <select class="form-select" name="dosbim" id="dosbim">
                 <option selected>Pembimbing</option>
+                <option>{{ $datas->materi->ajuan_pembimbing1 }}</option>
+                <option>{{ $datas->materi->ajuan_pembimbing2 }}</option>
+                <option disabled class="dropdown-divider"></option>
                 @foreach ($dosens as $dosen)
                     <option> {{ $dosen->nama }}</option>
                 @endforeach
             </select>
-            <button type="sumbit" class="btn btn-success mt-3">Sumbit </button>
+            <button type="sumbit" class="btn btn-primary mt-3">Plot Pembimbing</button>
         </form>
     </div>
 @endsection

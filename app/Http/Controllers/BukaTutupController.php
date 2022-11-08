@@ -19,7 +19,8 @@ class BukaTutupController extends Controller
     public function lockKP1(Request $request)
     {
         BukaTutup::first()->update([
-            'kp1' => $request['kp1']
+            'kp1' => $request['kp1'],
+            'kp2' => $request['kp2']
         ]);
         return redirect()->back()->with('success', 'Status Form KP1 Telah Diubah');
     }
@@ -27,7 +28,8 @@ class BukaTutupController extends Controller
     public function lockKP2(Request $request)
     {
         BukaTutup::first()->update([
-            'kp2' => $request['kp2']
+            'kp2' => $request['kp2'],
+            'kp1' => $request['kp1']
         ]);
         return redirect()->back()->with('success', 'Status Form KP2 Telah Diubah');
     }

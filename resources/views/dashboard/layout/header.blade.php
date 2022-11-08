@@ -4,7 +4,7 @@
         data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <h2 class="text-light">SISTEM INFORMASI KERJA PRAKTIK</h2>
+    <h2 class="text-light">APLIKASI KERJA PRAKTIK</h2>
     {{-- <div class="navbar-nav">
         <div class="nav-item text-nowrap">
             <a class="nav-link px-3" href="#">Sign out</a>

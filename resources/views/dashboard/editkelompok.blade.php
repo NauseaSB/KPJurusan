@@ -4,7 +4,7 @@
 
     <body>
         <main class="form-signin text-center">
-            <form action="/daftar-kelompok" method="post">
+            <form action="/edit-kelompok" method="post">
                 @csrf
                 <h1 class="h3 mt-3 mb-3 fw-normal">Edit Data Kelompok</h1>
 

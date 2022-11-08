@@ -35,8 +35,8 @@
 
                             <td>
                                 @if (isset($item->materi->ajuan_pembimbing1))
-                                    <a href="{{ route('ploting-dosen.show', $item->id) }}" class="btn bg-warning"
-                                        style="text-decoration: none">
+                                    <a href="{{ route('ploting-dosen.show', $item->id) }}" class="btn btn-sm bg-warning"
+                                        style="text-decoration: none" role="button">
                                         <span data-feather="edit"></span>
                                         Plot Pembimbing
                                     </a>
