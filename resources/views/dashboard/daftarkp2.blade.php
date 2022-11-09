@@ -164,10 +164,10 @@
                         </div>
                         <div class="form-floating">
                             <div class="mb-2">
-                                {{-- @if (isset($datakp2->khs1))
+                                @if (isset($datakp2->khs1))
                                     <a href="storage/{{ $datakp2->khs1 }}" target="_blank" class="btn btn-primary">Lihat
                                         Data KHS</a>
-                                @endif --}}
+                                @endif
                             </div>
                         </div>
                         <div class="form-floating">
@@ -178,10 +178,10 @@
                         </div>
                         <div class="form-floating">
                             <div class="mb-2">
-                                {{-- @if (isset($datakp2->krs1))
+                                @if (isset($datakp2->krs1))
                                     <a href="storage/{{ $datakp2->krs1 }}" target="_blank" class="btn btn-primary">Lihat
                                         Data KRS</a>
-                                @endif --}}
+                                @endif
                             </div>
                         </div>
                     </div>
@@ -341,10 +341,10 @@
                         </div>
                         <div class="form-floating">
                             <div class="mb-2">
-                                {{-- @if (isset($datakp2->khs2))
+                                @if (isset($datakp2->khs2))
                                     <a href="storage/{{ $datakp2->khs2 }}" target="_blank" class="btn btn-primary">Lihat
                                         Data KHS</a>
-                                @endif --}}
+                                @endif
                             </div>
                         </div>
                         <div class="form-floating">
@@ -355,10 +355,10 @@
                         </div>
                         <div class="form-floating">
                             <div class="mb-2">
-                                {{-- @if (isset($datakp2->krs2))
+                                @if (isset($datakp2->krs2))
                                     <a href="storage/{{ $datakp2->krs2 }}" target="_blank" class="btn btn-primary">Lihat
                                         Data KRS</a>
-                                @endif --}}
+                                @endif
                             </div>
                         </div>
                     </div>
@@ -501,10 +501,11 @@
                         </div>
                         <div class="form-floating">
                             <div class="mb-2">
-                                {{-- @if (isset($datakp1->k_b_akademik))
-                                <a href="storage/{{ $datakp1->k_b_akademik }}" target="_blank" class="btn btn-primary">Lihat
-                                    Data Proposal</a>
-                            @endif --}}
+                                @if (isset($datakp2->k_b_akademik))
+                                    <a href="storage/{{ $datakp2->k_b_akademik }}" target="_blank"
+                                        class="btn btn-primary">Lihat
+                                        Data Kartu Bimbingan Akademik</a>
+                                @endif
                             </div>
                         </div>
                     </div>
@@ -536,10 +537,11 @@
                         </div>
                         <div class="form-floating">
                             <div class="mb-2">
-                                {{-- @if (isset($datakp1->k_b_lapangan))
-                                <a href="storage/{{ $datakp1->k_b_lapangan }}" target="_blank" class="btn btn-primary">Lihat
-                                    Data Proposal</a>
-                            @endif --}}
+                                @if (isset($datakp2->k_b_lapangan))
+                                    <a href="storage/{{ $datakp2->k_b_lapangan }}" target="_blank"
+                                        class="btn btn-primary">Lihat
+                                        Data Kartu Bimbingan Lapangan</a>
+                                @endif
                             </div>
                         </div>
                     </div>
@@ -557,10 +559,11 @@
                         </div>
                         <div class="form-floating">
                             <div class="mb-2">
-                                {{-- @if (isset($datakp2->surat_kelayakan))
-                                    <a href="storage/{{ $datakp2->surat_kelayakan }}" target="_blank" class="btn btn-primary">Lihat
-                                        Data Proposal</a>
-                                @endif --}}
+                                @if (isset($datakp2->surat_kelayakan))
+                                    <a href="storage/{{ $datakp2->surat_kelayakan }}" target="_blank"
+                                        class="btn btn-primary">Lihat
+                                        Data Surat Kelayakan</a>
+                                @endif
                             </div>
                         </div>
                     </div>
@@ -573,10 +576,11 @@
                         </div>
                         <div class="form-floating">
                             <div class="mb-2">
-                                {{-- @if (isset($datakp2->form_daftar))
-                                    <a href="storage/{{ $datakp2->form_daftar }}" target="_blank" class="btn btn-primary">Lihat
-                                        Data Izin KP</a>
-                                @endif --}}
+                                @if (isset($datakp2->form_daftar))
+                                    <a href="storage/{{ $datakp2->form_daftar }}" target="_blank"
+                                        class="btn btn-primary">Lihat
+                                        Data Form Pendaftaran</a>
+                                @endif
                             </div>
                         </div>
                     </div>
