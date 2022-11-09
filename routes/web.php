@@ -82,6 +82,7 @@ Route::group(['middleware' => 'auth'], function () {
 
         //halaman daftar kp2
         Route::get('/daftar-kp2', [Kp2Controller::class, 'index'])->middleware('auth');
+        Route::post('/daftar-kp2', [Kp2Controller::class, 'store']);
 
         //halaman edit daftar kp2
 
