@@ -55,15 +55,15 @@ class CreateKp2sTable extends Migration
             // batas tabel materi
 
             $table->integer('jum_b_akademik');
-            $table->string('k_b_akademik');
+            $table->string('k_b_akademik')->nullable();
             // batas tabel akademik
 
             $table->integer('jum_b_lapangan');
-            $table->string('k_b_lapangan');
+            $table->string('k_b_lapangan')->nullable();
             // batas tabel lapangan
 
-            $table->string('surat_kelayakan');
-            $table->string('form_daftar');
+            $table->string('surat_kelayakan')->nullable();
+            $table->string('form_daftar')->nullable();
             $table->timestamps();
         });
     }

@@ -5,9 +5,9 @@
     <body>
 
         <main class="form-signin text-center">
-            <form action="/daftar-kp2" method="post" enctype="multipart/form-data">
+            <form action="/edit-data-kp2" method="post" enctype="multipart/form-data">
                 @csrf
-                <h1 class="h3 mt-3 mb-3 fw-normal">Daftar KP Tahap 2</h1>
+                <h1 class="h3 mt-3 mb-3 fw-normal">Edit Daftar KP Tahap 2</h1>
 
                 <div class="row">
                     {{-- Mahasiswa 1 --}}
@@ -15,7 +15,7 @@
                         <div class="form-floating">
                             <input type="text" class="form-control rounded-top @error('nim1') is-invalid rounded @enderror"
                                 name="nim1" id="nim1" placeholder="NIM Mahasiswa 1" required
-                                @if (isset($mhs1->nim)) value="{{ $mhs1->nim }}"
+                                @if (isset($datakp2->nim1)) value="{{ $datakp2->nim1 }}"
                                 @else
                                     value="{{ old('nim1') }}" @endif>
                             <label for="nim1">NIM Mahasiswa 1</label>
@@ -28,7 +28,7 @@
                         <div class=" form-floating">
                             <input type="text" class="form-control @error('nama1') is-invalid rounded @enderror"
                                 name="nama1" id="nama1" placeholder="Nama Mahasiswa 1" required
-                                @if (isset($mhs1->nama)) value="{{ $mhs1->nama }}"
+                                @if (isset($datakp2->nama1)) value="{{ $datakp2->nama1 }}"
                                 @else
                                     value="{{ old('nama1') }}" @endif>
                             <label for="nama1">Nama Mahasiswa 1</label>
@@ -41,7 +41,7 @@
                         <div class=" form-floating">
                             <input type="text" class="form-control @error('doswal1') is-invalid rounded @enderror"
                                 name="doswal1" id="doswal1" placeholder="Nama Dosen Wali" required
-                                @if (isset($mhs1->doswal)) value="{{ $mhs1->doswal }}"
+                                @if (isset($datakp2->doswal1)) value="{{ $datakp2->doswal1 }}"
                                 @else
                                     value="{{ old('doswal1') }}" @endif>
                             <label for="doswal1">Nama Dosen Wali</label>
@@ -54,7 +54,7 @@
                         <div class=" form-floating">
                             <input type="text" class="form-control @error('peminatan1') is-invalid rounded @enderror"
                                 name="peminatan1" id="peminatan1" placeholder="Peminatan" required
-                                @if (isset($mhs1->peminatan)) value="{{ $mhs1->peminatan }}"
+                                @if (isset($datakp2->peminatan1)) value="{{ $datakp2->peminatan1 }}"
                                 @else
                                     value="{{ old('peminatan1') }}" @endif>
                             <label for="peminatan1">Peminatan</label>
@@ -67,7 +67,7 @@
                         <div class=" form-floating">
                             <input type="text" class="form-control @error('ipk1') is-invalid rounded @enderror"
                                 name="ipk1" id="ipk1" placeholder="IPK" required
-                                @if (isset($mhs1->ipk)) value="{{ $mhs1->ipk }}"
+                                @if (isset($datakp2->ipk1)) value="{{ $datakp2->ipk1 }}"
                                 @else
                                     value="{{ old('ipk1') }}" @endif>
                             <label for="ipk1">IPK</label>
@@ -80,7 +80,7 @@
                         <div class=" form-floating">
                             <input type="text" class="form-control @error('t_sks1') is-invalid rounded @enderror"
                                 name="t_sks1" id="t_sks1" placeholder="Total SKS" required
-                                @if (isset($mhs1->t_sks)) value="{{ $mhs1->t_sks }}"
+                                @if (isset($datakp2->t_sks1)) value="{{ $datakp2->t_sks1 }}"
                                 @else
                                     value="{{ old('t_sks1') }}" @endif>
                             <label for="t_sks1">Total SKS</label>
@@ -93,7 +93,7 @@
                         <div class=" form-floating">
                             <input type="text" class="form-control @error('jum_d1') is-invalid rounded @enderror"
                                 name="jum_d1" id="jum_d1" placeholder="Jumlah Nilai D" required
-                                @if (isset($datakp1->jum_d1)) value="{{ $datakp1->jum_d1 }}"
+                                @if (isset($datakp2->jum_d1)) value="{{ $datakp2->jum_d1 }}"
                                 @else
                                     value="{{ old('jum_d1') }}" @endif>
                             <label for="jum_d1">Jumlah Nilai D</label>
@@ -106,7 +106,7 @@
                         <div class=" form-floating">
                             <input type="text" class="form-control @error('mk_d1') is-invalid rounded @enderror"
                                 name="mk_d1" id="mk_d1" placeholder="Jumlah Nilai D"
-                                @if (isset($datakp1->mk_d1)) value="{{ $datakp1->mk_d1 }}"
+                                @if (isset($datakp2->mk_d1)) value="{{ $datakp2->mk_d1 }}"
                                 @else
                                     value="{{ old('mk_d1') }}" @endif>
                             <label for="mk_d1">MK Nilai D</label>
@@ -119,7 +119,7 @@
                         <div class=" form-floating">
                             <input type="text" class="form-control @error('jum_e1') is-invalid rounded @enderror"
                                 name="jum_e1" id="jum_e1" placeholder="Jumlah Nilai D" required
-                                @if (isset($datakp1->jum_e1)) value="{{ $datakp1->jum_e1 }}"
+                                @if (isset($datakp2->jum_e1)) value="{{ $datakp2->jum_e1 }}"
                                 @else
                                     value="{{ old('jum_e1') }}" @endif>
                             <label for="jum_e1">Jumlah Nilai E</label>
@@ -132,7 +132,7 @@
                         <div class=" form-floating">
                             <input type="text" class="form-control @error('mk_e1') is-invalid rounded @enderror"
                                 name="mk_e1" id="mk_e1" placeholder="Jumlah Nilai D"
-                                @if (isset($datakp1->mk_e1)) value="{{ $datakp1->mk_e1 }}"
+                                @if (isset($datakp2->mk_e1)) value="{{ $datakp2->mk_e1 }}"
                                 @else
                                     value="{{ old('mk_e1') }}" @endif>
                             <label for="mk_e1">MK Nilai E</label>
@@ -164,24 +164,8 @@
                         </div>
                         <div class="form-floating">
                             <div class="mb-2">
-                                @if (isset($datakp2->khs1))
-                                    <a href="storage/{{ $datakp2->khs1 }}" target="_blank" class="btn btn-primary">Lihat
-                                        Data KHS</a>
-                                @endif
-                            </div>
-                        </div>
-                        <div class="form-floating">
-                            <div class="mb-2">
                                 <label for="krs1" class="form-label">Upload KRS</label>
                                 <input class="form-control" type="file" id="krs1" name="krs1">
-                            </div>
-                        </div>
-                        <div class="form-floating">
-                            <div class="mb-2">
-                                @if (isset($datakp2->krs1))
-                                    <a href="storage/{{ $datakp2->krs1 }}" target="_blank" class="btn btn-primary">Lihat
-                                        Data KRS</a>
-                                @endif
                             </div>
                         </div>
                     </div>
@@ -192,7 +176,7 @@
                             <input type="text"
                                 class="form-control rounded-top @error('nim2') is-invalid rounded @enderror"
                                 name="nim2" id="nim2" placeholder="NIM Mahasiswa 2" required
-                                @if (isset($mhs2->nim)) value="{{ $mhs2->nim }}"
+                                @if (isset($datakp2->nim2)) value="{{ $datakp2->nim2 }}"
                                 @else
                                     value="{{ old('nim2') }}" @endif>
                             <label for="nim2">NIM Mahasiswa 2</label>
@@ -205,7 +189,7 @@
                         <div class=" form-floating">
                             <input type="text" class="form-control @error('nama2') is-invalid rounded @enderror"
                                 name="nama2" id="nama2" placeholder="Nama Mahasiswa 2" required
-                                @if (isset($mhs2->nama)) value="{{ $mhs2->nama }}"
+                                @if (isset($datakp2->nama2)) value="{{ $datakp2->nama2 }}"
                                 @else
                                     value="{{ old('nama2') }}" @endif>
                             <label for="nama2">Nama Mahasiswa 2</label>
@@ -218,7 +202,7 @@
                         <div class=" form-floating">
                             <input type="text" class="form-control @error('doswal2') is-invalid rounded @enderror"
                                 name="doswal2" id="doswal2" placeholder="Nama Dosen Wali" required
-                                @if (isset($mhs2->doswal)) value="{{ $mhs2->doswal }}"
+                                @if (isset($datakp2->doswal2)) value="{{ $datakp2->doswal2 }}"
                                 @else
                                     value="{{ old('doswal2') }}" @endif>
                             <label for="doswal2">Nama Dosen Wali</label>
@@ -231,7 +215,7 @@
                         <div class=" form-floating">
                             <input type="text" class="form-control @error('peminatan2') is-invalid rounded @enderror"
                                 name="peminatan2" id="peminatan2" placeholder="Peminatan" required
-                                @if (isset($mhs2->peminatan)) value="{{ $mhs2->peminatan }}"
+                                @if (isset($datakp2->peminatan2)) value="{{ $datakp2->peminatan2 }}"
                                 @else
                                     value="{{ old('peminatan2') }}" @endif>
                             <label for="peminatan2">Peminatan</label>
@@ -244,7 +228,7 @@
                         <div class=" form-floating">
                             <input type="text" class="form-control @error('ipk2') is-invalid rounded @enderror"
                                 name="ipk2" id="ipk2" placeholder="IPK" required
-                                @if (isset($mhs2->ipk)) value="{{ $mhs2->ipk }}"
+                                @if (isset($datakp2->ipk2)) value="{{ $datakp2->ipk2 }}"
                                 @else
                                     value="{{ old('ipk2') }}" @endif>
                             <label for="ipk2">IPK</label>
@@ -257,7 +241,7 @@
                         <div class=" form-floating">
                             <input type="text" class="form-control @error('t_sks2') is-invalid rounded @enderror"
                                 name="t_sks2" id="t_sks2" placeholder="Total SKS" required
-                                @if (isset($mhs2->t_sks)) value="{{ $mhs2->t_sks }}"
+                                @if (isset($datakp2->t_sks2)) value="{{ $datakp2->t_sks2 }}"
                                 @else
                                     value="{{ old('t_sks2') }}" @endif>
                             <label for="t_sks2">Total SKS</label>
@@ -270,7 +254,7 @@
                         <div class=" form-floating">
                             <input type="text" class="form-control @error('jum_d2') is-invalid rounded @enderror"
                                 name="jum_d2" id="jum_d2" placeholder="Jumlah Nilai D" required
-                                @if (isset($datakp1->jum_d2)) value="{{ $datakp1->jum_d2 }}"
+                                @if (isset($datakp2->jum_d2)) value="{{ $datakp2->jum_d2 }}"
                                 @else
                                     value="{{ old('jum_d2') }}" @endif>
                             <label for="jum_d2">Jumlah Nilai D</label>
@@ -283,7 +267,7 @@
                         <div class=" form-floating">
                             <input type="text" class="form-control @error('mk_d2') is-invalid rounded @enderror"
                                 name="mk_d2" id="mk_d2" placeholder="Jumlah Nilai D"
-                                @if (isset($datakp1->mk_d2)) value="{{ $datakp1->mk_d2 }}"
+                                @if (isset($datakp2->mk_d2)) value="{{ $datakp2->mk_d2 }}"
                                 @else
                                     value="{{ old('mk_d2') }}" @endif>
                             <label for="mk_d2">MK Nilai D</label>
@@ -296,7 +280,7 @@
                         <div class=" form-floating">
                             <input type="text" class="form-control @error('jum_e2') is-invalid rounded @enderror"
                                 name="jum_e2" id="jum_e2" placeholder="Jumlah Nilai D" required
-                                @if (isset($datakp1->jum_e2)) value="{{ $datakp1->jum_e2 }}"
+                                @if (isset($datakp2->jum_e2)) value="{{ $datakp2->jum_e2 }}"
                                 @else
                                     value="{{ old('semester1') }}" @endif>
                             <label for="jum_e2">Jumlah Nilai E</label>
@@ -309,7 +293,7 @@
                         <div class=" form-floating">
                             <input type="text" class="form-control @error('mk_e2') is-invalid rounded @enderror"
                                 name="mk_e2" id="mk_e2" placeholder="Jumlah Nilai D"
-                                @if (isset($datakp1->mk_e2)) value="{{ $datakp1->mk_e2 }}"
+                                @if (isset($datakp2->mk_e2)) value="{{ $datakp2->mk_e2 }}"
                                 @else
                                     value="{{ old('semester1') }}" @endif>
                             <label for="mk_e2">MK Nilai E</label>
@@ -341,24 +325,8 @@
                         </div>
                         <div class="form-floating">
                             <div class="mb-2">
-                                @if (isset($datakp2->khs2))
-                                    <a href="storage/{{ $datakp2->khs2 }}" target="_blank" class="btn btn-primary">Lihat
-                                        Data KHS</a>
-                                @endif
-                            </div>
-                        </div>
-                        <div class="form-floating">
-                            <div class="mb-2">
                                 <label for="krs2" class="form-label">Upload KRS</label>
                                 <input class="form-control" type="file" id="krs2" name="krs2">
-                            </div>
-                        </div>
-                        <div class="form-floating">
-                            <div class="mb-2">
-                                @if (isset($datakp2->krs2))
-                                    <a href="storage/{{ $datakp2->krs2 }}" target="_blank" class="btn btn-primary">Lihat
-                                        Data KRS</a>
-                                @endif
                             </div>
                         </div>
                     </div>
@@ -371,7 +339,7 @@
                             <input type="text"
                                 class="form-control rounded-top @error('judul_kp') is-invalid rounded @enderror"
                                 name="judul_kp" id="judul_kp" placeholder="Judul Kerja Praktik" required
-                                @if (isset($materi->judul_kp)) value="{{ $materi->judul_kp }}"
+                                @if (isset($datakp2->judul_kp)) value="{{ $datakp2->judul_kp }}"
                                 @else
                                     value="{{ old('judul_kp') }}" @endif>
                             <label for="judul_kp">Judul Kerja Praktik</label>
@@ -386,7 +354,7 @@
                                 class="form-control rounded-top @error('tempat_kp_lapangan') is-invalid rounded @enderror"
                                 name="tempat_kp_lapangan" id="tempat_kp_lapangan" placeholder="Judul Kerja Praktik"
                                 required
-                                @if (isset($materi->tempat_kp_lapangan)) value="{{ $materi->tempat_kp_lapangan }}"
+                                @if (isset($datakp2->tempat_kp_lapangan)) value="{{ $datakp2->tempat_kp_lapangan }}"
                                 @else
                                     value="{{ old('tempat_kp_lapangan') }}" @endif>
                             <label for="tempat_kp_lapangan">Tempat Kerja Praktik</label>
@@ -400,7 +368,7 @@
                             <input type="text"
                                 class="form-control rounded-top @error('alamat') is-invalid rounded @enderror"
                                 name="alamat" id="alamat" placeholder="Judul Kerja Praktik" required
-                                @if (isset($materi->alamat)) value="{{ $materi->alamat }}"
+                                @if (isset($datakp2->alamat)) value="{{ $datakp2->alamat }}"
                                 @else
                                     value="{{ old('alamat') }}" @endif>
                             <label for="alamat">Alamat Kerja Praktik</label>
@@ -416,7 +384,7 @@
                             <input type="text"
                                 class="form-control rounded-top @error('telp_tempat_kp') is-invalid rounded @enderror"
                                 name="telp_tempat_kp" id="telp_tempat_kp" placeholder="Judul Kerja Praktik" required
-                                @if (isset($materi->telp_tempat_kp)) value="{{ $materi->telp_tempat_kp }}"
+                                @if (isset($datakp2->telp_tempat_kp)) value="{{ $datakp2->telp_tempat_kp }}"
                                 @else
                                     value="{{ old('telp_tempat_kp') }}" @endif>
                             <label for="telp_tempat_kp">Nomor Telepon Tempat Kerja Praktik</label>
@@ -431,7 +399,7 @@
                                 class="form-control rounded-top @error('nama_pembimbing_lapangan') is-invalid rounded @enderror"
                                 name="nama_pembimbing_lapangan" id="nama_pembimbing_lapangan"
                                 placeholder="Judul Kerja Praktik" required
-                                @if (isset($materi->nama_pembimbing_lapangan)) value="{{ $materi->nama_pembimbing_lapangan }}"
+                                @if (isset($datakp2->nama_pembimbing_lapangan)) value="{{ $datakp2->nama_pembimbing_lapangan }}"
                                 @else
                                     value="{{ old('nama_pembimbing_lapangan') }}" @endif>
                             <label for="nama_pembimbing_lapangan">Nama Pembimbing Lapangan</label>
@@ -446,7 +414,7 @@
                                 class="form-control rounded-top @error('nama_penanggung_jawab_lapangan') is-invalid rounded @enderror"
                                 name="nama_penanggung_jawab_lapangan" id="nama_penanggung_jawab_lapangan"
                                 placeholder="Judul Kerja Praktik" required
-                                @if (isset($materi->nama_penanggung_jawab_lapangan)) value="{{ $materi->nama_penanggung_jawab_lapangan }}"
+                                @if (isset($datakp2->nama_penanggung_jawab_lapangan)) value="{{ $datakp2->nama_penanggung_jawab_lapangan }}"
                                 @else
                                     value="{{ old('nama_penanggung_jawab_lapangan') }}" @endif>
                             <label for="nama_penanggung_jawab_lapangan">Nama Penanggung Jawab Lapangan</label>
@@ -464,7 +432,7 @@
                             <input type="text"
                                 class="form-control rounded-top @error('dosbim') is-invalid rounded @enderror"
                                 name="dosbim" id="dosbim" placeholder="Judul Kerja Praktik" required
-                                @if (isset($kelompok->dosbim)) value="{{ $kelompok->dosbim }}" @else value="{{ old('dosbim') }}" @endif>
+                                @if (isset($datakp2->dosbim)) value="{{ $datakp2->dosbim }}" @else value="{{ old('dosbim') }}" @endif>
                             <label for="dosbim">Dosen Pembimbing</label>
                             @error('dosbim')
                                 <div class="invalid-feedback">
@@ -499,15 +467,6 @@
                                 <input class="form-control" type="file" id="k_b_akademik" name="k_b_akademik">
                             </div>
                         </div>
-                        <div class="form-floating">
-                            <div class="mb-2">
-                                @if (isset($datakp2->k_b_akademik))
-                                    <a href="storage/{{ $datakp2->k_b_akademik }}" target="_blank"
-                                        class="btn btn-primary">Lihat
-                                        Data Kartu Bimbingan Akademik</a>
-                                @endif
-                            </div>
-                        </div>
                     </div>
                 </div>
 
@@ -535,15 +494,6 @@
                                 <input class="form-control" type="file" id="k_b_lapangan" name="k_b_lapangan">
                             </div>
                         </div>
-                        <div class="form-floating">
-                            <div class="mb-2">
-                                @if (isset($datakp2->k_b_lapangan))
-                                    <a href="storage/{{ $datakp2->k_b_lapangan }}" target="_blank"
-                                        class="btn btn-primary">Lihat
-                                        Data Kartu Bimbingan Lapangan</a>
-                                @endif
-                            </div>
-                        </div>
                     </div>
                 </div>
 
@@ -557,15 +507,6 @@
                                 <input class="form-control" type="file" id="surat_kelayakan" name="surat_kelayakan">
                             </div>
                         </div>
-                        <div class="form-floating">
-                            <div class="mb-2">
-                                @if (isset($datakp2->surat_kelayakan))
-                                    <a href="storage/{{ $datakp2->surat_kelayakan }}" target="_blank"
-                                        class="btn btn-primary">Lihat
-                                        Data Surat Kelayakan</a>
-                                @endif
-                            </div>
-                        </div>
                     </div>
                     <div class="col">
                         <div class="form-floating">
@@ -574,27 +515,11 @@
                                 <input class="form-control" type="file" id="form_daftar" name="form_daftar">
                             </div>
                         </div>
-                        <div class="form-floating">
-                            <div class="mb-2">
-                                @if (isset($datakp2->form_daftar))
-                                    <a href="storage/{{ $datakp2->form_daftar }}" target="_blank"
-                                        class="btn btn-primary">Lihat
-                                        Data Form Pendaftaran</a>
-                                @endif
-                            </div>
-                        </div>
                     </div>
                 </div>
 
-                <button class="mt-3 w-100 btn btn-lg btn-primary" type="submit"
-                    @if (isset($datakp2)) disabled @endif>Daftar</button>
+                <button class="mt-3 w-100 btn btn-lg btn-primary" type="submit">Ubah Data</button>
             </form>
-            <a href="/edit-data-kp2">
-                <button class="mt-3 w-100 btn btn-lg bg-warning border-0"
-                    @if (isset($datakp2)) @else disabled @endif style="text-decoration: none">
-                    <span data-feather="edit"></span> Edit Data
-                </button>
-            </a>
             <p class="mt-5 mb-3 text-muted">&copy; 2017–2022</p>
         </main>
 
