@@ -18,6 +18,7 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
+        'role_id',
         'name',
         'username',
         'email',
@@ -42,16 +43,20 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-    public function kelompok(){
+    public function kelompok()
+    {
         return $this->hasOne(Kelompok::class);
     }
-    public function mahasiswa(){
+    public function mahasiswa()
+    {
         return $this->belongsTo(Mahasiswa::class, 'mahasiswa_id', 'id');
     }
-    public function mahasiswa2(){
+    public function mahasiswa2()
+    {
         return $this->belongsTo(Mahasiswa::class, 'mahasiswa2_id', 'id');
     }
-    public function role(){
+    public function role()
+    {
         return $this->belongsTo(Role::class);
     }
 }

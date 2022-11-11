@@ -3,7 +3,7 @@
     <div class="text-center mt-5 mb-5">
         <h1>Ploting Dosen Pembimbing</h1>
         <div class="table-responsive">
-            <table class="table table-striped table-sm">
+            <table class="table table-striped table-sm table-hover">
                 <thead>
                     <tr>
                         <th scope="col">#</th>

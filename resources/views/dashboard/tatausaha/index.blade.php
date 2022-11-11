@@ -8,7 +8,7 @@
         @endif
         <h1>Data Pendaftaran KP</h1>
         <div class="table-responsive">
-            <table class="table table-striped table-sm">
+            <table class="table table-striped table-sm table-hover">
                 <thead>
                     <tr>
                         <th scope="col">#</th>

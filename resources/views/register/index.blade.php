@@ -69,8 +69,8 @@
 
             <button class="w-100 btn btn-lg mb-2 btn-primary" type="submit">Register</button>
             <a href="/login">Login</a>
-            <p class="mt-5 mb-3 text-muted">&copy; 2017–2022</p>
         </form>
+        <p class="mt-5 mb-3 text-muted">&copy; 2017–2022</p>
     </main>
 
 

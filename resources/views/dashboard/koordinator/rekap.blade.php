@@ -4,7 +4,7 @@
         <h1>Rekap Data KP</h1>
         <a href="/rekap-kp/rekap-pdf" target="_blank" class="btn btn-success mt-2 mb-2">Print PDF</a>
         <div class="table-responsive">
-            <table class="table table-striped table-sm">
+            <table class="table table-striped table-sm table-hover">
                 <thead>
                     <tr>
                         <th scope="col">#</th>

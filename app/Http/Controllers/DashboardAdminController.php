@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Kelompok;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -28,7 +29,9 @@ class DashboardAdminController extends Controller
      */
     public function create()
     {
-        //
+        return view('dashboard.admin.tambah-akun', [
+            'title' => 'Tambah Akun'
+        ]);
     }
 
     /**
@@ -39,7 +42,24 @@ class DashboardAdminController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData =  $request->validate([
+            'role_id' => 'required',
+            'username' => 'required|min:3|max:255|unique:users',
+            'password' => 'required|min:6|max:255',
+        ]);
+
+        $validatedData['password'] = bcrypt($validatedData['password']);
+
+        if ($validatedData['role_id'] == 2) {
+            $user = User::create($validatedData);
+            $current_id = $user->id;
+            Kelompok::create([
+                'user_id' => $current_id,
+            ]);
+        } else {
+            User::create($validatedData);
+        }
+        return redirect('/admin')->with('success', 'Tambah Akun Berhasil');
     }
 
     /**

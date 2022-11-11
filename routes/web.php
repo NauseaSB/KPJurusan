@@ -49,6 +49,8 @@ Route::group(['middleware' => 'auth'], function () {
     //route group untuk role ADMIN
     Route::group(['middleware' => 'role:admin'], function () {
         Route::get('/admin', [DashboardAdminController::class, 'index'])->middleware('auth');
+        Route::get('/tambah-akun', [DashboardAdminController::class, 'create']);
+        Route::post('/tambah-akun', [DashboardAdminController::class, 'store']);
     });
 
     //route group untuk role MAHASISWA
