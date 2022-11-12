@@ -168,6 +168,11 @@ class Kp2Controller extends Controller
 
         //bimbingan akademik
         $kp2->jum_b_akademik = $data['jum_b_akademik'];
+        if ($data['jum_b_akademik'] < 6) {
+            $status2->s_b_akademik = 'Tidak Memenuhi';
+        } else {
+            $status2->s_b_akademik = 'Memenuhi';
+        }
         if ($request->file('k_b_akademik')) {
             $kp2->k_b_akademik = $request->file('k_b_akademik')->store('data-mahasiswa');
             $status2->s_k_akademik = 'Memenuhi';
@@ -177,6 +182,11 @@ class Kp2Controller extends Controller
 
         //bimbingan lapangan
         $kp2->jum_b_lapangan = $data['jum_b_lapangan'];
+        if ($data['jum_b_lapangan'] < 8) {
+            $status2->s_b_lapangan = 'Tidak Memenuhi';
+        } else {
+            $status2->s_b_lapangan = 'Memenuhi';
+        }
         if ($request->file('k_b_lapangan')) {
             $kp2->k_b_lapangan = $request->file('k_b_lapangan')->store('data-mahasiswa');
             $status2->s_k_lapangan = 'Memenuhi';
@@ -427,6 +437,16 @@ class Kp2Controller extends Controller
         } else {
             $s_kontrak2 = 'Tidak Memenuhi';
         }
+        if ($data['jum_b_akademik'] < 6) {
+            $s_b_akademik = 'Tidak Memenuhi';
+        } else {
+            $s_b_akademik = 'Memenuhi';
+        }
+        if ($data['jum_b_lapangan'] < 8) {
+            $s_b_lapangan = 'Tidak Memenuhi';
+        } else {
+            $s_b_lapangan = 'Memenuhi';
+        }
 
         Status2::where('id', $current_status_id)->update([
             's_ipk1' => $s_ipk1,
@@ -439,6 +459,8 @@ class Kp2Controller extends Controller
             's_jum_d2' => $s_jum_d2,
             's_jum_e2' => $s_jum_e2,
             's_kontrak2' => $s_kontrak2,
+            's_b_akademik' => $s_b_akademik,
+            's_b_lapangan' => $s_b_lapangan,
         ]);
 
         return redirect('/dashboard')->with('success', 'Ubah Data KP2 Berhasil');

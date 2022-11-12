@@ -34,10 +34,17 @@ class CreateStatus2sTable extends Migration
             $table->string('s_krs2');
 
             //kelompok
+            $table->string('s_b_akademik');
             $table->string('s_k_akademik');
+            $table->string('s_b_lapangan');
             $table->string('s_k_lapangan');
             $table->string('s_surat_kelayakan');
             $table->string('s_form_daftar');
+            $table->string('s_mhs1')->nullable();
+            $table->string('s_mhs2')->nullable();
+            $table->string('s_kelompok')->nullable();
+            $table->string('s_akhir')->nullable();
+
             $table->timestamps();
         });
     }
