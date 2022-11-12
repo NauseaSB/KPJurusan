@@ -81,7 +81,12 @@ class DashboardAdminController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data = User::where('id', $id)->first();
+        // ddd($data);
+        return view('dashboard.admin.edit-akun', [
+            'datas' => $data,
+            'title' => 'Edit Akun'
+        ]);
     }
 
     /**
@@ -93,7 +98,16 @@ class DashboardAdminController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validatedData =  $request->validate([
+            'role_id' => 'required',
+            'username' => 'required|min:3|max:255',
+            'password' => 'required|min:6|max:255',
+        ]);
+
+        $validatedData['password'] = bcrypt($validatedData['password']);
+
+        User::where('id', $id)->update($validatedData);
+        return redirect('/admin')->with('success', 'Edit Akun Berhasil');
     }
 
     /**
@@ -104,6 +118,16 @@ class DashboardAdminController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $data = User::where('id', $id)->first();
+        // ddd($current_kelompok_id);
+        if ($data->role_id == '2') {
+            $kelompok = Kelompok::where('user_id', $data->id)->first();
+            $current_kelompok_id = $kelompok->id;
+            User::destroy($id);
+            Kelompok::destroy($current_kelompok_id);
+        } else {
+            User::destroy($id);
+        }
+        return redirect('/admin')->with('success', 'Delete Akun Berhasil');
     }
 }

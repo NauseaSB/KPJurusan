@@ -48,9 +48,19 @@ Route::group(['middleware' => 'auth'], function () {
 
     //route group untuk role ADMIN
     Route::group(['middleware' => 'role:admin'], function () {
+        //halaman utama
         Route::get('/admin', [DashboardAdminController::class, 'index'])->middleware('auth');
+
+        //halaman tambah akun
         Route::get('/tambah-akun', [DashboardAdminController::class, 'create']);
         Route::post('/tambah-akun', [DashboardAdminController::class, 'store']);
+
+        //halaman edit akun
+        Route::get('/edit-akun/{id}', [DashboardAdminController::class, 'edit']);
+        Route::post('/edit-akun/{id}', [DashboardAdminController::class, 'update']);
+
+        //delete akun
+        Route::post('/delete-akun/{id}', [DashboardAdminController::class, 'destroy']);
     });
 
     //route group untuk role MAHASISWA

@@ -23,6 +23,7 @@
                         <tr>
                             <th scope="col">#</th>
                             <th scope="col">Username</th>
+                            <th scope="col">Role</th>
                             <th scope="col">Aksi</th>
                         </tr>
                     </thead>
@@ -32,14 +33,28 @@
                                 <td>{{ $loop->iteration }}</td>
                                 <td>{{ $item->username }}</td>
                                 <td>
-                                    <a href="" class="badge bg-warning text-bg-light" style="text-decoration: none">
+                                    @if ($item->role_id == '1')
+                                        Admin
+                                    @elseif ($item->role_id == '2')
+                                        Mahasiswa
+                                    @elseif ($item->role_id == '3')
+                                        Koordinator
+                                    @elseif ($item->role_id == '4')
+                                        Tata Usaha
+                                    @endif
+                                </td>
+                                <td>
+                                    <a href="/edit-akun/{{ $item->id }}" class="badge bg-warning text-bg-light"
+                                        style="text-decoration: none">
                                         <span data-feather="edit"></span>
                                         Edit Akun
                                     </a>
-                                    <a href="" class="badge bg-danger text-bg-dark" style="text-decoration: none">
-                                        <span data-feather="trash-2"></span>
-                                        Hapus Akun
-                                    </a>
+                                    <form action="/delete-akun/{{ $item->id }}" method="post" class="d-inline">
+                                        @csrf
+                                        <button class="badge bg-danger text-bg-dark border-0"
+                                            onclick="return confirm('Akun akan di hapus, apakah anda yakin?')"><span
+                                                data-feather="trash-2"></span>Hapus Akun</button>
+                                    </form>
                                 </td>
                                 <td></td>
                                 <td></td>
