@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Kelompok;
 use App\Models\kp2;
+use App\Models\Status2;
 use Illuminate\Http\Request;
 
 class DashboardKP2Controller extends Controller
@@ -83,9 +84,47 @@ class DashboardKP2Controller extends Controller
      * @param  \App\Models\kp2  $kp2
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, kp2 $kp2)
+    public function update(Request $request, kp2 $kp2, $id)
     {
-        //
+        $data =  $request->all();
+        $datas = Kelompok::where('id', $id)->with('materi')->with('kp2')->with('status2')->first();
+        $current_status_id = $datas->status2->id;
+
+        Status2::where('id', $current_status_id)->update([
+            //mhs1
+            's_ipk1' => $data['s_ipk1'],
+            's_sks1' => $data['s_sks1'],
+            's_jum_d1' => $data['s_jum_d1'],
+            's_jum_e1' => $data['s_jum_e1'],
+            's_kontrak1' => $data['s_kontrak1'],
+            's_khs1' => $data['s_khs1'],
+            's_krs1' => $data['s_krs1'],
+
+            //mhs2
+            's_ipk2' => $data['s_ipk2'],
+            's_sks2' => $data['s_sks2'],
+            's_jum_d2' => $data['s_jum_d2'],
+            's_jum_e2' => $data['s_jum_e2'],
+            's_kontrak2' => $data['s_kontrak2'],
+            's_khs2' => $data['s_khs2'],
+            's_krs2' => $data['s_krs2'],
+
+            //kel
+            's_b_akademik' => $data['s_b_akademik'],
+            's_k_akademik' => $data['s_k_akademik'],
+            's_b_lapangan' => $data['s_b_lapangan'],
+            's_k_lapangan' => $data['s_k_lapangan'],
+            's_surat_kelayakan' => $data['s_surat_kelayakan'],
+            's_form_daftar' => $data['s_form_daftar'],
+
+            //status
+            's_mhs1' => $data['s_mhs1'],
+            's_mhs2' => $data['s_mhs2'],
+            's_kelompok' => $data['s_kelompok'],
+            's_akhir' => $data['s_akhir'],
+        ]);
+
+        return redirect('/data-kp2')->with('success', 'Perubahan Status KP2 Berhasil');
     }
 
     /**

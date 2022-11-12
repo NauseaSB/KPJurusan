@@ -787,14 +787,14 @@
                 <div class="row">
                     <div class="col">
                         <div class="form-floating">
-                            <select type="text" class="form-select" name="status_mhsw1" id="status_mhsw1">
-                                @if (isset($datas->status_mhsw1))
-                                    <option @if ($datas->status_mhsw1 == 'Memenuhi') selected @endif value="Memenuhi">Memenuhi
+                            <select type="text" class="form-select" name="s_mhs1" id="s_mhs1">
+                                @if (isset($status2->s_mhs1))
+                                    <option @if ($status2->s_mhs1 == 'Memenuhi') selected @endif value="Memenuhi">Memenuhi
                                     </option>
-                                    <option @if ($datas->status_mhsw1 == 'Tidak Memenuhi') selected @endif value="Tidak Memenuhi">
+                                    <option @if ($status2->s_mhs1 == 'Tidak Memenuhi') selected @endif value="Tidak Memenuhi">
                                         Tidak Memenuhi
                                     </option>
-                                    <option @if ($datas->status_mhsw1 == 'Bersyarat') selected @endif value="Bersyarat">
+                                    <option @if ($status2->s_mhs1 == 'Bersyarat') selected @endif value="Bersyarat">
                                         Bersyarat
                                     </option>
                                 @else
@@ -803,19 +803,19 @@
                                     <option value="Bersyarat">Bersyarat</option>
                                 @endif
                             </select>
-                            <label for="status_mhsw1" class="form-label">Status Mahasiswa1</label>
+                            <label for="s_mhs1" class="form-label">Status Mahasiswa1</label>
                         </div>
                     </div>
                     <div class="col">
                         <div class="form-floating">
-                            <select type="text" class="form-select" name="status_mhsw2" id="status_mhsw2">
-                                @if (isset($datas->status_mhsw2))
-                                    <option @if ($datas->status_mhsw2 == 'Memenuhi') selected @endif value="Memenuhi">Memenuhi
+                            <select type="text" class="form-select" name="s_mhs2" id="s_mhs2">
+                                @if (isset($status2->s_mhs2))
+                                    <option @if ($status2->s_mhs2 == 'Memenuhi') selected @endif value="Memenuhi">Memenuhi
                                     </option>
-                                    <option @if ($datas->status_mhsw2 == 'Tidak Memenuhi') selected @endif value="Tidak Memenuhi">
+                                    <option @if ($status2->s_mhs2 == 'Tidak Memenuhi') selected @endif value="Tidak Memenuhi">
                                         Tidak Memenuhi
                                     </option>
-                                    <option @if ($datas->status_mhsw2 == 'Bersyarat') selected @endif value="Bersyarat">
+                                    <option @if ($status2->s_mhs2 == 'Bersyarat') selected @endif value="Bersyarat">
                                         Bersyarat
                                     </option>
                                 @else
@@ -824,19 +824,19 @@
                                     <option value="Bersyarat">Bersyarat</option>
                                 @endif
                             </select>
-                            <label for="status_mhsw2" class="form-label">Status Mahasiswa2</label>
+                            <label for="s_mhs2" class="form-label">Status Mahasiswa2</label>
                         </div>
                     </div>
                     <div class="col">
                         <div class="form-floating">
-                            <select type="text" class="form-select" name="status_klmpk" id="status_klmpk">
-                                @if (isset($datas->status_klmpk))
-                                    <option @if ($datas->status_klmpk == 'Memenuhi') selected @endif value="Memenuhi">Memenuhi
+                            <select type="text" class="form-select" name="s_kelompok" id="s_kelompok">
+                                @if (isset($status2->s_kelompok))
+                                    <option @if ($status2->s_kelompok == 'Memenuhi') selected @endif value="Memenuhi">Memenuhi
                                     </option>
-                                    <option @if ($datas->status_klmpk == 'Tidak Memenuhi') selected @endif value="Tidak Memenuhi">
+                                    <option @if ($status2->s_kelompok == 'Tidak Memenuhi') selected @endif value="Tidak Memenuhi">
                                         Tidak Memenuhi
                                     </option>
-                                    <option @if ($datas->status_klmpk == 'Bersyarat') selected @endif value="Bersyarat">
+                                    <option @if ($status2->s_kelompok == 'Bersyarat') selected @endif value="Bersyarat">
                                         Bersyarat
                                     </option>
                                 @else
@@ -845,28 +845,32 @@
                                     <option value="Bersyarat">Bersyarat</option>
                                 @endif
                             </select>
-                            <label for="status_klmpk" class="form-label">Status Kelompok</label>
+                            <label for="s_kelompok" class="form-label">Status Kelompok</label>
                         </div>
                     </div>
                     <div class="col">
                         <div class="form-floating">
-                            <select type="text" class="form-select" name="status_akhir" id="status_akhir">
-                                @if (isset($datas->status_akhir))
-                                    <option @if ($datas->status_akhir == 'Memenuhi') selected @endif value="Memenuhi">Memenuhi
+                            <select type="text" class="form-select" name="s_akhir" id="s_akhir">
+                                @if (isset($status2->s_akhir))
+                                    <option @if ($status2->s_akhir == 'Memenuhi') selected @endif value="Memenuhi">Memenuhi
                                     </option>
-                                    <option @if ($datas->status_akhir == 'Tidak Memenuhi') selected @endif value="Tidak Memenuhi">
+                                    <option @if ($status2->s_akhir == 'Belum Memenuhi') selected @endif value="Belum Memenuhi">
+                                        Belum Memenuhi
+                                    </option>
+                                    <option @if ($status2->s_akhir == 'Tidak Memenuhi') selected @endif value="Tidak Memenuhi">
                                         Tidak Memenuhi
                                     </option>
-                                    <option @if ($datas->status_akhir == 'Bersyarat') selected @endif value="Bersyarat">
+                                    <option @if ($status2->s_akhir == 'Bersyarat') selected @endif value="Bersyarat">
                                         Bersyarat
                                     </option>
                                 @else
                                     <option value="Memenuhi">Memenuhi</option>
+                                    <option value="Tidak Memenuhi">Belum Memenuhi</option>
                                     <option value="Tidak Memenuhi">Tidak Memenuhi</option>
                                     <option value="Bersyarat">Bersyarat</option>
                                 @endif
                             </select>
-                            <label for="status_akhir" class="form-label">Status Akhir</label>
+                            <label for="s_akhir" class="form-label">Status Akhir</label>
                         </div>
                     </div>
                     <div class="d-grid gap-2 d-md-block">

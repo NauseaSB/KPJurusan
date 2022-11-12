@@ -67,23 +67,35 @@
                                         {{ $item->status2->s_mhs1 }}
                                     </div>
                                 @endif --}}
-                                @if (isset($item->status->s_mhs1))
-                                    {{ $item->status->s_mhs1 }}
+                                @if (isset($item->status2->s_mhs1))
+                                    <div
+                                        class="badge @if ($item->status2->s_mhs1 == 'Memenuhi') bg-success @elseif ($item->status2->s_mhs1 == 'Tidak Memenuhi') bg-danger @else bg-warning @endif">
+                                        {{ $item->status2->s_mhs1 }}
+                                    </div>
                                 @endif
                             </td>
                             <td>
-                                @if (isset($item->status->s_mhs2))
-                                    {{ $item->status->s_mhs2 }}
+                                @if (isset($item->status2->s_mhs2))
+                                    <div
+                                        class="badge @if ($item->status2->s_mhs2 == 'Memenuhi') bg-success @elseif ($item->status2->s_mhs2 == 'Tidak Memenuhi') bg-danger @else bg-warning @endif">
+                                        {{ $item->status2->s_mhs2 }}
+                                    </div>
                                 @endif
                             </td>
                             <td>
-                                @if (isset($item->status->s_kelompok))
-                                    {{ $item->status->s_kelompok }}
+                                @if (isset($item->status2->s_kelompok))
+                                    <div
+                                        class="badge @if ($item->status2->s_kelompok == 'Memenuhi') bg-success @elseif ($item->status2->s_kelompok == 'Tidak Memenuhi') bg-danger @else bg-warning @endif">
+                                        {{ $item->status2->s_kelompok }}
+                                    </div>
                                 @endif
                             </td>
                             <td>
-                                @if (isset($item->status->s_akhir))
-                                    {{ $item->status->s_akhir }}
+                                @if (isset($item->status2->s_akhir))
+                                    <div
+                                        class="badge @if ($item->status2->s_akhir == 'Memenuhi') bg-success @elseif ($item->status2->s_akhir == 'Belum Memenuhi') bg-secondary @elseif ($item->status2->s_akhir == 'Tidak Memenuhi') bg-danger @else bg-warning @endif">
+                                        {{ $item->status2->s_akhir }}
+                                    </div>
                                 @endif
                             </td>
                             <td>
