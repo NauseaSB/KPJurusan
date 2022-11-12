@@ -18,6 +18,7 @@ use App\Http\Controllers\DashboardTUController;
 use App\Http\Controllers\DashboardKoorController;
 use App\Http\Controllers\DaftarMateriKPController;
 use App\Http\Controllers\DashboardAdminController;
+use App\Http\Controllers\DashboardKP2Controller;
 
 /*
 |--------------------------------------------------------------------------
@@ -122,6 +123,13 @@ Route::group(['middleware' => 'auth'], function () {
 
         //halaman ploting dosen
         Route::resource('/ploting-dosen', PlotingDosen::class);
+
+        //halaman data pendaftaran kp2
+        route::get('/data-kp2', [DashboardKP2Controller::class, 'index']);
+
+        //halaman edit status mahasiswa kp2
+        Route::get('/data-kp2/set-status/{id}', [DashboardKP2Controller::class, 'edit']);
+        Route::post('/data-kp2/set-status/{id}', [DashboardKP2Controller::class, 'update']);
 
         //halaman switch form
         Route::get('/bukatutupform', [BukaTutupController::class, 'index']);

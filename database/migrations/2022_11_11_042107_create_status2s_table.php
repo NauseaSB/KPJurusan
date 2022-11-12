@@ -23,8 +23,8 @@ class CreateStatus2sTable extends Migration
             $table->string('s_kontrak1');
             $table->string('s_khs1');
             $table->string('s_krs1');
-            //mahasiswa 2
 
+            //mahasiswa 2
             $table->string('s_ipk2');
             $table->string('s_sks2');
             $table->string('s_jum_d2');

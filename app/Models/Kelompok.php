@@ -42,6 +42,6 @@ class Kelompok extends Model
     }
     public function status2()
     {
-        return $this->belongsTo(status1::class, 's_kp2', 'id');
+        return $this->belongsTo(status2::class, 's_kp2', 'id');
     }
 }

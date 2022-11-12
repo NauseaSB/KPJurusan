@@ -3,25 +3,32 @@
         <ul class="nav flex-column mb-2">
             <li class="nav-item">
                 <a class="nav-link {{ Request::is('koorkp') ? 'active' : '' }}" aria-current="page" href="/koorkp">
-                    <span data-feather="list" class="align-text-bottom"></span>
-                    Data Pendaftaran KP
+                    <span data-feather="users" class="align-text-bottom"></span>
+                    Data Pendaftaran KP1
                 </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link {{ Request::is('rekap-kp') ? 'active' : '' }}" href="/rekap-kp">
-                    <span data-feather="users" class="align-text-bottom"></span>
+                    <span data-feather="file-text" class="align-text-bottom"></span>
                     Rekapitulasi KP
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link {{ Request::is('ploting-dosen') ? 'active' : '' }}" href="{{ route('ploting-dosen.index') }}">
-                    <span data-feather="users" class="align-text-bottom"></span>
+                <a class="nav-link {{ Request::is('ploting-dosen') ? 'active' : '' }}"
+                    href="{{ route('ploting-dosen.index') }}">
+                    <span data-feather="list" class="align-text-bottom"></span>
                     Ploting Dosen Pembimbing
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link {{ Request::is('bukatutupform') ? 'active' : '' }}" href="/bukatutupform">
+                <a class="nav-link {{ Request::is('data-kp2') ? 'active' : '' }}" href="/data-kp2">
                     <span data-feather="users" class="align-text-bottom"></span>
+                    Data Pendaftaran KP2
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link {{ Request::is('bukatutupform') ? 'active' : '' }}" href="/bukatutupform">
+                    <span data-feather="flag" class="align-text-bottom"></span>
                     Buka Tutup Form
                 </a>
             </li>

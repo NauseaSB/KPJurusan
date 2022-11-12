@@ -1511,6 +1511,7 @@
                         <a href="/koorkp" class="btn bg-primary mt-3" role="button">Kembali</a>
                         <button type="submit" class="btn bg-warning mt-3">Ubah Status</button>
                     </div>
+                </div>
             </form>
         </div>
     </main>
