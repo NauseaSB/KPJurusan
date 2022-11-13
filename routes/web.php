@@ -19,6 +19,7 @@ use App\Http\Controllers\DashboardKoorController;
 use App\Http\Controllers\DaftarMateriKPController;
 use App\Http\Controllers\DashboardAdminController;
 use App\Http\Controllers\DashboardKP2Controller;
+use App\Http\Controllers\SeminarController;
 
 /*
 |--------------------------------------------------------------------------
@@ -101,6 +102,10 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/edit-data-kp2', [Kp2Controller::class, 'edit']);
         Route::post('/edit-data-kp2', [Kp2Controller::class, 'update']);
 
+        //halaman daftar seminar kp
+        Route::get('/daftar-seminar', [SeminarController::class, 'index'])->middleware('auth');
+        Route::post('/daftar-seminar', [SeminarController::class, 'store']);
+
         // dummy
         Route::get('/test', [KelompokController::class, 'index']);
     });
@@ -135,6 +140,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/bukatutupform', [BukaTutupController::class, 'index']);
         Route::post('/bukatutupkp1', [BukaTutupController::class, 'lockKP1']);
         Route::post('/bukatutupkp2', [BukaTutupController::class, 'lockKP2']);
+        Route::post('/bukatutupseminar', [BukaTutupController::class, 'lockSeminar']);
     });
 
     //route group untuk role TATA USAHA

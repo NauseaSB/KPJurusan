@@ -33,4 +33,12 @@ class BukaTutupController extends Controller
         ]);
         return redirect()->back()->with('success', 'Status Form KP2 Telah Diubah');
     }
+
+    public function lockSeminar(Request $request)
+    {
+        BukaTutup::first()->update([
+            'seminar' => $request['seminar'],
+        ]);
+        return redirect()->back()->with('success', 'Status Form Seminar Telah Diubah');
+    }
 }

@@ -44,4 +44,8 @@ class Kelompok extends Model
     {
         return $this->belongsTo(status2::class, 's_kp2', 'id');
     }
+    public function seminar()
+    {
+        return $this->belongsTo(Seminar::class, 'seminar_id', 'id');
+    }
 }

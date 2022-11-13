@@ -19,6 +19,14 @@
                             <th>KP 2 :</th>
                             <th><span class="badge bg-danger">Tutup</span></th>
                         </tr>
+                        <tr>
+                            <th>Seminar :</th>
+                            @if ($bukatutupform->seminar == 1)
+                                <th><span class="badge bg-success">Buka</span></th>
+                            @else
+                                <th><span class="badge bg-danger">Tutup</span></th>
+                            @endif
+                        </tr>
                     </table>
                 </div>
             </div>
@@ -43,6 +51,14 @@
                             <th>KP 2 :</th>
                             <th><span class="badge bg-success">Buka</span></th>
                         </tr>
+                        <tr>
+                            <th>Seminar :</th>
+                            @if ($bukatutupform->seminar == 1)
+                                <th><span class="badge bg-success">Buka</span></th>
+                            @else
+                                <th><span class="badge bg-danger">Tutup</span></th>
+                            @endif
+                        </tr>
                     </table>
                 </div>
             </div>
@@ -56,8 +72,25 @@
                 </button>
             </form>
         @endif
-
-
+        @if ($bukatutupform->seminar == 1)
+            <form action="/bukatutupseminar" method="post">
+                @csrf
+                <button class="btn btn-primary mt-3" type="submit">
+                    <input type="hidden" name="seminar" value=0>
+                    <i class="fa-solid fa-unlock fa-lg"></i>
+                    Tutup Seminar
+                </button>
+            </form>
+        @else
+            <form action="/bukatutupseminar" method="post">
+                @csrf
+                <button class="btn btn-primary mt-3" type="submit">
+                    <input type="hidden" name="seminar" value=1>
+                    <i class="fa-solid fa-unlock fa-lg"></i>
+                    Buka Seminar
+                </button>
+            </form>
+        @endif
 
     </div>
 @endsection

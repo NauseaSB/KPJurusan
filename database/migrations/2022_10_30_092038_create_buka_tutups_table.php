@@ -17,6 +17,7 @@ class CreateBukaTutupsTable extends Migration
             $table->id();
             $table->boolean('kp1')->default(0);
             $table->boolean('kp2')->default(0);
+            $table->boolean('seminar')->default(0);
             $table->timestamps();
         });
     }

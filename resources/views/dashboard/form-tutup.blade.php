@@ -5,7 +5,9 @@
     <body>
 
         <main class="form-signin text-center align-items-center">
-            <h1>Halaman Form Sudah Ditutup!</h1>
+            <div class="d-flex justify-content-md-center align-items-center vh-100">
+                <h1>Halaman Form Ditutup!</h1>
+            </div>
         </main>
 
     </body>

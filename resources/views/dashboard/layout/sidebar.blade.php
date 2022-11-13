@@ -31,6 +31,12 @@
                     Daftar KP 2
                 </a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link {{ Request::is('daftar-seminar') ? 'active' : '' }}" href="/daftar-seminar">
+                    <span data-feather="file" class="align-text-bottom"></span>
+                    Daftar Seminar KP
+                </a>
+            </li>
         </ul>
         <h6 class="sidebar-heading d-flex justify-content-between px-3 mt-4 mb-1 text-muted text-uppercase">
         </h6>

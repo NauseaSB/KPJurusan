@@ -23,6 +23,7 @@ class CreateKelompoksTable extends Migration
             $table->integer('kp2_id')->references('id')->on('kp2s')->nullable();
             $table->String('s_kp1')->references('id')->on('status1s')->nullable();
             $table->String('s_kp2')->references('id')->on('status2s')->nullable();
+            $table->String('seminar_id')->references('id')->on('seminars')->nullable();
             $table->String('status_mhsw1')->nullable();
             $table->String('status_mhsw2')->nullable();
             $table->String('status_klmpk')->nullable();
