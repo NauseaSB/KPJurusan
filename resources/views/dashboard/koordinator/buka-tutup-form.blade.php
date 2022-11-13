@@ -10,7 +10,7 @@
         @if ($bukatutupform->kp1 == 1)
             <div class="row justify-content-center">
                 <div class="col-auto">
-                    <table class="table table responsive">
+                    <table class="table table-responsive">
                         <tr>
                             <th>KP 1 :</th>
                             <th><span class="badge bg-success">Buka</span></th>

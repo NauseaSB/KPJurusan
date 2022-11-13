@@ -21,7 +21,8 @@
                         <div class="form-floating">
                             <div class="mb-2">
                                 @if (isset($dataseminar->khs1))
-                                    <a href="storage/{{ $dataseminar->khs1 }}" target="_blank" class="btn btn-primary">Lihat
+                                    <a href="/storage/{{ $dataseminar->khs1 }}" target="_blank"
+                                        class="btn btn-primary">Lihat
                                         Data</a>
                                 @endif
                             </div>
@@ -37,7 +38,8 @@
                         <div class="form-floating">
                             <div class="mb-2">
                                 @if (isset($dataseminar->khs2))
-                                    <a href="storage/{{ $dataseminar->khs2 }}" target="_blank" class="btn btn-primary">Lihat
+                                    <a href="/storage/{{ $dataseminar->khs2 }}" target="_blank"
+                                        class="btn btn-primary">Lihat
                                         Data</a>
                                 @endif
                             </div>
@@ -57,7 +59,7 @@
                         <div class="form-floating">
                             <div class="mb-2">
                                 @if (isset($dataseminar->f_demo_aplikasi))
-                                    <a href="storage/{{ $dataseminar->f_demo_aplikasi }}" target="_blank"
+                                    <a href="/storage/{{ $dataseminar->f_demo_aplikasi }}" target="_blank"
                                         class="btn btn-primary">Lihat
                                         Data</a>
                                 @endif
@@ -74,7 +76,7 @@
                         <div class="form-floating">
                             <div class="mb-2">
                                 @if (isset($dataseminar->f_surat_kelayakan))
-                                    <a href="storage/{{ $dataseminar->f_surat_kelayakan }}" target="_blank"
+                                    <a href="/storage/{{ $dataseminar->f_surat_kelayakan }}" target="_blank"
                                         class="btn btn-primary">Lihat
                                         Data</a>
                                 @endif
@@ -96,7 +98,7 @@
                         <div class="form-floating">
                             <div class="mb-2">
                                 @if (isset($dataseminar->f_bimbingan_akademik))
-                                    <a href="storage/{{ $dataseminar->f_bimbingan_akademik }}" target="_blank"
+                                    <a href="/storage/{{ $dataseminar->f_bimbingan_akademik }}" target="_blank"
                                         class="btn btn-primary">Lihat
                                         Data</a>
                                 @endif
@@ -113,7 +115,7 @@
                         <div class="form-floating">
                             <div class="mb-2">
                                 @if (isset($dataseminar->draft_laporan_kp))
-                                    <a href="storage/{{ $dataseminar->draft_laporan_kp }}" target="_blank"
+                                    <a href="/storage/{{ $dataseminar->draft_laporan_kp }}" target="_blank"
                                         class="btn btn-primary">Lihat
                                         Data</a>
                                 @endif

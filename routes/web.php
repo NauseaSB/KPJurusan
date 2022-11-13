@@ -19,6 +19,7 @@ use App\Http\Controllers\DashboardKoorController;
 use App\Http\Controllers\DaftarMateriKPController;
 use App\Http\Controllers\DashboardAdminController;
 use App\Http\Controllers\DashboardKP2Controller;
+use App\Http\Controllers\DashboardSeminarController;
 use App\Http\Controllers\SeminarController;
 
 /*
@@ -136,9 +137,16 @@ Route::group(['middleware' => 'auth'], function () {
         //halaman data pendaftaran kp2
         route::get('/data-kp2', [DashboardKP2Controller::class, 'index']);
 
+        //halaman rekap data pendaftaran kp2
+        Route::get('/data-kp2/rekap-pdf', [DashboardKP2Controller::class, 'rpdf']);
+
         //halaman edit status mahasiswa kp2
         Route::get('/data-kp2/set-status/{id}', [DashboardKP2Controller::class, 'edit']);
         Route::post('/data-kp2/set-status/{id}', [DashboardKP2Controller::class, 'update']);
+
+        //halaman data seminar
+        route::get('/data-seminar', [DashboardSeminarController::class, 'index']);
+        route::get('/data-seminar/lihat-data/{id}', [DashboardSeminarController::class, 'show']);
 
         //halaman switch form
         Route::get('/bukatutupform', [BukaTutupController::class, 'index']);

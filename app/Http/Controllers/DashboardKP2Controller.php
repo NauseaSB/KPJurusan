@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Kelompok;
 use App\Models\kp2;
 use App\Models\Status2;
+use Dompdf\Dompdf;
 use Illuminate\Http\Request;
 
 class DashboardKP2Controller extends Controller
@@ -294,5 +295,26 @@ class DashboardKP2Controller extends Controller
         }
 
         return $jumlah;
+    }
+
+    public function rpdf()
+    {
+        $data = Kelompok::all();
+        $dompdf = new Dompdf();
+
+        $kertas = view('dashboard.koordinator.daftarkp2-pdf', [
+            'datas' => $data,
+        ]);
+
+        $dompdf->loadHtml($kertas);
+
+        // (Optional) Setup the paper size and orientation
+        $dompdf->setPaper('A4', 'landscape');
+
+        // Render the HTML as PDF
+        $dompdf->render();
+
+        // Output the generated PDF to Browser
+        $dompdf->stream('rekap.pdf');
     }
 }

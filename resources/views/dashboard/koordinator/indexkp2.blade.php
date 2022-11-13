@@ -7,7 +7,7 @@
             </div>
         @endif
         <h1>Data Pendaftaran KP2</h1>
-        <a href="/koorkp/rekap-pdf" target="_blank" class="btn btn-success mt-2 mb-2">Print PDF</a>
+        <a href="/data-kp2/rekap-pdf" target="_blank" class="btn btn-success mt-2 mb-2">Print PDF</a>
         <div class="table-responsive">
             <table class="table table-striped table-sm table-hover">
                 <thead>
@@ -61,12 +61,6 @@
                                 @endif
                             </td>
                             <td>
-                                {{-- @if (isset($item->status2->s_mhs1))
-                                    <div
-                                        class="badge @if ($item->status_mhsw1 == 'Memenuhi') bg-success @elseif ($item->status_mhsw1 == 'Tidak Memenuhi') bg-danger @else bg-warning @endif">
-                                        {{ $item->status2->s_mhs1 }}
-                                    </div>
-                                @endif --}}
                                 @if (isset($item->status2->s_mhs1))
                                     <div
                                         class="badge @if ($item->status2->s_mhs1 == 'Memenuhi') bg-success @elseif ($item->status2->s_mhs1 == 'Tidak Memenuhi') bg-danger @else bg-warning @endif">

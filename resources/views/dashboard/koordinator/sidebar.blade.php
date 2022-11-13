@@ -27,6 +27,12 @@
                 </a>
             </li>
             <li class="nav-item">
+                <a class="nav-link {{ Request::is('data-seminar') ? 'active' : '' }}" href="/data-seminar">
+                    <span data-feather="users" class="align-text-bottom"></span>
+                    Data Pendaftaran Seminar KP
+                </a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link {{ Request::is('bukatutupform') ? 'active' : '' }}" href="/bukatutupform">
                     <span data-feather="flag" class="align-text-bottom"></span>
                     Buka Tutup Form
