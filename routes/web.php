@@ -106,6 +106,10 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/daftar-seminar', [SeminarController::class, 'index'])->middleware('auth');
         Route::post('/daftar-seminar', [SeminarController::class, 'store']);
 
+        //halaman edit daftar seminar
+        Route::get('/edit-data-seminar', [SeminarController::class, 'edit']);
+        Route::post('/edit-data-seminar', [SeminarController::class, 'update']);
+
         // dummy
         Route::get('/test', [KelompokController::class, 'index']);
     });

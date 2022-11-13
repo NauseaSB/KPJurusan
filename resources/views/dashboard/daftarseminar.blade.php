@@ -125,7 +125,7 @@
                 <button class="mt-3 w-100 btn btn-lg btn-primary" type="submit"
                     @if (isset($dataseminar)) disabled @endif>Daftar</button>
             </form>
-            <a href="/edit-data-kp">
+            <a href="/edit-data-seminar">
                 <button class="mt-3 w-100 btn btn-lg bg-warning border-0"
                     @if (isset($dataseminar)) @else disabled @endif style="text-decoration: none">
                     <span data-feather="edit"></span> Edit Data

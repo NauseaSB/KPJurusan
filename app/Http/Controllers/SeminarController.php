@@ -99,7 +99,10 @@ class SeminarController extends Controller
      */
     public function edit(Seminar $seminar)
     {
-        //
+        return view('dashboard.editseminar', [
+            'dataseminar' => auth()->user()->kelompok->seminar,
+            'title' => 'Edit Data Seminar KP',
+        ]);
     }
 
     /**
@@ -111,7 +114,46 @@ class SeminarController extends Controller
      */
     public function update(UpdateSeminarRequest $request, Seminar $seminar)
     {
-        //
+        $data = $request->all();
+        $current_seminar_id = auth()->user()->kelompok->seminar->id;
+        if ($request->file('khs1')) {
+            $khs1 = $request->file('khs1')->store('data-mahasiswa');
+            Seminar::where('id', $current_seminar_id)->update([
+                'khs1' => $khs1,
+            ]);
+        }
+        if ($request->file('khs2')) {
+            $khs2 = $request->file('khs2')->store('data-mahasiswa');
+            Seminar::where('id', $current_seminar_id)->update([
+                'khs2' => $khs2,
+            ]);
+        }
+        if ($request->file('f_demo_aplikasi')) {
+            $f_demo_aplikasi = $request->file('f_demo_aplikasi')->store('data-mahasiswa');
+            Seminar::where('id', $current_seminar_id)->update([
+                'f_demo_aplikasi' => $f_demo_aplikasi,
+            ]);
+        }
+        if ($request->file('f_surat_kelayakan')) {
+            $f_surat_kelayakan = $request->file('f_surat_kelayakan')->store('data-mahasiswa');
+            Seminar::where('id', $current_seminar_id)->update([
+                'f_surat_kelayakan' => $f_surat_kelayakan,
+            ]);
+        }
+        if ($request->file('f_bimbingan_akademik')) {
+            $f_bimbingan_akademik = $request->file('f_bimbingan_akademik')->store('data-mahasiswa');
+            Seminar::where('id', $current_seminar_id)->update([
+                'f_bimbingan_akademik' => $f_bimbingan_akademik,
+            ]);
+        }
+        if ($request->file('draft_laporan_kp')) {
+            $draft_laporan_kp = $request->file('draft_laporan_kp')->store('data-mahasiswa');
+            Seminar::where('id', $current_seminar_id)->update([
+                'draft_laporan_kp' => $draft_laporan_kp,
+            ]);
+        }
+
+        return redirect('/dashboard')->with('success', 'Ubah Data Seminar Berhasil');
     }
 
     /**
