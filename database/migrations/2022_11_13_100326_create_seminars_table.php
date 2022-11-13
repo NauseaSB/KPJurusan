@@ -15,8 +15,8 @@ class CreateSeminarsTable extends Migration
     {
         Schema::create('seminars', function (Blueprint $table) {
             $table->id();
-            $table->string('khs1')->nullable();
-            $table->string('khs2')->nullable();
+            $table->string('khs1');
+            $table->string('khs2');
             $table->string('f_demo_aplikasi')->nullable();
             $table->string('f_surat_kelayakan')->nullable();
             $table->string('f_bimbingan_akademik')->nullable();
