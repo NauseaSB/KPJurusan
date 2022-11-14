@@ -4,7 +4,12 @@
             <li class="nav-item">
                 <a class="nav-link {{ Request::is('TU') ? 'active' : '' }}" aria-current="page" href="/TU">
                     <span data-feather="list" class="align-text-bottom"></span>
-                    Data Pendaftaran KP
+                    Data Pendaftaran KP 1
+                </a>
+                <a class="nav-link {{ Request::is('data-kp2-tu') ? 'active' : '' }}" aria-current="page"
+                    href="/data-kp2-tu">
+                    <span data-feather="list" class="align-text-bottom"></span>
+                    Data Pendaftaran KP 2
                 </a>
             </li>
         </ul>

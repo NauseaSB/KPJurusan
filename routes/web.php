@@ -19,6 +19,7 @@ use App\Http\Controllers\DashboardKoorController;
 use App\Http\Controllers\DaftarMateriKPController;
 use App\Http\Controllers\DashboardAdminController;
 use App\Http\Controllers\DashboardKP2Controller;
+use App\Http\Controllers\DashboardKP2TUController;
 use App\Http\Controllers\DashboardSeminarController;
 use App\Http\Controllers\SeminarController;
 
@@ -160,5 +161,15 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/TU', [DashboardTUController::class, 'index'])->middleware('auth');
         Route::get('/TU/set-status/{id}', [DashboardTUController::class, 'edit']);
         Route::post('/TU/set-status/{id}', [DashboardTUController::class, 'update']);
+
+        //halaman data pendaftaran kp2
+        route::get('/data-kp2-tu', [DashboardKP2TUController::class, 'index']);
+
+        //halaman rekap data pendaftaran kp2
+        Route::get('/data-kp2-tu/rekap-pdf', [DashboardKP2TUController::class, 'rpdf']);
+
+        //halaman edit status mahasiswa kp2
+        Route::get('/data-kp2-tu/set-status/{id}', [DashboardKP2TUController::class, 'edit']);
+        Route::post('/data-kp2-tu/set-status/{id}', [DashboardKP2TUController::class, 'update']);
     });
 });
