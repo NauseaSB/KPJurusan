@@ -31,7 +31,7 @@
                             </td>
                             <td>
                                 @if (isset($item->materi))
-                                    {{ $item->materi->judul }}
+                                    {{ $item->materi->judul_kp }}
                                 @endif
                             </td>
                             <td>
@@ -41,7 +41,8 @@
                             </td>
 
                             <td>
-                                <a href="/" class="btn bg-warning" style="text-decoration: none">
+                                <a href="/rekap-kp/detail-status/{{ $item->id }}" class="btn bg-warning"
+                                    style="text-decoration: none">
                                     <span data-feather="file-text"></span>
                                     Lihat Detail
                                 </a>

@@ -130,6 +130,7 @@ Route::group(['middleware' => 'auth'], function () {
 
         //halaman rekap
         Route::get('/rekap-kp', [RekapController::class, 'index']);
+        Route::get('/rekap-kp/detail-status/{id}', [RekapController::class, 'show']);
         Route::get('/rekap-kp/rekap-pdf', [RekapController::class, 'rpdf']);
 
         //halaman ploting dosen

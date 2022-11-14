@@ -51,7 +51,20 @@ class RekapController extends Controller
      */
     public function show($id)
     {
-        //
+        $data = Kelompok::where('id', $id)->with('kp1')->with('materi')->with('kp2')->with('status1')->with('status2')->with('seminar')->first();
+        // ddd($data->kp1->nim1);
+
+        return view('dashboard.koordinator.detail-rekap', [
+            'id' => $id,
+            'datas' => $data,
+            'datakp1' => $data->kp1,
+            'datakp2' => $data->kp2,
+            'status1' => $data->status1,
+            'status2' => $data->status2,
+            'dataseminar' => $data->seminar,
+            'datamateri' => $data->materi,
+            'title' => 'Set Status KP 2 Mahasiswa',
+        ]);
     }
 
     /**
