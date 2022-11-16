@@ -1,4 +1,4 @@
-@extends('dashboard.layout.main')
+@extends('dashboard.koordinator.main')
 
 @section('container')
 
