@@ -15,7 +15,7 @@
                         <div class="form-floating">
                             <div class="mb-2">
                                 <label for="khs1" class="form-label">KHS Mahasiswa 1</label>
-                                <input class="form-control" type="file" id="khs1" name="khs1" required>
+                                <input class="form-control" type="file" id="khs1" name="khs1">
                             </div>
                         </div>
                         <div class="form-floating">
@@ -32,7 +32,7 @@
                         <div class="form-floating">
                             <div class="mb-2">
                                 <label for="khs2" class="form-label">KHS Mahasiswa 2</label>
-                                <input class="form-control" type="file" id="khs2" name="khs2" required>
+                                <input class="form-control" type="file" id="khs2" name="khs2">
                             </div>
                         </div>
                         <div class="form-floating">

@@ -95,7 +95,7 @@
                     </td>
                     <td>
                         @if (isset($item->materi))
-                            {{ $item->materi->judul }}
+                            {{ $item->materi->judul_kp }}
                         @endif
                     </td>
                     <td>

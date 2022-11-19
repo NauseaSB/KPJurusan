@@ -122,32 +122,28 @@
                         </td>
                         <td>
                             @if (isset($item->status_mhsw1))
-                                <div
-                                    class="badge @if ($item->status_mhsw1 == 'Memenuhi') bg-success @elseif ($item->status_mhsw1 == 'Tidak Memenuhi') bg-danger @else bg-warning @endif">
+                                <div>
                                     {{ $item->status_mhsw1 }}
                                 </div>
                             @endif
                         </td>
                         <td>
                             @if (isset($item->status_mhsw2))
-                                <div
-                                    class="badge @if ($item->status_mhsw2 == 'Memenuhi') bg-success @elseif ($item->status_mhsw2 == 'Tidak Memenuhi') bg-danger @else bg-warning @endif">
+                                <div>
                                     {{ $item->status_mhsw2 }}
                                 </div>
                             @endif
                         </td>
                         <td>
                             @if (isset($item->status_klmpk))
-                                <div
-                                    class="badge @if ($item->status_klmpk == 'Memenuhi') bg-success @elseif ($item->status_klmpk == 'Tidak Memenuhi') bg-danger @else bg-warning @endif">
+                                <div>
                                     {{ $item->status_klmpk }}
                                 </div>
                             @endif
                         </td>
                         <td>
                             @if (isset($item->status_akhir))
-                                <div
-                                    class="badge @if ($item->status_akhir == 'Memenuhi') bg-success @elseif ($item->status_akhir == 'Tidak Memenuhi') bg-danger @else bg-warning @endif">
+                                <div>
                                     {{ $item->status_akhir }}
                                 </div>
                             @endif

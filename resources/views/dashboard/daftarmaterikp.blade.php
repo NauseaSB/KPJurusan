@@ -103,9 +103,9 @@
                 </div>
 
                 <div class="row">
-                    <div class="col">
+                    <div class="col mt-2">
                         <div class="form-floating">
-                            <select class="form-select mt-2" name="status_judul" id="status_judul">
+                            <select class="form-select" name="status_judul" id="status_judul">
                                 @if (isset($materi))
                                     <option @if ($materi->status_judul == null) selected @endif>Nilai</option>
                                     <option @if ($materi->status_judul == 'Sudah Ada Judul') selected @endif value="Sudah Ada Judul">Sudah
@@ -137,7 +137,7 @@
                             <label for="jenis_kp">Jenis Kerja Praktik</label>
                         </div>
                     </div>
-                    <div class="col">
+                    <div class="col mt-2">
                         <div class="form-floating">
                             <select class="form-select" name="p_kp1" id="p_kp1">
                                 @if (isset($materi))

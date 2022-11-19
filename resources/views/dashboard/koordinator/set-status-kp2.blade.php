@@ -570,7 +570,7 @@
                                             @if (isset($datakp2->jum_b_akademik)) value="{{ $datakp2->jum_b_akademik }}"
                                     @else value="{{ old('jum_b_akademik') }}" @endif>
                                         @if (isset($datakp2->k_b_akademik))
-                                            <a href="storage/{{ $datakp2->k_b_akademik }}" target="_blank"
+                                            <a href="/storage/{{ $datakp2->k_b_akademik }}" target="_blank"
                                                 class="btn btn-primary">Lihat
                                                 Data Kartu Bimbingan Akademik</a>
                                         @endif
@@ -587,7 +587,7 @@
                                             @if (isset($datakp2->jum_b_lapangan)) value="{{ $datakp2->jum_b_lapangan }}"
                                     @else value="{{ old('jum_b_lapangan') }}" @endif>
                                         @if (isset($datakp2->k_b_lapangan))
-                                            <a href="storage/{{ $datakp2->k_b_lapangan }}" target="_blank"
+                                            <a href="/storage/{{ $datakp2->k_b_lapangan }}" target="_blank"
                                                 class="btn btn-primary">Lihat
                                                 Data Kartu Bimbingan Akademik</a>
                                         @endif
