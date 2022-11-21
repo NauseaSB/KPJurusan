@@ -7,7 +7,6 @@
             </div>
         @endif
         <h1>Data Pendaftaran KP2</h1>
-        <a href="/data-kp2-tu/rekap-pdf" target="_blank" class="btn btn-success mt-2 mb-2">Print PDF</a>
         <div class="table-responsive">
             <table class="table table-striped table-sm table-hover">
                 <thead>
