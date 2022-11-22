@@ -13,7 +13,7 @@
                     <div class="col">
                         <div class="form-floating">
                             <input type="text" class="form-control rounded-top @error('nim1') is-invalid rounded @enderror"
-                                name="nim1" id="nim1" placeholder="NIM Mahasiswa 1" required
+                                name="nim1" id="nim1" placeholder="NIM Mahasiswa 1" required pattern="[0-9]{10}"
                                 @if (isset($mhs1->nim)) value="{{ $mhs1->nim }}" readonly
                                 @else
                                     value="{{ old('nim1') }}" @endif>
@@ -65,17 +65,21 @@
                             @enderror
                         </div>
                         <div class=" form-floating">
-                            <input type="text" class="form-control @error('doswal1') is-invalid rounded @enderror"
-                                name="doswal1" id="doswal1" placeholder="Nama Mahasiswa 1" required
-                                @if (isset($mhs1->doswal)) value="{{ $mhs1->doswal }}" readonly
+                            <select class="form-select" name="doswal1" id="doswal1">
+                                @if (isset($mhs1))
+                                    <option selected value="{{ $mhs1->doswal }}">
+                                        {{ $mhs1->doswal }}</option>
+                                    @foreach ($dosens as $dosen)
+                                        <option> {{ $dosen->nama }}</option>
+                                    @endforeach
                                 @else
-                                    value="{{ old('doswal1') }}" @endif>
-                            <label for="doswal1">Nama Dosen Wali</label>
-                            @error('doswal1')
-                                <div class="invalid-feedback">
-                                    {{ $message }}
-                                </div>
-                            @enderror
+                                    <option selected>Pembimbing</option>
+                                    @foreach ($dosens as $dosen)
+                                        <option> {{ $dosen->nama }}</option>
+                                    @endforeach
+                                @endif
+                            </select>
+                            <label for="doswal1">Dosen Wali</label>
                         </div>
                         <div class=" form-floating">
                             <input type="text" class="form-control @error('peminatan1') is-invalid rounded @enderror"
@@ -162,7 +166,7 @@
                         <div class="form-floating">
                             <input type="text"
                                 class="form-control rounded-top @error('nim2') is-invalid rounded @enderror" name="nim2"
-                                id="nim2" placeholder="NIM Mahasiswa 2" required
+                                id="nim2" placeholder="NIM Mahasiswa 2" required pattern="[0-9]{10}"
                                 @if (isset($mhs2->nim)) value="{{ $mhs2->nim }}" readonly
                                 @else
                                     value="{{ old('nim2') }}" @endif>
@@ -214,17 +218,21 @@
                             @enderror
                         </div>
                         <div class=" form-floating">
-                            <input type="text" class="form-control @error('doswal2') is-invalid rounded @enderror"
-                                name="doswal2" id="doswal2" placeholder="Nama Dosen Wali" required
-                                @if (isset($mhs2->doswal)) value="{{ $mhs2->doswal }}" readonly
+                            <select class="form-select" name="doswal2" id="doswal2">
+                                @if (isset($mhs2))
+                                    <option selected value="{{ $mhs2->doswal }}">
+                                        {{ $mhs2->doswal }}</option>
+                                    @foreach ($dosens as $dosen)
+                                        <option> {{ $dosen->nama }}</option>
+                                    @endforeach
                                 @else
-                                    value="{{ old('doswal2') }}" @endif>
-                            <label for="doswal2">Nama Dosen Wali</label>
-                            @error('doswal2')
-                                <div class="invalid-feedback">
-                                    {{ $message }}
-                                </div>
-                            @enderror
+                                    <option selected>Pembimbing</option>
+                                    @foreach ($dosens as $dosen)
+                                        <option> {{ $dosen->nama }}</option>
+                                    @endforeach
+                                @endif
+                            </select>
+                            <label for="doswal2">Dosen Wali</label>
                         </div>
                         <div class=" form-floating">
                             <input type="text" class="form-control @error('peminatan2') is-invalid rounded @enderror"

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Dosen;
 use App\Models\kelompok;
 use App\Models\mahasiswa;
 use Illuminate\Http\Request;
@@ -16,6 +17,7 @@ class DaftarKPController extends Controller
     public function index()
     {
         return view('dashboard.daftarkp', [
+            'dosens' => Dosen::all(),
             'kelompok' => auth()->user()->kelompok->mahasiswa,
             'mhs1' => auth()->user()->kelompok->mahasiswa,
             'mhs2' => auth()->user()->kelompok->mahasiswa2,
@@ -103,8 +105,12 @@ class DaftarKPController extends Controller
     public function edit(mahasiswa $mahasiswa)
     {
         return view('dashboard.editkelompok', [
+            'dosens' => Dosen::all(),
             'datakelompok' => auth()->user()->kelompok,
             'title' => 'Edit Daftar Kelompok KP',
+            'mhs1' => auth()->user()->kelompok->mahasiswa,
+            'mhs2' => auth()->user()->kelompok->mahasiswa2,
+
         ]);
     }
 
