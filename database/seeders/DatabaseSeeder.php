@@ -33,6 +33,7 @@ class DatabaseSeeder extends Seeder
             'user_id' => '1',
             'mahasiswa_id' => '1',
             'mahasiswa_id2' => '2',
+            'periode' => 'GANJIL',
         ]);
 
         Mahasiswa::create([

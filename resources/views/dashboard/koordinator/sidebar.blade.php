@@ -38,6 +38,12 @@
                     Buka Tutup Form
                 </a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link {{ Request::is('ubahperiode') ? 'active' : '' }}" href="/ubahperiode">
+                    <span data-feather="calendar" class="align-text-bottom"></span>
+                    Ubah Periode
+                </a>
+            </li>
         </ul>
         <h6 class="sidebar-heading d-flex justify-content-between px-3 mt-4 mb-1 text-muted text-uppercase">
         </h6>

@@ -16,6 +16,15 @@ class BukaTutupController extends Controller
         ]);
     }
 
+    public function indexPeriode()
+    {
+        $periode = BukaTutup::first();
+        return view('dashboard.koordinator.ubah-periode', [
+            'periode' => $periode,
+            'title' => 'Ubah Periode',
+        ]);
+    }
+
     public function lockKP1(Request $request)
     {
         BukaTutup::first()->update([
@@ -40,5 +49,13 @@ class BukaTutupController extends Controller
             'seminar' => $request['seminar'],
         ]);
         return redirect()->back()->with('success', 'Status Form Seminar Telah Diubah');
+    }
+
+    public function lockPeriode(Request $request)
+    {
+        BukaTutup::first()->update([
+            'periode' => $request['periode'],
+        ]);
+        return redirect()->back()->with('success', 'Periode KP Telah Diubah');
     }
 }

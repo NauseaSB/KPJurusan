@@ -155,6 +155,10 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('/bukatutupkp1', [BukaTutupController::class, 'lockKP1']);
         Route::post('/bukatutupkp2', [BukaTutupController::class, 'lockKP2']);
         Route::post('/bukatutupseminar', [BukaTutupController::class, 'lockSeminar']);
+
+        //halaman switch periode
+        Route::get('/ubahperiode', [BukaTutupController::class, 'indexPeriode']);
+        Route::post('/ubahsettingperiode', [BukaTutupController::class, 'lockPeriode']);
     });
 
     //route group untuk role TATA USAHA
