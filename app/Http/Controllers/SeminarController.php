@@ -18,15 +18,42 @@ class SeminarController extends Controller
      */
     public function index()
     {
+        $periode_user = auth()->user()->kelompok->Periode;
+        $periode_sys = BukaTutup::first()->periode;
         if (BukaTutup::first()->seminar == 0) {
             return view('dashboard.form-tutup', [
                 'title' => 'Daftar Seminar',
             ]);
         }
-        return view('dashboard.daftarseminar', [
-            'dataseminar' => auth()->user()->kelompok->seminar,
-            'title' => 'Daftar KP2',
-        ]);
+        if ($periode_sys == 0) {
+            $periode = "GANJIL";
+            if ($periode_user == $periode) {
+                return view('dashboard.daftarseminar', [
+                    'dataseminar' => auth()->user()->kelompok->seminar,
+                    'title' => 'Daftar Seminar',
+                ]);
+            } else {
+                return view('dashboard.form-tutup', [
+                    'title' => 'Daftar Seminar',
+                ]);
+            }
+        } else {
+            $periode = "GENAP";
+            if ($periode_user == $periode) {
+                return view('dashboard.daftarseminar', [
+                    'dataseminar' => auth()->user()->kelompok->seminar,
+                    'title' => 'Daftar Seminar',
+                ]);
+            } else {
+                return view('dashboard.form-tutup', [
+                    'title' => 'Daftar Seminar',
+                ]);
+            }
+        }
+        // return view('dashboard.daftarseminar', [
+        //     'dataseminar' => auth()->user()->kelompok->seminar,
+        //     'title' => 'Daftar Seminar',
+        // ]);
     }
 
     /**

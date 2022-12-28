@@ -19,17 +19,42 @@ class Kp1Controller extends Controller
      */
     public function index()
     {
+        $periode_user = auth()->user()->kelompok->Periode;
+        $periode_sys = BukaTutup::first()->periode;
         if (BukaTutup::first()->kp1 == 0) {
             return view('dashboard.form-tutup', [
                 'title' => 'Daftar KP1',
             ]);
         }
-        return view('dashboard.daftarkp1', [
-            'datakp1' => auth()->user()->kelompok->kp1,
-            'mhs1' => auth()->user()->kelompok->mahasiswa,
-            'mhs2' => auth()->user()->kelompok->mahasiswa2,
-            'title' => 'Daftar KP1',
-        ]);
+        if ($periode_sys == 0) {
+            $periode = "GANJIL";
+            if ($periode_user == $periode) {
+                return view('dashboard.daftarkp1', [
+                    'datakp1' => auth()->user()->kelompok->kp1,
+                    'mhs1' => auth()->user()->kelompok->mahasiswa,
+                    'mhs2' => auth()->user()->kelompok->mahasiswa2,
+                    'title' => 'Daftar KP1',
+                ]);
+            } else {
+                return view('dashboard.form-tutup', [
+                    'title' => 'Daftar KP1',
+                ]);
+            }
+        } else {
+            $periode = "GENAP";
+            if ($periode_user == $periode) {
+                return view('dashboard.daftarkp1', [
+                    'datakp1' => auth()->user()->kelompok->kp1,
+                    'mhs1' => auth()->user()->kelompok->mahasiswa,
+                    'mhs2' => auth()->user()->kelompok->mahasiswa2,
+                    'title' => 'Daftar KP1',
+                ]);
+            } else {
+                return view('dashboard.form-tutup', [
+                    'title' => 'Daftar KP1',
+                ]);
+            }
+        }
     }
 
     /**

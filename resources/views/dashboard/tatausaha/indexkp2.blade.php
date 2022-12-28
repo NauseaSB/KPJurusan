@@ -7,6 +7,23 @@
             </div>
         @endif
         <h1>Data Pendaftaran KP2</h1>
+
+        <div class="row justify-content-end mt-3 mb-3">
+            <div class="col-md-3">
+                <form action="/data-kp2-tu">
+                    <div class="input-group">
+                        <label class="input-group-text" for="search">Cari Berdasarkan Periode : </label>
+                        <select class="form-select" id="search" name="search">
+                            <option selected disabled="disabled">Choose...</option>
+                            <option value="GANJIL">Ganjil</option>
+                            <option value="GENAP">Genap</option>
+                        </select>
+                        <button class="btn btn-success" type="submit">Cari</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
         <div class="table-responsive">
             <table class="table table-striped table-sm table-hover">
                 <thead>

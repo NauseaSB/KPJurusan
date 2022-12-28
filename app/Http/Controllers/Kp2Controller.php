@@ -18,20 +18,57 @@ class Kp2Controller extends Controller
      */
     public function index()
     {
+        $periode_user = auth()->user()->kelompok->Periode;
+        $periode_sys = BukaTutup::first()->periode;
         if (BukaTutup::first()->kp2 == 0) {
             return view('dashboard.form-tutup', [
                 'title' => 'Daftar KP2',
             ]);
         }
-        return view('dashboard.daftarkp2', [
-            'datakp1' => auth()->user()->kelompok->kp1,
-            'datakp2' => auth()->user()->kelompok->kp2,
-            'mhs1' => auth()->user()->kelompok->mahasiswa,
-            'mhs2' => auth()->user()->kelompok->mahasiswa2,
-            'materi' => auth()->user()->kelompok->materi,
-            'kelompok' => auth()->user()->kelompok,
-            'title' => 'Daftar KP2',
-        ]);
+        if ($periode_sys == 0) {
+            $periode = "GANJIL";
+            if ($periode_user == $periode) {
+                return view('dashboard.daftarkp2', [
+                    'datakp1' => auth()->user()->kelompok->kp1,
+                    'datakp2' => auth()->user()->kelompok->kp2,
+                    'mhs1' => auth()->user()->kelompok->mahasiswa,
+                    'mhs2' => auth()->user()->kelompok->mahasiswa2,
+                    'materi' => auth()->user()->kelompok->materi,
+                    'kelompok' => auth()->user()->kelompok,
+                    'title' => 'Daftar KP2',
+                ]);
+            } else {
+                return view('dashboard.form-tutup', [
+                    'title' => 'Daftar KP2',
+                ]);
+            }
+        } else {
+            $periode = "GENAP";
+            if ($periode_user == $periode) {
+                return view('dashboard.daftarkp2', [
+                    'datakp1' => auth()->user()->kelompok->kp1,
+                    'datakp2' => auth()->user()->kelompok->kp2,
+                    'mhs1' => auth()->user()->kelompok->mahasiswa,
+                    'mhs2' => auth()->user()->kelompok->mahasiswa2,
+                    'materi' => auth()->user()->kelompok->materi,
+                    'kelompok' => auth()->user()->kelompok,
+                    'title' => 'Daftar KP2',
+                ]);
+            } else {
+                return view('dashboard.form-tutup', [
+                    'title' => 'Daftar KP2',
+                ]);
+            }
+        }
+        // return view('dashboard.daftarkp2', [
+        //     'datakp1' => auth()->user()->kelompok->kp1,
+        //     'datakp2' => auth()->user()->kelompok->kp2,
+        //     'mhs1' => auth()->user()->kelompok->mahasiswa,
+        //     'mhs2' => auth()->user()->kelompok->mahasiswa2,
+        //     'materi' => auth()->user()->kelompok->materi,
+        //     'kelompok' => auth()->user()->kelompok,
+        //     'title' => 'Daftar KP2',
+        // ]);
     }
 
     /**

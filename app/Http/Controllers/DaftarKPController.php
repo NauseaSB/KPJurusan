@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Dosen;
 use App\Models\kelompok;
 use App\Models\mahasiswa;
+use App\Models\BukaTutup;
 use Illuminate\Http\Request;
 
 class DaftarKPController extends Controller
@@ -16,13 +17,39 @@ class DaftarKPController extends Controller
      */
     public function index()
     {
-        return view('dashboard.daftarkp', [
-            'dosens' => Dosen::all(),
-            'kelompok' => auth()->user()->kelompok->mahasiswa,
-            'mhs1' => auth()->user()->kelompok->mahasiswa,
-            'mhs2' => auth()->user()->kelompok->mahasiswa2,
-            'title' => 'Daftar Kelompok KP',
-        ]);
+        $periode_user = auth()->user()->kelompok->Periode;
+        $periode_sys = BukaTutup::first()->periode;
+        if ($periode_sys == 0) {
+            $periode = "GANJIL";
+            if ($periode_user == $periode) {
+                return view('dashboard.daftarkp', [
+                    'dosens' => Dosen::all(),
+                    'kelompok' => auth()->user()->kelompok->mahasiswa,
+                    'mhs1' => auth()->user()->kelompok->mahasiswa,
+                    'mhs2' => auth()->user()->kelompok->mahasiswa2,
+                    'title' => 'Daftar Kelompok KP',
+                ]);
+            } else {
+                return view('dashboard.form-tutup', [
+                    'title' => 'Daftar Kelompok KP',
+                ]);
+            }
+        } else {
+            $periode = "GENAP";
+            if ($periode_user == $periode) {
+                return view('dashboard.daftarkp', [
+                    'dosens' => Dosen::all(),
+                    'kelompok' => auth()->user()->kelompok->mahasiswa,
+                    'mhs1' => auth()->user()->kelompok->mahasiswa,
+                    'mhs2' => auth()->user()->kelompok->mahasiswa2,
+                    'title' => 'Daftar Kelompok KP',
+                ]);
+            } else {
+                return view('dashboard.form-tutup', [
+                    'title' => 'Daftar Kelompok KP',
+                ]);
+            }
+        }
     }
 
     /**

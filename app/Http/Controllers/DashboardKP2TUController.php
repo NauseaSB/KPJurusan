@@ -16,11 +16,14 @@ class DashboardKP2TUController extends Controller
      */
     public function index()
     {
-        $data = Kelompok::paginate(10);
-        // $datas = Kelompok::where('id', '1')->first();
-        // ddd($datas->status2->s_mhs1);
+        $data = Kelompok::latest();
+
+        if (request('search')) {
+            $data->where('Periode', request('search'));
+        };
+
         return view('dashboard.tatausaha.indexkp2', [
-            'datas' => $data,
+            'datas' => $data->paginate(10),
             'title' => 'Data Pendaftaran KP2',
         ]);
     }

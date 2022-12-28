@@ -120,6 +120,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::group(['middleware' => 'role:koodinatorKP'], function () {
         //halaman utama
         Route::get('/koorkp', [DashboardKoorController::class, 'index'])->middleware('auth');
+        // Route::post('/koorkp', [DashboardKoorController::class, 'index'])->middleware('auth');
 
         //halaman rekap data pendaftaran kp
         Route::get('/koorkp/rekap-pdf', [DashboardKoorController::class, 'rpdf']);

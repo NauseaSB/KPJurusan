@@ -2,6 +2,23 @@
 @section('container')
     <div class="text-center mt-5 mb-5">
         <h1>Data Pendaftaran Seminar KP</h1>
+
+        <div class="row justify-content-center mt-3 mb-3">
+            <div class="col-md-3">
+                <form action="/data-seminar">
+                    <div class="input-group">
+                        <label class="input-group-text" for="search">Cari Berdasarkan Periode : </label>
+                        <select class="form-select" id="search" name="search">
+                            <option selected disabled="disabled">Choose...</option>
+                            <option value="GANJIL">Ganjil</option>
+                            <option value="GENAP">Genap</option>
+                        </select>
+                        <button class="btn btn-success" type="submit">Cari</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
         <div class="row justify-content-center">
             <div class="col-auto">
                 <div class="table-responsive">

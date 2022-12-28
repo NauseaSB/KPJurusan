@@ -14,9 +14,14 @@ class DashboardTUController extends Controller
      */
     public function index()
     {
-        $data = Kelompok::paginate(10);
+        $data = Kelompok::latest();
+
+        if (request('search')) {
+            $data->where('Periode', request('search'));
+        }
+
         return view('dashboard.tatausaha.index', [
-            'datas' => $data,
+            'datas' => $data->paginate(10),
             'title' => 'Data Pendaftaran KP',
         ]);
     }

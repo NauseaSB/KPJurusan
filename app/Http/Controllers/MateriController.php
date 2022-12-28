@@ -19,16 +19,45 @@ class MateriController extends Controller
     public function index()
     {
         $dosen = Dosen::all();
+        $periode_user = auth()->user()->kelompok->Periode;
+        $periode_sys = BukaTutup::first()->periode;
         if (BukaTutup::first()->kp1 == 0) {
             return view('dashboard.form-tutup', [
                 'title' => 'Daftar KP1',
             ]);
         }
-        return view('dashboard.daftarmaterikp', [
-            'materi' => auth()->user()->kelompok->materi,
-            'dosens' => $dosen,
-            'title' => 'Daftar Materi KP',
-        ]);
+        if ($periode_sys == 0) {
+            $periode = "GANJIL";
+            if ($periode_user == $periode) {
+                return view('dashboard.daftarmaterikp', [
+                    'materi' => auth()->user()->kelompok->materi,
+                    'dosens' => $dosen,
+                    'title' => 'Daftar Materi KP',
+                ]);
+            } else {
+                return view('dashboard.form-tutup', [
+                    'title' => 'Daftar Materi KP',
+                ]);
+            }
+        } else {
+            $periode = "GENAP";
+            if ($periode_user == $periode) {
+                return view('dashboard.daftarmaterikp', [
+                    'materi' => auth()->user()->kelompok->materi,
+                    'dosens' => $dosen,
+                    'title' => 'Daftar Materi KP',
+                ]);
+            } else {
+                return view('dashboard.form-tutup', [
+                    'title' => 'Daftar Materi KP',
+                ]);
+            }
+        }
+        // return view('dashboard.daftarmaterikp', [
+        //     'materi' => auth()->user()->kelompok->materi,
+        //     'dosens' => $dosen,
+        //     'title' => 'Daftar Materi KP',
+        // ]);
     }
 
     /**
