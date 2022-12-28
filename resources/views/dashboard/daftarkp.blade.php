@@ -73,7 +73,7 @@
                                         <option> {{ $dosen->nama }}</option>
                                     @endforeach
                                 @else
-                                    <option selected>Pembimbing</option>
+                                    <option selected>Dosen Wali</option>
                                     @foreach ($dosens as $dosen)
                                         <option> {{ $dosen->nama }}</option>
                                     @endforeach
@@ -226,7 +226,7 @@
                                         <option> {{ $dosen->nama }}</option>
                                     @endforeach
                                 @else
-                                    <option selected>Pembimbing</option>
+                                    <option selected>Dosen Wali</option>
                                     @foreach ($dosens as $dosen)
                                         <option> {{ $dosen->nama }}</option>
                                     @endforeach

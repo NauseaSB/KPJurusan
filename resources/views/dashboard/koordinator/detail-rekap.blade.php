@@ -1116,7 +1116,7 @@
                             <input type="text"
                                 class="form-control rounded-top @error('judul_kp') is-invalid rounded @enderror"
                                 name="judul_kp" id="judul_kp" placeholder="Judul Kerja Praktik" readonly
-                                @if (isset($datakp2->judul_kp)) value="{{ $datakp2->judul_kp }}"
+                                @if (isset($datamateri->judul_kp)) value="{{ $datamateri->judul_kp }}"
                                 @else
                                     value="{{ old('judul_kp') }}" @endif>
                             <label for="judul_kp">Judul Kerja Praktik</label>
@@ -1126,7 +1126,7 @@
                                 class="form-control rounded-top @error('tempat_kp_lapangan') is-invalid rounded @enderror"
                                 name="tempat_kp_lapangan" id="tempat_kp_lapangan" placeholder="Judul Kerja Praktik"
                                 readonly
-                                @if (isset($datakp2->tempat_kp_lapangan)) value="{{ $datakp2->tempat_kp_lapangan }}"
+                                @if (isset($datamateri->tempat_kp_lapangan)) value="{{ $datamateri->tempat_kp_lapangan }}"
                                 @else
                                     value="{{ old('tempat_kp_lapangan') }}" @endif>
                             <label for="tempat_kp_lapangan">Tempat Kerja Praktik</label>
@@ -1140,7 +1140,7 @@
                             <input type="text"
                                 class="form-control rounded-top @error('alamat') is-invalid rounded @enderror"
                                 name="alamat" id="alamat" placeholder="Judul Kerja Praktik" readonly
-                                @if (isset($datakp2->alamat)) value="{{ $datakp2->alamat }}"
+                                @if (isset($datamateri->alamat)) value="{{ $datamateri->alamat }}"
                                 @else
                                     value="{{ old('alamat') }}" @endif>
                             <label for="alamat">Alamat Kerja Praktik</label>
@@ -1156,7 +1156,7 @@
                             <input type="text"
                                 class="form-control rounded-top @error('telp_tempat_kp') is-invalid rounded @enderror"
                                 name="telp_tempat_kp" id="telp_tempat_kp" placeholder="Judul Kerja Praktik" readonly
-                                @if (isset($datakp2->telp_tempat_kp)) value="{{ $datakp2->telp_tempat_kp }}"
+                                @if (isset($datamateri->telp_tempat_kp)) value="{{ $datamateri->telp_tempat_kp }}"
                                 @else
                                     value="{{ old('telp_tempat_kp') }}" @endif>
                             <label for="telp_tempat_kp">Nomor Telepon Tempat Kerja Praktik</label>
@@ -1171,7 +1171,7 @@
                                 class="form-control rounded-top @error('nama_pembimbing_lapangan') is-invalid rounded @enderror"
                                 name="nama_pembimbing_lapangan" id="nama_pembimbing_lapangan"
                                 placeholder="Judul Kerja Praktik" readonly
-                                @if (isset($datakp2->nama_pembimbing_lapangan)) value="{{ $datakp2->nama_pembimbing_lapangan }}"
+                                @if (isset($datamateri->nama_pembimbing_lapangan)) value="{{ $datamateri->nama_pembimbing_lapangan }}"
                                 @else
                                     value="{{ old('nama_pembimbing_lapangan') }}" @endif>
                             <label for="nama_pembimbing_lapangan">Nama Pembimbing Lapangan</label>
@@ -1186,7 +1186,7 @@
                                 class="form-control rounded-top @error('nama_penanggung_jawab_lapangan') is-invalid rounded @enderror"
                                 name="nama_penanggung_jawab_lapangan" id="nama_penanggung_jawab_lapangan"
                                 placeholder="Judul Kerja Praktik" readonly
-                                @if (isset($datakp2->nama_penanggung_jawab_lapangan)) value="{{ $datakp2->nama_penanggung_jawab_lapangan }}"
+                                @if (isset($datamateri->nama_penanggung_jawab_lapangan)) value="{{ $datamateri->nama_penanggung_jawab_lapangan }}"
                                 @else
                                     value="{{ old('nama_penanggung_jawab_lapangan') }}" @endif>
                             <label for="nama_penanggung_jawab_lapangan">Nama Penanggung Jawab Lapangan</label>
@@ -1204,7 +1204,7 @@
                             <input type="text"
                                 class="form-control rounded-top @error('dosbim') is-invalid rounded @enderror"
                                 name="dosbim" id="dosbim" placeholder="Dosen Pembimbing" readonly
-                                @if (isset($datakp2->dosbim)) value="{{ $datakp2->dosbim }}" @else value="{{ old('dosbim') }}" @endif>
+                                @if (isset($datas->dosbim)) value="{{ $datas->dosbim }}" @else value="{{ old('dosbim') }}" @endif>
                             <label for="dosbim">Dosen Pembimbing</label>
                             @error('dosbim')
                                 <div class="invalid-feedback">

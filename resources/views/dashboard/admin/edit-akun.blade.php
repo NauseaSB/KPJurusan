@@ -31,7 +31,7 @@
                                 class="form-control rounded-bottom @error('password')
                     is-invalid rounded
                 @enderror"
-                                id="password" name="password" placeholder="Password" required>
+                                id="password" name="password" placeholder="Password" required autocomplete="off">
                             <label for="floatingPassword">Password</label>
                             @error('password')
                                 <div class="invalid-feedback">
